@@ -1,0 +1,1172 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Video Slider</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="17ebc280-32a8-80b5-a147-e6074fbd3ef4" class="page sans"><header><h1 class="page-title">Video Slider</h1><p class="page-description"></p></header><div class="page-body"><figure id="17ebc280-32a8-80dc-ae67-e41b07cbb03d" class="image"><a href="Video%20Slider%2017ebc28032a880b5a147e6074fbd3ef4/image.png"><img style="width:707.984375px" src="Video%20Slider%2017ebc28032a880b5a147e6074fbd3ef4/image.png"/></a></figure><p id="17ebc280-32a8-80a5-b35f-e72e07e70af2" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="17ebc280-32a8-8037-964b-da8910aef9b7" class="code"><code class="language-JavaScript">{% liquid
+  assign id = section.id
+%}
+
+&lt;style&gt;
+    #shopify-section-{{id}}{
+      margin-top: {{section.settings.margin_top | append: &#x27;px&#x27;}};
+      margin-bottom: {{section.settings.margin_bottom | append: &#x27;px&#x27;}};
+      padding-top: {{section.settings.padding_top | append: &#x27;px&#x27;}};
+      padding-bottom: {{section.settings.padding_bottom | append: &#x27;px&#x27;}};
+    }
+    .vrs__wrapper{
+      position: relative;
+    }
+
+    .vrs__header{
+      margin: 0 0 30px;
+      text-align: center;
+    }
+    .vrs__header h2{
+      font-size: 32px;
+      line-height: 36px;
+      margin: 0;
+    }
+    .vrs__slider--{{ section.id }}{
+      position: relative;
+    }
+    .vrs__slider--{{ section.id }} .swiper-slide{
+      height: auto;
+    }
+    .slider-slide-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      box-sizing: border-box;
+      font-size: 0;
+      line-height: 0;
+      cursor: pointer;
+      max-width: 300px;
+    }
+    .play-button-{{ section.id }} {
+      position: absolute;
+      width: 48px;
+      height: 48px;
+      border: none;
+      border-radius: 50%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -100%);
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    p.video-length {
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+      font-size: 14px;
+      color: #fff;
+      margin: 0;
+    }
+    .slider-slide-video.playing ~ p.video-length{
+      display: none;
+    }
+    #shopify-section-{{id}} #next--{{ section.id }}{
+      width: 34px;
+      height: 128px;
+      background: rgba(234, 9, 75, 0.25);
+      right: 16px;
+    }
+    #shopify-section-{{id}} #prev--{{ section.id }}{
+      width: 34px;
+      height: 128px;
+      background: rgba(234, 9, 75, 0.25);
+      left: 16px;
+    }
+
+
+    .video__slider-modal{
+      display: none;
+      background: rgb(0,0,0,0.8);
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 99;
+      cursor: pointer;
+    }
+    .video__slider-modal.show-modal{
+      display: block;
+    }
+    .video__slider-modal video{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 90%;
+      max-height: 90%;
+    }
+  /* new code starts here for product wrapper  */
+    .wrapper-{{ id }} .product-wrapper {
+      position: relative;
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 8px;
+      align-items: center;
+      border: 1px solid #00000021;
+      padding: 8px;
+    /* border-radius: 5px; */
+    /* box-shadow: 0px 0px  0px #000; */
+      a.absolute_link{
+        position: absolute;
+         width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: block;
+      }
+      .pw_title{
+        color: #000;
+        font-size: 13px;
+        line-height: normal;
+        text-transform: capitalize;
+        margin: 0;
+        text-decoration: none;
+        display: block;
+      }
+      .pw-product-price {
+        display: flex;
+        gap: 8px;
+        color: #000;
+        font-size: 13px;
+        line-height: normal;
+        text-transform: capitalize;
+        margin: 8px 0 0 0;
+        text-decoration: none;
+        /* display: block; */
+        p{
+          margin: 0;
+        }
+        p.compare_at_price {
+          text-decoration: line-through;
+        }
+      }
+      img{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+  /* new code starts here for product wrapper  */
+
+    @media screen and (min-width: 769px){
+      .video__slider-modal video{
+        min-width: 465px;
+        max-width: 465px;
+      }
+    }
+    @media screen and (min-width: 990px){
+      #pagination--{{ section.id }}{
+        display: none;
+      }
+    }
+    @media screen and (max-width: 989px){
+      #shopify-section-{{id}}{
+        margin-top: {{section.settings.margin_top_m | append: &#x27;px&#x27;}};
+        margin-bottom: {{section.settings.margin_bottom_m | append: &#x27;px&#x27;}};
+        padding-top: {{section.settings.padding_top_m | append: &#x27;px&#x27;}};
+        padding-bottom: {{section.settings.padding_bottom_m | append: &#x27;px&#x27;}};
+      }
+      .vrs__header {
+        margin: 0 0 18px;
+      }
+      .vrs__header h2 {
+        font-size: 24px;
+        line-height: 28px;
+      }
+      .video__slider-modal video{
+        min-width: 90%;
+      }
+      #shopify-section-{{id}} #next--{{ section.id }}, #shopify-section-{{id}} #prev--{{ section.id }}{
+        display: none;
+      }
+      #pagination--{{ section.id }}{
+        position: static;
+        margin: 10px 0 0;
+      }
+       #pagination--{{ section.id }} .swiper-pagination-bullet{
+         width: 4px;
+         height: 4px;
+       }
+      #pagination--{{ section.id }} .swiper-pagination-bullet.swiper-pagination-bullet-active{
+        width: 30px;
+      }
+    }
+&lt;/style&gt;
+
+&lt;video-reviews-section data-section-id=&quot;{{ section.id }}&quot;&gt;
+  &lt;div class=&quot;vrs__wrapper page-width&quot;&gt;
+    {% if section.settings.title != blank %}
+      &lt;div class=&quot;vrs__header&quot;&gt;
+        &lt;h2&gt;{{ section.settings.title }}&lt;/h2&gt;
+      &lt;/div&gt;
+    {% endif %}
+    &lt;div class=&quot;vrs__slider--{{ section.id }}&quot;&gt;
+      &lt;div class=&quot;swiper&quot;&gt;
+        &lt;div class=&quot;swiper-wrapper&quot;&gt;
+          {% for block in section.blocks %}
+            &lt;div
+              class=&quot;swiper-slide vls__video-item {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}&quot;
+              {% if settings.animations_reveal_on_scroll %}
+                data-cascade
+                style=&quot;--animation-order: {{ forloop.index }};&quot;
+              {% endif %}
+            &gt;
+              &lt;div class=&quot;wrapper-{{ id }}&quot;&gt;
+                {% unless block.settings.video == blank %}
+                  {{
+                    block.settings.video
+                    | video_tag:
+                      image_size: &#x27;200x&#x27;,
+                      autoplay: true,
+                      loop: true,
+                      muted: true,
+                      controls: false,
+                      class: &#x27;slider-slide-video&#x27;,
+                      data-index: forloop.index
+                  }}
+                  &lt;p class=&quot;video-length&quot;&gt;&lt;/p&gt;
+                  &lt;div class=&quot;play-button-{{ section.id }}&quot;&gt;
+                    {% render &#x27;gelico-icons&#x27;, name: &#x27;play-btn&#x27; %}
+                  &lt;/div&gt;
+                {% endunless %}
+                {% if block.settings.product != blank %}
+                  &lt;div class=&quot;product-wrapper&quot;&gt;
+                    {% assign product = block.settings.product %}
+                    &lt;a class=&quot;absolute_link&quot; href=&quot;{{ product.url }}&quot;&gt;&lt;/a&gt;
+                    {% if product.featured_image %}
+                      {{ product.featured_image | image_url: width: product.featured_image.width | image_tag }}
+                    {% endif %}
+                    &lt;div class=&quot;pw_info&quot;&gt;
+                      &lt;div class=&quot;pw_title&quot;&gt;{{ product.title | escape }}&lt;/div&gt;
+                      {% if product.price %}
+                        &lt;div class=&quot;pw-product-price&quot;&gt;
+                          {% if product.selected_or_first_available_variant.price
+                              &lt; product.selected_or_first_available_variant.compare_at_price
+                          %}
+                            &lt;p&gt;
+                              &lt;span&gt;{{ cart.currency.symbol }}&lt;/span&gt;
+                              {{- product.selected_or_first_available_variant.price | money_without_currency }}
+                            &lt;/p&gt;
+                            &lt;p class=&quot;compare_at_price&quot;&gt;
+                              &lt;span&gt;{{ cart.currency.symbol }}&lt;/span&gt;
+                              {{-
+                                product.selected_or_first_available_variant.compare_at_price
+                                | money_without_currency
+                              }}
+                            &lt;/p&gt;
+                          {% else %}
+                            &lt;p&gt;
+                              &lt;span&gt;{{ cart.currency.symbol }}&lt;/span&gt;
+                              {{- product.selected_or_first_available_variant.price | money_without_currency }}
+                            &lt;/p&gt;
+                          {% endif %}
+                        &lt;/div&gt;
+                      {% endif %}
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                {% endif %}
+              &lt;/div&gt;
+            &lt;/div&gt;
+          {% endfor %}
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    {% if section.blocks.size &gt; 0 %}
+      &lt;div id=&quot;pagination--{{ section.id }}&quot; class=&quot;swiper-pagination&quot;&gt;&lt;/div&gt;
+      &lt;div id=&quot;prev--{{ section.id }}&quot; class=&quot;swiper-button-prev&quot;&gt;{% render &#x27;gelico-icons&#x27;, name: &#x27;swiper-left&#x27; %}&lt;/div&gt;
+      &lt;div id=&quot;next--{{ section.id }}&quot; class=&quot;swiper-button-next&quot;&gt;
+        {% render &#x27;gelico-icons&#x27;, name: &#x27;swiper-right&#x27; %}
+      &lt;/div&gt;
+    {% endif %}
+  &lt;/div&gt;
+&lt;/video-reviews-section&gt;
+&lt;div class=&quot;video__slider-modal&quot;&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  
+class VideoReviewsSection extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    document.addEventListener(&quot;DOMContentLoaded&quot;, () =&gt; {
+      this.initSwiper();
+      this.setupEventListeners();
+    });
+  }
+
+  initSwiper() {
+    new Swiper(this.querySelector(&#x27;.swiper&#x27;), {
+      slidesPerView: 1.7,
+      spaceBetween: 10,
+      breakpoints: {
+        300: { slidesPerView: 1.3, spaceBetween: 10 },
+        560: { slidesPerView: 2, spaceBetween: 10 },
+        769: { slidesPerView: 2.5, spaceBetween: 15 },
+        1024: { slidesPerView: 3, spaceBetween: 15 },
+        1200: { slidesPerView: 4, spaceBetween: 15 },
+        1440: { slidesPerView: 5, spaceBetween: 15 }
+      },
+      pagination: { el: `#pagination--${this.dataset.sectionId}` },
+      navigation: {
+        nextEl: `#next--${this.dataset.sectionId}`,
+        prevEl: `#prev--${this.dataset.sectionId}`
+      }
+    });
+  }
+
+  setupEventListeners() {
+    const videos = this.querySelectorAll(&#x27;.vls__video-item&#x27;);
+    videos.forEach(video =&gt; {
+      video.addEventListener(&#x27;click&#x27;, this.handleVideoClick.bind(this));
+    });
+
+    const videoModal = document.querySelector(&#x27;.video__slider-modal&#x27;);
+    videoModal.addEventListener(&#x27;click&#x27;, this.handleModalClick.bind(this));
+  }
+
+  handleVideoClick(event) {
+    if (event.target.closest(&#x27;.product-wrapper&#x27;)) {
+      return; 
+    }
+
+    const videoModal = document.querySelector(&#x27;.video__slider-modal&#x27;);
+    videoModal.classList.add(&#x27;show-modal&#x27;);
+    const videoElement = event.currentTarget.querySelector(&#x27;video&#x27;);
+    videoModal.innerHTML = videoElement.outerHTML;
+    const modalVideo = videoModal.querySelector(&#x27;video&#x27;);
+    modalVideo.play();
+    modalVideo.autoplay = true;
+    modalVideo.muted = false;
+    modalVideo.loop = false;
+    modalVideo.controls = true;
+  }
+
+  handleModalClick(event) {
+    const videoModal = document.querySelector(&#x27;.video__slider-modal&#x27;);
+    if (event.target === videoModal) {
+      videoModal.classList.remove(&#x27;show-modal&#x27;);
+      const modalVideo = videoModal.querySelector(&#x27;video&#x27;);
+      modalVideo.pause();
+    }
+  }
+}
+
+customElements.define(&#x27;video-reviews-section&#x27;, VideoReviewsSection);
+&lt;/script&gt;
+{% schema %}
+{
+  &quot;name&quot;: &quot;Video Slider&quot;,
+  &quot;settings&quot;: [
+    {
+      &quot;type&quot;: &quot;text&quot;,
+      &quot;id&quot;: &quot;title&quot;,
+      &quot;label&quot;: &quot;Title&quot;
+    },
+    {
+      &quot;type&quot;: &quot;header&quot;,
+      &quot;content&quot;: &quot;Section Spacing Desktop&quot;
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;margin_top&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 100,
+      &quot;step&quot;: 1,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Margin Top&quot;,
+      &quot;default&quot;: 24
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;margin_bottom&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 100,
+      &quot;step&quot;: 1,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Margin Bottom&quot;,
+      &quot;default&quot;: 24
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;padding_top&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 100,
+      &quot;step&quot;: 1,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Padding Top&quot;,
+      &quot;default&quot;: 0
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;padding_bottom&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 100,
+      &quot;step&quot;: 1,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Padding Bottom&quot;,
+      &quot;default&quot;: 0
+    },
+    {
+      &quot;type&quot;: &quot;header&quot;,
+      &quot;content&quot;: &quot;Section Spacing Mobile&quot;
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;margin_top_m&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 100,
+      &quot;step&quot;: 1,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Margin Top&quot;,
+      &quot;default&quot;: 24
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;margin_bottom_m&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 100,
+      &quot;step&quot;: 1,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Margin Bottom&quot;,
+      &quot;default&quot;: 24
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;padding_top_m&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 100,
+      &quot;step&quot;: 1,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Padding Top&quot;,
+      &quot;default&quot;: 0
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;padding_bottom_m&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 100,
+      &quot;step&quot;: 1,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Padding Bottom&quot;,
+      &quot;default&quot;: 0
+    }
+  ],
+  &quot;blocks&quot;: [
+     {
+       &quot;name&quot;: &quot;Video&quot;,
+       &quot;type&quot;: &quot;video&quot;,
+       &quot;settings&quot;: [
+         {
+            &quot;type&quot;: &quot;video&quot;,
+            &quot;id&quot;: &quot;video&quot;,
+            &quot;label&quot;: &quot;Video&quot;
+         },
+         {
+            &quot;type&quot;: &quot;product&quot;,
+            &quot;id&quot;: &quot;product&quot;,
+            &quot;label&quot;: &quot;Product&quot;
+         },
+       ]
+     }
+   ],
+  &quot;presets&quot;: [
+    {
+      &quot;name&quot;: &quot;Video Slider&quot;
+    }
+  ]
+}
+{% endschema %}
+</code></pre></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

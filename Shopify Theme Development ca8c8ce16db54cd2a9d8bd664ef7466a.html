@@ -1,0 +1,2039 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Shopify Theme Development</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="ca8c8ce1-6db5-4cd2-a9d8-bd664ef7466a" class="page sans"><header><h1 class="page-title">Shopify Theme Development</h1><p class="page-description"></p></header><div class="page-body"><p id="37de42cf-9f14-46fd-9e48-d60b3dcfcfe1" class="">
+</p><figure id="14ebc280-32a8-8048-85fc-c8560ae8c1ca" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Fonts%2014ebc28032a8804885fcc8560ae8c1ca.html">Fonts</a></figure><figure id="103bc280-32a8-8083-a6c7-f7e83f21cb76" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Shopify%20Resources%20103bc28032a88083a6c7f7e83f21cb76.html">Shopify Resources</a></figure><figure id="0c8da59a-c466-4d60-814f-ab7a6d83afc2" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Links%20And%20Stores%200c8da59ac4664d60814fab7a6d83afc2.html">Links And Stores</a></figure><figure id="d6a6d8e1-3cdc-4e41-9394-1af0f114b8c3" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Partner%20Account%20Recovery%20d6a6d8e13cdc4e4193941af0f114b8c3.html">Partner Account Recovery</a></figure><p id="5ccbb496-6a22-4759-9ca7-be268484b138" class="block-color-gray_background">Base  templates</p><figure id="58dd50f3-c6c9-409b-b2ce-ed62780e9469" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/demo(Classic)%2058dd50f3c6c9409bb2ceed62780e9469.html">demo(Classic)</a></figure><figure id="6e28b5d7-30c7-4649-b648-87760992d417" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Demo%20(Standard)%206e28b5d730c74649b64887760992d417.html">Demo (Standard)</a></figure><figure id="165bc280-32a8-8040-bb45-c68e6af45f32" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Boiler%20Template%20(Am)%20165bc28032a88040bb45c68e6af45f32.html">Boiler Template (Am)</a></figure><figure id="ae41eb57-2a02-419c-b444-72d32e959435" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Custom%20Button%20ae41eb572a02419cb44472d32e959435.html">Custom Button</a></figure><figure id="72054533-d192-4c7e-b082-9d3e7d0e9a81" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Button%20link%20to%20checkout%2072054533d1924c7eb0829d3e7d0e9a81.html">Button link to checkout</a></figure><figure id="c3b5737e-cd82-4285-9597-0510aece2aa7" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Shopify%20BUY%20Button%20c3b5737ecd82428595970510aece2aa7.html">Shopify BUY Button </a></figure><figure id="160bc280-32a8-8008-9d0e-ef4590daaa83" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Responsive%20Image%20160bc28032a880089d0eef4590daaa83.html">Responsive Image</a></figure><figure id="163bc280-32a8-8018-930b-f04c2060284f" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Theme%20style%20163bc28032a88018930bf04c2060284f.html">Theme style</a></figure><figure id="180bc280-32a8-80fa-bf5b-e9f49f71211e" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Add%20To%20Cart%20Button%20180bc28032a880fabf5be9f49f71211e.html">Add To Cart Button</a></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="41590162-d791-4763-8855-6032f745e880"><div style="font-size:1.5em"><span class="icon">🌐</span></div><div style="width:100%">Base  Global templates</div></figure><figure id="152bc280-32a8-8094-bdd3-d424051365f7" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Announcement%20Bar%20152bc28032a88094bdd3d424051365f7.html">Announcement Bar</a></figure><figure id="54eb8366-a16b-4d2b-af1d-c59e81675d75" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Gelico%20Header%2054eb8366a16b4d2baf1dc59e81675d75.html">Gelico Header</a></figure><figure id="e5b24d5b-8818-4a38-b5ee-a82d011e3b01" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Life%20Is%20Osom%20Header%20e5b24d5b88184a38b5eea82d011e3b01.html">Life Is Osom Header</a></figure><figure id="d2d80990-dbe7-47f4-9648-d2798c389aea" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Hadalabo%20Emani%20Login%20page%20d2d80990dbe747f49648d2798c389aea.html">Hadalabo Emani Login page</a></figure><figure id="0747e8c1-b680-4b88-bd8a-69139c151bb1" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Footer%200747e8c1b6804b88bd8a69139c151bb1.html">Footer</a></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="6aab42cf-bdf9-4b73-82ee-efc933a58357"><div style="font-size:1.5em"><span class="icon">🔐</span></div><div style="width:100%">Base  Common Section templates</div></figure><figure id="6f0b90d6-27be-49e9-bcc5-cccfef48a05c" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Home%20Banner%20slider%206f0b90d627be49e9bcc5cccfef48a05c.html">Home Banner slider</a></figure><figure id="14abc280-32a8-80dc-96a6-e6801e2c3e4a" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Swiper%20Slides%20Per%20View%2014abc28032a880dc96a6e6801e2c3e4a.html">Swiper Slides Per View</a></figure><figure id="a84b651c-fe17-4234-800a-05661d1fe48c" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Custom%20Marquee%20using%20swiper%20slide%20a84b651cfe174234800a05661d1fe48c.html">Custom Marquee using swiper slide</a></figure><figure id="071b1e64-9e3c-4d4e-922c-f1cbfa7d7507" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/custom%20home%20banner%20with%20silder%20071b1e649e3c4d4e922cf1cbfa7d7507.html">custom home banner with silder</a></figure><figure id="242fd4c6-8b50-4fac-900c-7b2177c983c0" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Custom-media-with-text%20242fd4c68b504fac900c7b2177c983c0.html">Custom-media-with-text</a></figure><figure id="12d6058c-61c6-4e30-86e9-10c3a5098115" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Slider%20Swiper%20Section%20Base%2012d6058c61c64e3086e910c3a5098115.html">Slider Swiper Section Base</a></figure><figure id="3fb10b78-18c5-4ad1-ae9b-a443a85b572a" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Custom%20Faq%203fb10b7818c54ad1ae9ba443a85b572a.html">Custom Faq</a></figure><figure id="166bc280-32a8-809d-9157-cf7cea41581f" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Faq%20Standards%20166bc28032a8809d9157cf7cea41581f.html">Faq Standards</a></figure><figure id="874b88ac-196f-4184-a845-567454e2f346" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Custom%20Multicolumn%20874b88ac196f4184a845567454e2f346.html">Custom Multicolumn</a></figure><figure id="17ebc280-32a8-80b5-a147-e6074fbd3ef4" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Video%20Slider%2017ebc28032a880b5a147e6074fbd3ef4.html">Video Slider</a></figure><figure id="1b7bc280-32a8-804a-86be-d7cd13dc7824" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Collection%20Tab%201b7bc28032a8804a86bed7cd13dc7824.html">Collection Tab</a></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="3fc74457-1bb4-4912-a9a9-5df605ffd1d4"><div style="font-size:1.5em"><span class="icon">❤️‍🔥</span></div><div style="width:100%">Base  Unique Section templates</div></figure><figure id="14abc280-32a8-80d1-bb1a-ee3bc82de9ce" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Custom%20Shop%20The%20Look%2014abc28032a880d1bb1aee3bc82de9ce.html">Custom Shop The Look</a></figure><figure id="4c170955-e18c-4a76-9dd9-271cc4a13ff4" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Custom%20feature%20product%20with%20color%20swatch%204c170955e18c4a769dd9271cc4a13ff4.html">Custom feature product with color swatch</a></figure><figure id="13a23732-08d6-41d3-bc5f-da4be06bfc45" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Hadalabo%20FaqwithTab%2013a2373208d641d3bc5fda4be06bfc45.html">Hadalabo FaqwithTab</a></figure><figure id="fc5fe6cd-18ec-47bd-a6f1-c16157031c40" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Before%20After(Image%20Comparison)%20fc5fe6cd18ec47bda6f1c16157031c40.html">Before After(Image Comparison)</a></figure><figure id="26f36aa6-b938-411f-a52a-e09d2fcf00de" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Shop%20The%20Look%2026f36aa6b938411fa52ae09d2fcf00de.html">Shop The Look</a></figure><figure id="728ca2e6-2f65-4dae-a953-8f7629b3dab6" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Pricing%20Table%20728ca2e62f654daea9538f7629b3dab6.html">Pricing Table</a></figure><figure id="01aead2b-bb86-4382-ba9c-2e072ebbf609" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Product%20Media%20with%20Text%2001aead2bbb864382ba9c2e072ebbf609.html">Product Media with Text</a></figure><figure id="90efd783-8409-426d-9919-0defdcc36195" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Collection%20Card%20Scent%2090efd7838409426d99190defdcc36195.html">Collection Card Scent</a></figure><figure id="e3f82b14-06c6-4af2-a33b-cfc92bedd342" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Floating%20Nav%20Slider%20e3f82b1406c64af2a33bcfc92bedd342.html">Floating Nav Slider</a></figure><figure id="151bc280-32a8-809f-8479-fd9a731adae7" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Custom%20Filter%20By%20Alpahbet%20151bc28032a8809f8479fd9a731adae7.html">Custom Filter By Alpahbet</a></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="8b6701fc-e2c3-4741-a5f9-fe7527291ca0"><div style="font-size:1.5em"><span class="icon">👜</span></div><div style="width:100%">Base  Products Page templates</div></figure><figure id="32e6fa90-3d52-4180-8316-f1b269b5aade" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Varticle%20Alignment%20Product%20Page%2032e6fa903d5241808316f1b269b5aade.html">Varticle Alignment Product Page</a></figure><figure id="782cc867-aa4e-422c-bd9a-2c25ac141f2b" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Kimbo%20Product%20Page%20782cc867aa4e422cbd9a2c25ac141f2b.html">Kimbo Product Page</a></figure><figure id="99424abe-d9e7-4417-bee3-dc424cea6cc8" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Hadalabo%20Custom%20Product%20Page%2099424abed9e74417bee3dc424cea6cc8.html">Hadalabo Custom Product Page</a></figure><ul id="806f2b66-a11b-47bc-b701-ecbb975132a1" class="toggle"><li><details open=""><summary>Metafield product</summary><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="0931ad38-fd93-4358-9c8b-aa8433afafcd" class="code"><code class="language-JavaScript">              {%- when &#x27;bage&#x27; -%}
+                {% if product.metafields.custom.seller_type %}
+                  &lt;div class=&quot;product__bage&quot;&gt;
+                    &lt;p&gt;⭐️ {{ product.metafields.custom.seller_type }}&lt;/p&gt;
+                  &lt;/div&gt;
+                {% endif %}</code></pre></details></li></ul><figure id="39887e9e-46f2-4139-ad72-0a5f5af0c3e8" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Bodysh%20variant%20With%20color%20swath%2039887e9e46f24139ad720a5f5af0c3e8.html">Bodysh variant With color swath</a></figure><figure id="151bc280-32a8-8066-bc3a-fe60a0c0b968" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Custom%20Recent%20Viewed%20Product%20151bc28032a88066bc3afe60a0c0b968.html">Custom Recent Viewed Product</a></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="cb5c483b-55f4-4d50-ace9-910d538c10e4"><div style="font-size:1.5em"><span class="icon">🛒</span></div><div style="width:100%">Base  Collection Page templates</div></figure><figure id="e538b206-e025-46e0-a095-d44cd57ed239" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Subcollection%20Metafield%20e538b206e02546e0a095d44cd57ed239.html">Subcollection Metafield</a></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="ef794f65-4d52-4699-ac68-8407498fec65"><div style="font-size:1.5em"><span class="icon">✅</span></div><div style="width:100%">Dawn Theme Special</div></figure><figure id="5b160e29-a59a-4044-a760-b51feba2e81c" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Hadalabo%20Emani%20Contact%20form%205b160e29a59a4044a760b51feba2e81c.html">Hadalabo Emani Contact form</a></figure><figure id="44dd56d1-de32-49bc-bd14-99878b8e3964" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Custom%20Form%2044dd56d1de3249bcbd1499878b8e3964.html">Custom Form</a></figure><figure id="126bc280-32a8-809f-a0db-ff77eb9328da" class="link-to-page"><a href="Shopify%20Theme%20Development%20ca8c8ce16db54cd2a9d8bd664ef7466a/Add%20To%20Cart%20Form%20126bc28032a8809fa0dbff77eb9328da.html">Add To Cart Form</a></figure><ul id="10bbc280-32a8-80d5-a5ce-e7b56505ec7c" class="toggle"><li><details open=""><summary>Set Equal Height</summary><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="10bbc280-32a8-8058-ac92-cb842b9a1861" class="code"><code class="language-JavaScript">&lt;script&gt;
+ function setEqualHeight(selector){
+      const divs = document.querySelectorAll(selector);
+      const maxHeight = Math.max(...Array.from(divs, div =&gt; div.offsetHeight));
+      divs.forEach(div =&gt; {
+        div.style.height = `${maxHeight}px`;
+      });
+    };
+  document.addEventListener(&#x27;DOMContentLoaded&#x27;, () =&gt; {
+    setEqualHeight(&#x27;.info--text&#x27;);
+  });
+&lt;/script&gt;</code></pre></details></li></ul><ul id="13cbc280-32a8-807b-a959-c72d25766209" class="toggle"><li><details open=""><summary>policy</summary><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="13cbc280-32a8-805b-b9a0-cdc93c66f830" class="code"><code class="language-JavaScript">/* Policy */
+.shopify-policy__body{
+  a {
+    color: #b2915c;
+    font-weight: 600;
+  }
+}
+.shopify-policy__container {
+    max-width: 150rem;    
+    margin: 0 auto;    
+    padding: 0 5rem;  
+    h1{
+      margin: 40px 0 24px;
+      @media(max-width: 768px){
+         margin: 24px 0 20px;
+      }
+    }
+    h2{
+      margin: 40px 0 24px;
+      @media(max-width: 768px){
+         margin: 24px 0 20px;
+      }
+    } 
+    h3{
+      margin: 40px 0 24px;
+      @media(max-width: 768px){
+         margin: 24px 0 20px;
+      }      
+    }
+}
+/* End policy */</code></pre></details></li></ul><ul id="1bfbc280-32a8-8047-ab13-e6c30c57aad9" class="toggle"><li><details open=""><summary>Load More Butt</summary><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1bfbc280-32a8-8073-9204-d048830d5716" class="code"><code class="language-JavaScript">&lt;!-- main-collection-product-grid.liquid --&gt;
+
+&lt;div id=&quot;product-grid&quot; class=&quot;product-grid&quot;&gt;
+  {% for product in collection.products %}
+    &lt;div class=&quot;product-card&quot;&gt;
+      &lt;a href=&quot;{{ product.url }}&quot;&gt;
+        &lt;img src=&quot;{{ product.featured_image | img_url: &#x27;medium&#x27; }}&quot; alt=&quot;{{ product.title }}&quot;&gt;
+        &lt;h2&gt;{{ product.title }}&lt;/h2&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+  {% endfor %}
+&lt;/div&gt;
+&lt;button id=&quot;load-more&quot; class=&quot;load-more-button&quot;&gt;Load More&lt;/button&gt;
+
+
+&lt;script&gt;
+  document.addEventListener(&#x27;DOMContentLoaded&#x27;, function() {
+    var loadMoreButton = document.getElementById(&#x27;load-more&#x27;);
+    var productGrid = document.getElementById(&#x27;product-grid__&#x27;);
+    var currentPage = 1;
+
+    var totalPages = {{ total_pages }};
+
+
+    loadMoreButton.addEventListener(&#x27;click&#x27;, function() {
+      currentPage++;
+
+      if (currentPage &lt;= totalPages) {
+        var xhr = new XMLHttpRequest();
+        xhr.open(&#x27;GET&#x27;, &#x27;/collections/{{ collection.handle }}?page=&#x27; + currentPage, true);
+        xhr.onload = function() {
+          if (xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 400) {
+            var parser = new DOMParser();
+            var doc = parser.parseFromString(xhr.responseText, &#x27;text/html&#x27;);
+            var newProducts = doc.querySelectorAll(&#x27;[data-collection-card]&#x27;);
+            console.log(newProducts)
+
+            newProducts.forEach(function(product) {
+              productGrid.appendChild(product);
+            });
+
+            if (currentPage &gt;= totalPages) {
+              loadMoreButton.style.display = &#x27;none&#x27;;
+            }
+          }
+        };
+        xhr.send();
+      }
+    });
+  });
+&lt;/script&gt;</code></pre></details></li></ul><p id="13cbc280-32a8-8013-8f49-d8dfb22998f4" class=""><a href="https://shopify.dev/docs/api/liquid/filters/video_tag">Video tag</a></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="4dc2496e-1899-4331-8ad7-2e7f1a33f368" class="code"><code class="language-JavaScript">// mouse hover event
+
+document.addEventListener(&quot;DOMContentLoaded&quot;, () =&gt; {
+  function applyProductBlockEffect() {
+  let productCards = document.querySelectorAll(&quot;.block-inner&quot;);
+  // productCards = Array.prototype.slice.call(productCards);
+
+  productCards.forEach((productCard) =&gt; {
+    productCard.addEventListener(&quot;mouseover&quot;, () =&gt; {
+      const customVariantWrapper = productCard.querySelector(
+        &quot;.custom-varient-wrapper&quot;
+      );
+      if (customVariantWrapper) {
+        customVariantWrapper.classList.add(&quot;show&quot;);
+      }
+    });
+
+    productCard.addEventListener(&quot;mouseout&quot;, () =&gt; {
+      const customVariantWrapper = productCard.querySelector(
+        &quot;.custom-varient-wrapper&quot;
+      );
+      if (customVariantWrapper) {
+        customVariantWrapper.classList.remove(&quot;show&quot;);
+      }
+    });
+  });
+  }
+  applyProductBlockEffect();
+});
+
+
+// add to cart
+
+document.addEventListener(&quot;DOMContentLoaded&quot;, () =&gt; {
+  const addToCartButtons = document.querySelectorAll(&quot;.custom-add-to-cart&quot;);
+
+  addToCartButtons.forEach((button) =&gt; {
+    button.addEventListener(&quot;click&quot;, async () =&gt; {
+      const variantId = button.getAttribute(&quot;data-variant-id&quot;);
+
+      try {
+        const response = await fetch(&quot;/cart/add.js&quot;, {
+          method: &quot;POST&quot;,
+          headers: {
+            &quot;Content-Type&quot;: &quot;application/json&quot;,
+          },
+          body: JSON.stringify({
+            id: variantId,
+            quantity: 1,
+          }),
+        });
+        const data = await response.json();
+        // console.log(data);
+        // showAddedNotification(data);
+
+        await updateCartCount();
+
+        const cartForm = document.querySelector(&quot;cart-form&quot;);
+        cartForm.refresh();
+        document.querySelector(&quot;.js-cart-drawer&quot;).open();
+      } catch (error) {
+        console.error(&quot;Error adding variant to cart:&quot;, error);
+      }
+    });
+  });
+
+  async function updateCartCount() {
+    try {
+      const response = await fetch(&quot;/cart.js&quot;);
+      const cart = await response.json();
+
+      const cartCountElement = document.querySelector(&quot;.cart-link__count&quot;);
+      if (cartCountElement) {
+        cartCountElement.textContent = cart.item_count;
+      }
+    } catch (error) {
+      console.error(&quot;Error fetching cart data:&quot;, error);
+    }
+  }
+
+  // notification
+
+  // function showAddedNotification(product) {
+  //   console.log(product.title);
+  //   const notification = document.createElement(&#x27;div&#x27;);
+  //   notification.innerHTML = `
+  //     &lt;added-notification class=&quot;added-notification&quot; data-product-title=${product.title}&gt;
+  //       &lt;div class=&quot;added-notification__message-area&quot;&gt;
+  //         &lt;div class=&quot;added-notification__message-title&quot;&gt;${product.title}&lt;/div&gt;
+  //         &lt;div class=&quot;added-notification__message-text underline-child&quot;&gt;
+  //           Added to your &lt;a href=&quot;/cart&quot;&gt;Cart&lt;/a&gt;
+  //         &lt;/div&gt;
+  //       &lt;/div&gt;
+  //       &lt;div class=&quot;added-notification__button-area&quot;&gt;
+  //         &lt;button type=&quot;button&quot; class=&quot;added-notification__close&quot; aria-label=&quot;Close&quot;&gt;
+  //           &lt;svg width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; class=&quot;icon feather feather-x&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot; role=&quot;presentation&quot;&gt;
+  //             &lt;path d=&quot;M18 6 6 18M6 6l12 12&quot;&gt;&lt;/path&gt;
+  //           &lt;/svg&gt;
+  //         &lt;/button&gt;
+  //       &lt;/div&gt;
+  //     &lt;/added-notification&gt;
+  //   `;
+  //   document.body.appendChild(notification);
+  //   const closeButton = notification.querySelector(&#x27;.added-notification__close&#x27;);
+  //   closeButton.addEventListener(&#x27;click&#x27;, () =&gt; {
+  //     notification.remove();
+  //   });
+  //   setTimeout(() =&gt; {
+  //     notification.remove();
+  //   }, 3000);
+  // }
+});
+</code></pre><p id="103bc280-32a8-8118-85a6-f12a3bb19253" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="117bc280-32a8-809e-ba29-f74c67d1b668" class="code"><code class="language-JavaScript">&lt;style&gt;
+  .mobile__only{
+    display: none;
+  }
+  @media(max-width: 768px){
+    .mobile__only{
+      display: block;
+    }
+    .desktop__only{
+      display: none;
+    }
+    .mobile__only.mcart-items-footer{
+      padding-inline: 0px;
+      position: sticky;
+      bottom: 0;
+      left: 0;
+    }
+  }
+  .multi__container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-items: start;
+    column-gap: 20px;
+    @media(max-width: 768px){
+      margin-bottom: 35px;
+    }
+  }
+  .m_checkout-notice h4 {
+    /* font-style: italic; */
+    color: #000;
+    margin: 0;
+    font-family: Satoshi;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    @media (max-width: 768px) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+  .my-cart-sec div:empty {
+    display: block !important;
+  }
+  .my-cart-sec button {
+    border: none;
+  }
+  .my-cart-sec button:focus-visible {
+    border: none;
+    outline: none;
+  }
+  .my-cart-sec {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 50%);
+    z-index: 399;
+    visibility: hidden;
+  }
+  .my-cart.my-cart-sec.active {
+    visibility: visible;
+  }
+  .js-show-ajax-cart .my-cart-sec {
+    visibility: visible;
+  }
+  .mcart-container {
+    position: fixed;
+    right: -544px;
+    top: 10px;
+    width: 534px;
+    height: calc(100vh - 20px);
+    color: rgb(22, 37, 67);
+    background: white;
+    border-radius: 15px;
+    box-sizing: border-box;
+    border: 0 solid #e2e8f0;
+    overflow: hidden;
+    z-index: 400;
+    transition: 0.3s ease-in;
+    opacity: 0;
+    padding-bottom: 15px;
+  }
+  .my-cart.my-cart-sec.active .mcart-container {
+    right: 10px;
+    opacity: 1;
+  }
+  .js-show-ajax-cart .mcart-container {
+    right: 10px;
+    opacity: 1;
+  }
+  .mcart-container.loading:after {
+    position: absolute;
+    content: &#x27;&#x27;;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    background: rgba(0, 0, 0, 10%);
+    cursor: no-drop;
+  }
+
+  .mcart-wrapper {
+    overflow: auto;
+    min-height: 80vh;
+    max-height: 88vh;
+    height: 100%;
+   position: relative;
+  }
+  .mcart-wrapper::-webkit-scrollbar {
+    width: 6px;
+    background: var(--Primary, #111827);
+    display: none;
+  }
+  .mcart-header {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 5;
+    border-bottom: 1px solid #111827;
+  }
+  .mcart-heading {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 9px 0px 0px 0px;
+    background: #ff66ff;
+    color: white;
+    box-sizing: border-box;
+    padding: 18px 28px;
+  }
+  .mcart-heading-p {
+    color: #fff;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  .mcart-close-btn {
+    height: 22px;
+    width: 22px;
+    background: white;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .mcart-close-btn svg {
+    width: 10px;
+    height: 10px;
+  }
+  .mcart-body.my-cart__items {
+    display: flex;
+    flex-direction: column;
+    min-height: 80%;
+    justify-content: space-between;
+    @media (max-width: 768px) {
+      min-height: unset;
+      justify-content: flex-end !important;
+      overflow: auto;
+      position:relative;
+    }
+  }
+  .mcart-items-wrapper {
+    box-sizing: border-box;
+    padding-inline: 28px;
+  }
+  .mcart-bundle-heading {
+    grid-column: 1/-1;
+    color: var(--Primary, #111827);
+    font-size: 22px;
+    line-height: normal;
+    font-weight: 600;
+  }
+  .mcart-item {
+    display: grid;
+    /* grid-template-columns: 100px 1fr; */
+    grid-gap: 15px;
+    box-sizing: border-box;
+    padding: 15px 0px;
+    border-bottom: 1px solid #60dbd952;
+    position: relative;
+  }
+  .multi__container .mcart-bundle-complete {
+    padding-top: 45%;
+  }
+  .multi__container .mcart-bundle-complete:not(:last-child) {
+    display: none;
+  }
+  .multi__container .mcart-bundle-price {
+    padding-top: 45%;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  .mcart-item-error-msg {
+    position: absolute;
+    min-height: 35px;
+    width: 45%;
+    right: 0;
+    bottom: 3px;
+    background: #ff0000ba;
+    border-radius: 6px;
+    color: white;
+    box-sizing: border-box;
+    padding: 2px 6px;
+    font-size: 12px;
+    opacity: 0;
+    z-index: -1;
+    transition: 0.2s;
+    transform: translateY(5px);
+  }
+  .mcart-item.error .mcart-item-error-msg {
+    opacity: 1;
+    z-index: 2;
+    transform: translateY(0px);
+  }
+  .mcart-media {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .mcart-media img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    aspect-ratio: 0.9;
+    object-fit: cover;
+    object-position: bottom;
+  }
+  .mcart-action {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 10px;
+    /* grid-area: 2/-2; */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  mc-quantity {
+    display: grid;
+    grid-template-columns: 15px minmax(35px, 1fr) 15px;
+    grid-gap: 5px;
+    justify-items: center;
+    border-radius: 2px;
+    border: 0.5px solid #cfcff6;
+    box-sizing: border-box;
+    height: 24px;
+    align-items: center;
+  }
+  mc-quantity button {
+    background: #1118272e;
+  }
+  .mcart-qty-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+  }
+  .mcart-qty-btn svg {
+    width: 7px;
+    height: 7px;
+  }
+  mc-quantity p {
+    margin: 0;
+    color: #212121;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    opacity: 0.8;
+  }
+  .mcart-final-price {
+    color: #111827;
+    /* text-align: right; */
+    font-size: 18px;
+    font-style: normal;
+    /* font-weight: 600; */
+    line-height: normal;
+    margin: 0;
+  }
+  .mcart-item-option {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .mcart-item-option p {
+    margin-block: 0px;
+  }
+  .mcart-item-title {
+    color: #212121;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0 0 9px 0;
+  }
+  /* .discount--container{
+        list-style-type: none;
+
+      } */
+  .mcart-item-title a {
+    text-decoration: none;
+    color: #111827;
+    font-family: Satoshi;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.32px;
+    @media(max-width: 768px){
+      font-size: 12px;
+    }
+  }
+  .mcart-item-options {
+    margin-bottom: 2px;
+    display: none;
+  }
+  .mcart-item-options: is(strong, p) {
+    color: #212121;
+    font-size: 16px;
+    font-style: normal;
+    line-height: normal;
+    margin: 0;
+  }
+  .mcart-subscription p {
+    color: #3d3d3d;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+  }
+  .condition-slide {
+    box-sizing: border-box;
+    padding-inline: 28px;
+    padding-top: 18px;
+    padding-bottom: 25px;
+  }
+  .mcart-items-footer {
+    position: sticky;
+    bottom: 40px;
+    background: white;
+    left: 0;
+    @media(max-width: 768px){
+      flex-grow: 1;
+      position: relative;
+      /* padding-inline: 0px !important; */
+    }
+  }
+  .mcart-items-footer {
+    box-sizing: border-box;
+    padding-inline: 28px;
+  }
+  .mcart-subtotals {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block: 10px;
+  }
+  .mcart-subtotal-title {
+    color: var(--Primary, #111827);
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+  }
+  .mcart-subtotal-price {
+    color: var(--Primary, #111827);
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    text-align: right;
+  }
+  .mcart-coupon {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 6px;
+    margin-top: 18px;
+    display: none;
+  }
+  .mcart-coupon button {
+    width: 14.77px;
+    height: 14.77px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #111827;
+    padding: 0;
+    border: none;
+  }
+  .mcart-coupon svg {
+    width: 6.714px;
+    height: 6.714px;
+    stroke: white;
+  }
+  .mcart-coupon h5 {
+    color: #111827;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 8px;
+    opacity: 0.5;
+  }
+  .mcart-checkout {
+    margin-top: 18px;
+  }
+  #mcart-checkout-form button {
+    border-radius: 4px;
+    background: var(--Primary, #cc00cc);
+    width: 100%;
+    height: 42px;
+    color: var(--Pure-White, #fff);
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    /* text-transform: uppercase; */
+    cursor: pointer;
+    border: none;
+  }
+  button.proceed_checkout_button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  .mcart-continue-shopping {
+    color: var(--Primary, #111827);
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+    margin-top: 12px;
+    display: block;
+  }
+  .mcart-featured-collection {
+    padding-bottom: 20px;
+    padding-inline: 28px;
+  }
+  .mcart-fc-show-details {
+    color: var(--Primary, #3d3d3d);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    text-decoration: none;
+  }
+  .mcart-fc-btn {
+    color: #fff;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1;
+    border-radius: 2px;
+    background: var(--Primary, #111827);
+    height: 28px;
+    width: max-content;
+    box-sizing: border-box;
+    padding-inline: 16px;
+    border-radius: 50px;
+  }
+  .mcart-fc-price {
+    color: var(--Primary, #111827);
+    text-align: right;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+  }
+  .mcart-fc-heading {
+    background: var(--Primary, #111827);
+    height: 42px;
+    line-height: 42px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding-inline: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 33px;
+  }
+  .mcart-fc-heading h3 {
+    color: #fff;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    margin: 0;
+  }
+  .mcart-empty-wrapper h3 {
+    text-align: center;
+    margin: 41px 0 40px 0;
+    text-transform: uppercase;
+    font-size: 22px;
+  }
+  .mcart-delete-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  @media (max-width: 768px) {
+    .mcart-container {
+      right: -100vw;
+      width: calc(100vw - 20px);
+    }
+    .mcart-item-title {
+      font-size: 14px;
+    }
+    .mcart-subscription p {
+      font-size: 13px;
+    }
+    .mcart-final-price {
+      font-size: 12px;
+    }
+    .mcart-subtotal-title {
+      font-size: 16px;
+    }
+    .mcart-subtotal-price {
+      font-size: 12px;
+    }
+    .mcart-fc-show-details {
+      font-size: 13px;
+    }
+    .mcart-fc-price {
+      font-size: 12px;
+    }
+    .mcart-fc-btn {
+      font-size: 13px;
+    }
+    .mcart-fc-heading h3 {
+      font-size: 15px;
+    }
+    #mcart-checkout-form button {
+      font-size: 15px;
+    }
+  }
+
+  /* Asad Start */
+  .mcart_footer-product-wrapper {
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: auto;
+    border-top: 2px solid #f6f;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    @media (max-width: 768px) {
+      /* grid-template-columns: 1fr; */
+    }
+  }
+  .mcart_footer-product {
+    display: grid;
+    /* grid-template-columns: 50px 1fr 20px; */
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 15px;
+    min-width: 260px;
+    max-width: 300px;
+    .mcart-media {
+      @media (max-width: 768px) {
+        grid-row: 1/3;
+      }
+    }
+    .mcart-info {
+      grid-column: 2/-1;
+      @media (max-width: 768px) {
+        grid-column: 2/3;
+        grid-row: 1/3;
+      }
+    }
+    mc-quantity {
+      grid-column: 1/3;
+      @media (max-width: 768px) {
+        grid-column: 3/4;
+        grid-row: 2/3;
+      }
+    }
+    mc-itemdelete {
+      display: flex;
+      justify-content: flex-end;
+      @media (max-width: 768px) {
+        /* justify-content: center; */
+        grid-column: 3/4;
+        grid-row: 1/2;
+      }
+    }
+  }
+  /* Asad End */
+
+  /* Yeasin Start */
+  .discounts__discount &gt; .icon {
+    color: rgb(var(--color-foreground));
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: 0.7rem;
+  }
+
+  /* Yeasin End */
+&lt;/style&gt;
+
+{% liquid
+  assign linePrice = cart.total_price | money_without_currency
+  assign item_serial = 0
+%}
+
+{% unless template.name == &#x27;cartx&#x27; %}
+  &lt;mc-drawer data-id=&quot;{{ section.id }}&quot; data-item-count=&quot;{{ cart.item_count }}&quot;&gt;
+    &lt;div class=&quot;my-cart my-cart-sec&quot;&gt;
+      &lt;div class=&quot;mcart-container&quot;&gt;
+        &lt;div class=&quot;mcart-wrapper&quot;&gt;
+          &lt;div class=&quot;mcart-header&quot;&gt;
+            &lt;div class=&quot;mcart-heading&quot;&gt;
+              &lt;p class=&quot;mcart-heading-p&quot;&gt;Your Cart&lt;/p&gt;
+              &lt;div type=&quot;button&quot; class=&quot;mcart-close-btn&quot;&gt;
+                &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;10&quot; height=&quot;10&quot; viewBox=&quot;0 0 10 10&quot; fill=&quot;none&quot;&gt;
+                  &lt;path d=&quot;M5.58274 5.00014L10.0003 9.42408L9.42408 10.0003L5.00014 5.58274L0.5762 10.0003L0 9.42408L4.41754 5.00014L0 0.5762L0.5762 0L5.00014 4.41754L9.42408 0L10.0003 0.5762L5.58274 5.00014Z&quot; fill=&quot;#6f60e9&quot;/&gt;
+                &lt;/svg&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;condition-slide&quot;&gt;
+              {% render &#x27;mcart-range-slider&#x27;, cart: cart, free_shipping: section.settings.free_shipping %}
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;mcart-body my-cart__items&quot;&gt;
+            &lt;div class=&quot;mcart-items-wrapper&quot;&gt;
+              {% if cart.item_count == 0 %}
+                &lt;div class=&quot;mcart-empty-wrapper&quot;&gt;
+                  &lt;h3&gt;Empty Cart&lt;/h3&gt;
+                &lt;/div&gt;
+              {% endif %}
+              &lt;div class=&quot;multi__container&quot;&gt;
+                {% for item in cart.items %}
+                  {% unless item.product.metafields.custom.bundle_exclusion != blank %}
+                    {% assign itemIndex = forloop.index %}
+                    {% assign range = item.quantity %}
+                    {% for i in (1..range) %}
+                      {% assign item_serial = item_serial | plus: 1 %}
+                      {% comment %}
+                        {% assign dynamic_text = i | modulo: 3 %}
+                        {% if dynamic_text == 0 %}
+                          &lt;p&gt;is divisible by 3&lt;/p&gt;
+                        {% endif %}
+                      {% endcomment %}
+                      {% assign item_serial_heading = item_serial | modulo: 2 %}
+                      {% if item_serial_heading == 1 %}
+                        &lt;div class=&quot;mcart-bundle-heading&quot;&gt;Bundle&lt;/div&gt;
+                      {% endif %}
+                      &lt;div class=&quot;mcart-item&quot;&gt;
+                        &lt;div class=&quot;mcart-item-error-msg&quot;&gt;Error orrcoured&lt;/div&gt;
+                        &lt;div class=&quot;mcart-media&quot;&gt;
+                          {% unless item.image == blank %}
+                            {{ item.image | image_url: width: item.image.width | image_tag: loading: &#x27;lazy&#x27; }}
+                          {% endunless %}
+                        &lt;/div&gt;
+                        &lt;div class=&quot;mcart-info&quot;&gt;
+                          &lt;div class=&quot;mcart-item-title&quot;&gt;
+                            &lt;a href=&quot;{{ item.url }}&quot;&gt;
+                              {{ item.title | escape -}}
+                            &lt;/a&gt;
+                          &lt;/div&gt;
+                          &lt;div class=&quot;mcart-item-options&quot;&gt;
+                            {% for option in item.options_with_values %}
+                              &lt;div class=&quot;mcart-item-option {% if option.name == &#x27;Title&#x27;  %} hidden {% endif %}&quot;&gt;
+                                &lt;strong&gt;{{ option.name }}: &lt;/strong&gt;
+                                &lt;p&gt;{{ option.value }}&lt;/p&gt;
+                              &lt;/div&gt;
+                            {% endfor %}
+                          &lt;/div&gt;
+                          &lt;div class=&quot;mcart-final-price hidden&quot;&gt;
+                            {% comment %}
+                              {{ item.final_line_price | money }}
+                            {% endcomment %}
+                            {%- if item.original_price != item.final_price -%}
+                              &lt;div class=&quot;cart-item__discounted-prices&quot;&gt;
+                                &lt;span class=&quot;visually-hidden&quot;&gt;
+                                  {{ &#x27;products.product.price.regular_price&#x27; | t }}
+                                &lt;/span&gt;
+                                &lt;s class=&quot;cart-item__old-price product-option&quot;&gt;
+                                  {{- item.original_price | money -}}
+                                &lt;/s&gt;
+                                &lt;span class=&quot;visually-hidden&quot;&gt;
+                                  {{ &#x27;products.product.price.sale_price&#x27; | t }}
+                                &lt;/span&gt;
+                                &lt;strong class=&quot;cart-item__final-price product-option&quot;&gt;
+                                  {{ item.final_price | money }}
+                                &lt;/strong&gt;
+                              &lt;/div&gt;
+                            {%- else -%}
+                              &lt;div class=&quot;product-option&quot;&gt;
+                                {{ item.original_price | money }}
+                              &lt;/div&gt;
+                            {%- endif -%}
+                          &lt;/div&gt;
+                          &lt;ul
+                            class=&quot;discounts hidden list-unstyled&quot;
+                            role=&quot;list&quot;
+                            aria-label=&quot;{{ &#x27;customer.order.discount&#x27; | t }}&quot;
+                          &gt;
+                            {%- for discount in item.line_level_discount_allocations -%}
+                              &lt;li class=&quot;discounts__discount&quot;&gt;
+                                {%- render &#x27;icon-discount&#x27; -%}
+                                {{ discount.discount_application.title }}
+                              &lt;/li&gt;
+                            {%- endfor -%}
+                          &lt;/ul&gt;
+                          {% if item.selling_plan_allocation %}
+                            &lt;div class=&quot;mcart-subscription&quot;&gt;
+                              &lt;p&gt;{{ item.selling_plan_allocation.selling_plan.name }}&lt;/p&gt;
+                            &lt;/div&gt;
+                          {% endif %}
+                        &lt;/div&gt;
+                        &lt;div class=&quot;mcart-action&quot;&gt;
+                          &lt;mc-itemdelete
+                            data-url=&quot;{{ routes.cart_change_url }}.json?line={{ itemIndex }}&amp;quantity={{ item.quantity | minus: 1 }}&quot;
+                            {% comment %} data-url=&quot;{{ item.url_to_remove | replace: &#x27;?&#x27;,&#x27;.json?&#x27; }}&quot;{% endcomment %}
+                          &gt;
+                            &lt;button
+                              type=&quot;button&quot;
+                              class=&quot;mcart-delete-btn&quot;
+                            &gt;
+                              &lt;svg
+                                xmlns=&quot;http://www.w3.org/2000/svg&quot;
+                                width=&quot;17&quot;
+                                height=&quot;17&quot;
+                                viewBox=&quot;0 0 17 17&quot;
+                                fill=&quot;none&quot;
+                              &gt;
+                                &lt;path d=&quot;M4.25 1.7C4.25 1.24913 4.42911 0.81673 4.74792 0.497918C5.06673 0.179107 5.49913 0 5.95 0H11.05C11.5009 0 11.9333 0.179107 12.2521 0.497918C12.5709 0.81673 12.75 1.24913 12.75 1.7V3.4H16.15C16.3754 3.4 16.5916 3.48955 16.751 3.64896C16.9104 3.80837 17 4.02457 17 4.25C17 4.47543 16.9104 4.69163 16.751 4.85104C16.5916 5.01045 16.3754 5.1 16.15 5.1H15.2414L14.5044 15.4207C14.4739 15.8496 14.282 16.251 13.9673 16.544C13.6526 16.8371 13.2386 17 12.8087 17H4.1905C3.76052 17 3.34651 16.8371 3.03185 16.544C2.7172 16.251 2.52528 15.8496 2.49475 15.4207L1.7595 5.1H0.85C0.624566 5.1 0.408365 5.01045 0.248959 4.85104C0.0895533 4.69163 0 4.47543 0 4.25C0 4.02457 0.0895533 3.80837 0.248959 3.64896C0.408365 3.48955 0.624566 3.4 0.85 3.4H4.25V1.7ZM5.95 3.4H11.05V1.7H5.95V3.4ZM3.4629 5.1L4.19135 15.3H12.8095L13.538 5.1H3.4629Z&quot; fill=&quot;#111827&quot;/&gt;
+                              &lt;/svg&gt;
+                            &lt;/button&gt;
+                          &lt;/mc-itemdelete&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                      {% if item_serial_heading == 1 %}
+                        &lt;div class=&quot;mcart-bundle-complete&quot;&gt;
+                          {{ section.settings.bundle_completion_notice }}
+                        &lt;/div&gt;
+                      {% endif %}
+                      {% assign discounted_bundle_price = item_serial | modulo: 4 %}
+                      {% if item_serial_heading == 0 %}
+                        &lt;div class=&quot;mcart-bundle-price&quot;&gt;
+                          {% if discounted_bundle_price == 0 %}
+                            $20.99 &lt;span style=&quot;text-decoration: line-through; display: block&quot;&gt;$27.98&lt;/span&gt;
+                          {% else %}
+                            $27.98
+                          {% endif %}
+                        &lt;/div&gt;
+                      {% endif %}
+                    {% endfor %}
+                  {% endunless %}
+                {% endfor %}
+              &lt;/div&gt;
+            &lt;/div&gt;
+            {% capture cartFooter %}   &lt;div class=&quot;mcart-items-footer&quot;&gt;
+              &lt;div class=&quot;mcart-coupon&quot;&gt;
+                &lt;button&gt;
+                  {% render &#x27;delete-icon&#x27; %}
+                &lt;/button&gt;
+                &lt;h5&gt;Coupon Code&lt;/h5&gt;
+              &lt;/div&gt;
+              &lt;!--
+                item before proceed to checkout ............................. ..............................................................................
+              --&gt;
+              &lt;div class=&quot;mcart_footer-product-wrapper&quot;&gt;
+                {% for item in cart.items %}
+                  {% assign itemIndex = forloop.index %}
+                  {% if item.product.metafields.custom.bundle_exclusion %}
+                    &lt;div class=&quot;mcart_footer-product&quot;&gt;
+                      &lt;div class=&quot;mcart-media&quot;&gt;
+                        {% unless item.image == blank %}
+                          {{ item.image | image_url: width: item.image.width | image_tag: loading: &#x27;lazy&#x27; }}
+                        {% endunless %}
+                      &lt;/div&gt;
+                      &lt;div class=&quot;mcart-info&quot;&gt;
+                        &lt;div class=&quot;mcart-item-title&quot;&gt;
+                          &lt;a href=&quot;{{ item.url }}&quot;&gt;
+                            {{ item.title | escape -}}
+                          &lt;/a&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;mcart-final-price&quot;&gt;
+                          {% comment %}
+                            {{ item.final_line_price | money }}
+                          {% endcomment %}
+                          {%- if item.original_price != item.final_price -%}
+                            &lt;div class=&quot;cart-item__discounted-prices&quot;&gt;
+                              &lt;span class=&quot;visually-hidden&quot;&gt;
+                                {{ &#x27;products.product.price.regular_price&#x27; | t }}
+                              &lt;/span&gt;
+                              &lt;s class=&quot;cart-item__old-price product-option&quot;&gt;
+                                {{- item.original_price | money -}}
+                              &lt;/s&gt;
+                              &lt;span class=&quot;visually-hidden&quot;&gt;
+                                {{ &#x27;products.product.price.sale_price&#x27; | t }}
+                              &lt;/span&gt;
+                              &lt;strong class=&quot;cart-item__final-price product-option&quot;&gt;
+                                {{ item.final_price | money }}
+                              &lt;/strong&gt;
+                            &lt;/div&gt;
+                          {%- else -%}
+                            &lt;div class=&quot;product-option&quot;&gt;
+                              {{ item.original_price | money }}
+                            &lt;/div&gt;
+                          {%- endif -%}
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                      &lt;mc-quantity&gt;
+                        &lt;button
+                          type=&quot;button&quot;
+                          class=&quot;mcart-qty-btn&quot;
+                          data-url=&quot;{{ routes.cart_change_url }}.json?line={{ itemIndex }}&amp;quantity={{ item.quantity | minus: 1 }}&quot;
+                        &gt;
+                          {% render &#x27;plus-icon&#x27; %}
+                        &lt;/button&gt;
+                        &lt;p&gt;{{ item.quantity }}&lt;/p&gt;
+                        &lt;button
+                          type=&quot;button&quot;
+                          class=&quot;mcart-qty-btn&quot;
+                          data-url=&quot;{{ routes.cart_change_url }}.json?line={{ itemIndex }}&amp;quantity={{ item.quantity | plus: 1 }}&quot;
+                        &gt;
+                          {% render &#x27;minus-icon&#x27; %}
+                        &lt;/button&gt;
+                      &lt;/mc-quantity&gt;
+                      &lt;mc-itemdelete data-url=&quot;{{ item.url_to_remove | replace: &#x27;?&#x27;,&#x27;.json?&#x27; }}&quot;&gt;
+                        &lt;button
+                          type=&quot;button&quot;
+                          class=&quot;mcart-delete-btn&quot;
+                        &gt;
+                          {% render &#x27;delete-2&#x27; %}
+                        &lt;/button&gt;
+                      &lt;/mc-itemdelete&gt;
+                    &lt;/div&gt;
+                  {% endif -%}
+                {%- endfor %}
+              &lt;/div&gt;
+              &lt;div class=&quot;mcart-subtotals&quot;&gt;
+                &lt;h4 class=&quot;mcart-subtotal-title&quot;&gt;Subtotal&lt;/h4&gt;
+                &lt;h4 class=&quot;mcart-subtotal-price&quot;&gt;{{ cart.total_price | money }}&lt;/h4&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;m_checkout-notice&quot;&gt;
+                &lt;h4&gt;{{ settings.checkout_notice }}&lt;/h4&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;mcart-checkout&quot;&gt;
+                {% assign even_cart_number = item_serial | modulo: 2 %}
+                {% form &#x27;cart&#x27;, cart, id: &#x27;mcart-checkout-form&#x27; %}
+                  &lt;button
+                    class=&quot;proceed_checkout_button&quot;
+                    type=&quot;submit&quot;
+                    name=&quot;checkout&quot;
+                    {% if cart == empty or even_cart_number == 1 %}
+                      disabled
+                    {% endif %}
+                  &gt;
+                    Proceed to checkout
+                  &lt;/button&gt;
+                {% endform %}
+              &lt;/div&gt;
+              &lt;a href=&quot;/collections/all&quot; class=&quot;mcart-continue-shopping&quot;&gt;Continue SHopping&lt;/a&gt;
+            &lt;/div&gt;{% endcapture %}
+            &lt;div class=&quot;desktop__only&quot;&gt;{{ cartFooter }}&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;mobile__only mcart-items-footer&quot;&gt;{{ cartFooter }}&lt;/div&gt;
+          &lt;div class=&quot;mcart-footer&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/mc-drawer&gt;
+{% endunless %}
+
+&lt;script&gt;
+  class McDrawer extends HTMLElement {
+    constructor() {
+      super();
+      this.sectionName = this.dataset.id;
+    }
+
+    connectedCallback() {
+      // this.querySelectorAll(&quot;.mcart-prod-add-to-cart&quot;).forEach(btn =&gt; {
+      //   btn.addEventListener(&quot;click&quot;, this.handleAddOnItem.bind(this))
+      // })
+    }
+
+    deleteItemEvent(url) {
+      this.updateCartItem(url);
+    }
+
+    handleAddOnItem(e) {
+      this.updateCartItem(e.target.dataset.url);
+    }
+
+    updateItemEvent(url, itemWrapper) {
+      this.itemWrapper = itemWrapper;
+      this.updateCartItem(url);
+    }
+
+    handleeQuickAddProduct(url, el) {
+      this.quickAddToCartTbn = el;
+      el.innerHTML = &#x27;Adding To Cart&#x27;;
+      el.setAttribute(&#x27;disabled&#x27;, true);
+      this.updateCartItem(url);
+    }
+
+    updateCartItem(url) {
+      url = `${url}&amp;sections=${this.dataset.id}`;
+      fetch(url)
+        .then((res) =&gt; {
+          return res.json();
+        })
+        .then((res) =&gt; {
+          if (res.errors) {
+            this.handleErrorMessage(res);
+            return;
+          }
+          let html = new DOMParser().parseFromString(res.sections[this.sectionName], &#x27;text/html&#x27;);
+          this.renderElement(html);
+        })
+        .catch((err) =&gt; console.log(err))
+        .finally(() =&gt; {
+          if (this.quickAddToCartTbn) {
+            this.quickAddToCartTbn.innerHTML = &#x27;Add To Cart&#x27;;
+            this.quickAddToCartTbn.removeAttribute(&#x27;disabled&#x27;);
+          }
+        });
+    }
+
+    fetchSection() {
+      let parentThis = this;
+      fetch(`${window.location.pathname}?sections=${this.dataset.id}`)
+        .then((res) =&gt; res.json())
+        .then((res) =&gt; {
+          if (res.errors) {
+            return;
+          }
+          let html = new DOMParser().parseFromString(res[this.sectionName], &#x27;text/html&#x27;);
+          this.renderElement(html);
+        })
+        .catch((err) =&gt; console.log(err));
+    }
+
+    handleErrorMessage(res) {
+      this.itemWrapper.querySelector(&#x27;.mcart-item-error-msg&#x27;).innerHTML = res.errors;
+      this.itemWrapper.classList.add(&#x27;error&#x27;);
+      setTimeout(() =&gt; {
+        this.itemWrapper.classList.remove(&#x27;error&#x27;);
+        this.loadingDisabled();
+      }, 2000);
+    }
+
+    renderElement(html) {
+      if (this.querySelector(&#x27;.mcart-items-wrapper&#x27;))
+        this.querySelector(&#x27;.mcart-items-wrapper&#x27;).innerHTML = html.querySelector(&#x27;.mcart-items-wrapper&#x27;).innerHTML;
+      if (this.querySelector(&#x27;.mcart_footer-product-wrapper&#x27;))
+        this.querySelector(&#x27;.mcart_footer-product-wrapper&#x27;).innerHTML = html.querySelector(
+          &#x27;.mcart_footer-product-wrapper&#x27;
+        ).innerHTML;
+      if (this.querySelector(&#x27;.condition-slide&#x27;))
+        this.querySelector(&#x27;.condition-slide&#x27;).innerHTML = html.querySelector(&#x27;.condition-slide&#x27;).innerHTML;
+      if (this.querySelector(&#x27;.mcart-subtotals&#x27;))
+        this.querySelector(&#x27;.mcart-subtotals&#x27;).innerHTML = html.querySelector(&#x27;.mcart-subtotals&#x27;).innerHTML;
+      if (this.querySelector(&#x27;.mcart-checkout&#x27;))
+        this.querySelector(&#x27;.mcart-checkout&#x27;).innerHTML = html.querySelector(&#x27;.mcart-checkout&#x27;).innerHTML;
+      if (document.querySelector(&#x27;.cart_item_count&#x27;))
+        document.querySelector(&#x27;.cart_item_count&#x27;).innerHTML = html.querySelector(&#x27;mc-drawer&#x27;).dataset.itemCount;
+
+      this.loadingDisabled();
+    }
+
+    open() {
+      this.fetchSection();
+      document.body.style.overflow = &#x27;hidden&#x27;;
+      this.querySelector(&#x27;.my-cart-sec&#x27;).classList.add(&#x27;active&#x27;);
+    }
+    close() {
+      document.body.style.overflow = &#x27;unset&#x27;;
+      this.querySelector(&#x27;.my-cart-sec&#x27;).classList.remove(&#x27;active&#x27;);
+    }
+
+    loadingEnabled() {
+      this.querySelector(&#x27;.mcart-container&#x27;).classList.add(&#x27;loading&#x27;);
+    }
+    loadingDisabled() {
+      this.querySelector(&#x27;.mcart-container&#x27;).classList.remove(&#x27;loading&#x27;);
+    }
+
+    debounce(fn, wait) {
+      let t;
+      return (...args) =&gt; {
+        clearTimeout(t);
+        t = setTimeout(() =&gt; fn.apply(this, args), wait);
+      };
+    }
+  }
+
+  customElements.define(&#x27;mc-drawer&#x27;, McDrawer);
+
+  window.openCartDrawer = () =&gt; document.querySelector(&#x27;mc-drawer&#x27;).open();
+  window.closeCartDrawer = () =&gt; document.querySelector(&#x27;mc-drawer&#x27;).close();
+
+  class McQuantity extends HTMLElement {
+    constructor() {
+      super();
+    }
+
+    connectedCallback() {
+      this.btns = this.querySelectorAll(&#x27;button&#x27;);
+      this.qtyElement = this.querySelector(&#x27;p&#x27;);
+
+      this.btns.forEach((btn) =&gt; btn.addEventListener(&#x27;click&#x27;, this.handleEvent.bind(this)));
+    }
+
+    handleEvent(e) {
+      let url = &#x27;/cart.json&#x27;,
+        wrapper = e.target.closest(&#x27;.mcart-item&#x27;);
+      if (e.target.tagName === &#x27;BUTTON&#x27;) url = e.target.dataset.url;
+      if (e.currentTarget.tagName === &#x27;BUTTON&#x27;) url = e.currentTarget.dataset.url;
+
+      let drawer = this.closest(&#x27;mc-drawer&#x27;);
+      drawer.loadingEnabled();
+      drawer.updateItemEvent(url, wrapper);
+    }
+
+    debounce(fn, wait) {
+      let t;
+      return (...args) =&gt; {
+        clearTimeout(t);
+        t = setTimeout(() =&gt; fn.apply(this, args), wait);
+      };
+    }
+  }
+
+  customElements.define(&#x27;mc-quantity&#x27;, McQuantity);
+
+  class McItemDelete extends HTMLElement {
+    constructor() {
+      super();
+    }
+
+    connectedCallback() {
+      this.addEventListener(&#x27;click&#x27;, this.handleEvent.bind(this));
+    }
+
+    handleEvent(e) {
+      let drawer = this.closest(&#x27;mc-drawer&#x27;);
+      drawer.loadingEnabled();
+      drawer.deleteItemEvent(this.dataset.url);
+    }
+  }
+  customElements.define(&#x27;mc-itemdelete&#x27;, McItemDelete);
+
+  class QuickAddProduct extends HTMLElement {
+    constructor() {
+      super();
+    }
+
+    connectedCallback() {
+      this.addEventListener(&#x27;click&#x27;, this.handleEvent.bind(this));
+      this.button = this.querySelector(&#x27;button&#x27;);
+    }
+
+    handleEvent(e) {
+      let drawer = this.closest(&#x27;mc-drawer&#x27;);
+      drawer.loadingEnabled();
+      drawer.handleeQuickAddProduct(this.dataset.url, this.button);
+    }
+  }
+  customElements.define(&#x27;quickadd-prod&#x27;, QuickAddProduct);
+
+  window.customFormSubmit = () =&gt; {
+    document.querySelectorAll(&#x27;.product-form__submit&#x27;).forEach((btn) =&gt; {
+      btn.addEventListener(&#x27;click&#x27;, (e) =&gt; {
+        e.preventDefault();
+        let form = btn.closest(&#x27;form&#x27;);
+        let formData = new FormData(form);
+        fetch(window.Shopify.routes.root + &#x27;cart/add.js&#x27;, {
+          method: &#x27;POST&#x27;,
+          body: formData,
+        })
+          .then((response) =&gt; {
+            return response.json();
+          })
+          .then((response) =&gt; {
+            openCartDrawer();
+          })
+          .catch((error) =&gt; {
+            console.error(&#x27;Error:&#x27;, error);
+          });
+      });
+    });
+  };
+
+  customFormSubmit();
+
+  if (document.querySelectorAll(&#x27;.new-header-cart-icon&#x27;)) {
+    document.querySelectorAll(&#x27;.new-header-cart-icon&#x27;).forEach((btn) =&gt; {
+      btn.addEventListener(&#x27;click&#x27;, (e) =&gt; {
+        e.preventDefault();
+        openCartDrawer();
+      });
+    });
+  }
+  if (document.querySelector(&#x27;.mcart-close-btn&#x27;))
+    document.querySelector(&#x27;.mcart-close-btn&#x27;).addEventListener(&#x27;click&#x27;, closeCartDrawer);
+&lt;/script&gt;
+
+{% schema %}
+{
+  &quot;name&quot;: &quot;Cart Drawer&quot;,
+  &quot;settings&quot;: [
+    {
+      &quot;type&quot;: &quot;text&quot;,
+      &quot;id&quot;: &quot;bundle_completion_notice&quot;,
+      &quot;label&quot;: &quot;Bundle Completion Notice&quot;
+    },
+    {
+      &quot;type&quot;: &quot;number&quot;,
+      &quot;id&quot;: &quot;free_shipping&quot;,
+      &quot;label&quot;: &quot;Free Shipping Over $n&quot;,
+      &quot;default&quot;: 100
+    }
+  ]
+}
+{% endschema %}
+</code></pre></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

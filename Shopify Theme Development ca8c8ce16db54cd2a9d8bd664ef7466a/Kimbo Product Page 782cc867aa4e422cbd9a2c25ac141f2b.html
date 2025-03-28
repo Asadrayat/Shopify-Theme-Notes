@@ -1,0 +1,3063 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Kimbo Product Page</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="782cc867-aa4e-422c-bd9a-2c25ac141f2b" class="page sans"><header><h1 class="page-title">Kimbo Product Page</h1><p class="page-description"></p></header><div class="page-body"><figure id="6ca982be-0a0f-40d4-9b89-7e728387a42e" class="image"><a href="Kimbo%20Product%20Page%20782cc867aa4e422cbd9a2c25ac141f2b/Untitled.png"><img style="width:707.984375px" src="Kimbo%20Product%20Page%20782cc867aa4e422cbd9a2c25ac141f2b/Untitled.png"/></a></figure><h1 id="57bc0061-7289-4b36-a9f3-64f73564862d" class="">Product details</h1><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="7f4df560-02d1-45e5-8c0b-8aebcbfebd25" class="code"><code class="language-JavaScript">{% liquid
+  assign id = section.id
+  assign showBadge = section.settings.show_badge | default: false
+  assign showPagination = section.settings.show_pagination | default: false
+  assign showArrow = section.settings.show_arrow | default: false
+  assign formId = &#x27;main-product-details-form&#x27;
+  assign tabs = section.blocks | where: &#x27;type&#x27;, &#x27;tab&#x27;
+  assign update_url = true
+  assign replace_colors = settings.color_swatch_code | strip_newlines | strip | remove: &#x27; &#x27; | downcase
+  assign slider_direction = section.settings.slider_direction
+%}
+
+&lt;style&gt;
+  #shopify-section-{{id}} {
+    box-sizing: border-box;
+    margin-top: {{section.settings.margin_top | append: &#x27;px&#x27;}};
+    margin-bottom: {{section.settings.margin_bottom | append: &#x27;px&#x27;}};
+    padding-top: {{section.settings.padding_top | append: &#x27;px&#x27;}};
+    padding-bottom: {{section.settings.padding_bottom | append: &#x27;px&#x27;}};
+  }
+
+  @media(max-width: 768px) {
+    #shopify-section-{{id}} {
+      margin-top: {{section.settings.margin_top_m | append: &#x27;px&#x27;}};
+      margin-bottom: {{section.settings.margin_bottom_m | append: &#x27;px&#x27;}};
+      padding-top: {{section.settings.padding_top_m | append: &#x27;px&#x27;}};
+      padding-bottom: {{section.settings.padding_bottom_m | append: &#x27;px&#x27;}};
+      max-width: 100vw;
+      overflow: hidden;
+    }
+  }
+&lt;/style&gt;
+
+{{ &#x27;product-details-2.css&#x27; | asset_url | stylesheet_tag }}
+
+&lt;div
+  class=&quot;sec-{{ id }} product-section {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}&quot;
+  {% if settings.animations_reveal_on_scroll %}
+    data-cascade
+  {% endif %}
+&gt;
+  &lt;div class=&quot;{% unless section.settings.full_width %}page-width{% else %}product-details-pw{% endunless %}&quot;&gt;
+    &lt;div class=&quot;pd-bcrmd hidden&quot;&gt;
+      &lt;a href=&quot;/&quot;&gt;Home&lt;/a&gt; &lt;span&gt;&gt;&lt;/span&gt; &lt;a href=&quot;{{ product.url }}&quot;&gt;{{ product.title }}&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;main-pd-wrapper&quot;&gt;
+      &lt;div class=&quot;pd-media-wrapper&quot;&gt;
+        &lt;pd-gellary
+          data-thumb-selector=&quot;pd-thumb-swiper&quot;
+          data-scroll-selector=&quot;pd-scroll-swiper&quot;
+          data-slide-type=&quot;{{ section.settings.slide_type }}&quot;
+          data-direction=&quot;{{ slider_direction }}&quot;
+          class=&quot;direction-{{ slider_direction }}&quot;
+          data-is-thumb=&quot;{% if section.settings.show_swiper_thumb and product.media.size &gt; 1 %}true{% else %}false{% endif %}&quot;
+        &gt;
+          &lt;div class=&quot;pd-media-thumb-gellary&quot;&gt;
+            &lt;div class=&quot;swiper pd-thumb-swiper&quot;&gt;
+              &lt;div class=&quot;swiper-wrapper&quot;&gt;
+                {% for media in product.media %}
+                  &lt;div
+                    class=&quot;swiper-slide&quot;
+                    data-src=&quot;{{ media | image_url }}&quot;
+                    data-index=&quot;{{ forloop.index0 }}&quot;
+                  &gt;
+                    {% case media.media_type %}
+                      {% when &#x27;video&#x27; %}
+                        {{
+                          media
+                          | video_tag: autoplay: true, loop: true, muted: true, controls: false, image_size: &#x27;600x&#x27;
+                        }}
+                      {% when &#x27;image&#x27; %}
+                        {% unless media == blank %}
+                          {% if forloop.first %}
+                            {{ media | image_url: width: media.width | image_tag }}
+                          {% else %}
+                            {{ media | image_url: width: media.width | image_tag: loading: &#x27;lazy&#x27; }}
+                          {% endif %}
+                        {% endunless %}
+                    {% endcase %}
+                  &lt;/div&gt;
+                {% endfor %}
+              &lt;/div&gt;
+              {% if product.media.size &gt; 1 %}
+                {% if showArrow %}
+                  &lt;div class=&quot;swiper-button-next&quot;&gt;
+                    {% render &#x27;swiper-icons&#x27;, name: &#x27;next&#x27; %}
+                  &lt;/div&gt;
+                  &lt;div class=&quot;swiper-button-prev&quot;&gt;
+                    {% render &#x27;swiper-icons&#x27;, name: &#x27;prev&#x27; %}
+                  &lt;/div&gt;
+                {% endif %}
+                {% if showPagination %}
+                  &lt;div class=&quot;swiper-pagination&quot;&gt;&lt;/div&gt;
+                {% endif %}
+              {% endif %}
+            &lt;/div&gt;
+            {% if showBadge %}
+              {% if product.tags contains &#x27;popular&#x27; %}
+                &lt;div class=&quot;pd-badge&quot;&gt;
+                  &lt;button&gt;Most Popular&lt;/button&gt;
+                &lt;/div&gt;
+              {% endif %}
+            {% endif %}
+          &lt;/div&gt;
+          {% if section.settings.show_swiper_thumb and product.media.size &gt; 1 %}
+            &lt;div class=&quot;pd-media-scroll-gellary&quot;&gt;
+              &lt;div class=&quot;swiper pd-scroll-swiper&quot;&gt;
+                &lt;div class=&quot;swiper-wrapper&quot;&gt;
+                  {% for media in product.media %}
+                    &lt;div class=&quot;swiper-slide&quot;&gt;
+                      {{ media | image_url: width: 150 | image_tag: loading: &#x27;lazy&#x27; }}
+                    &lt;/div&gt;
+                  {% endfor %}
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          {% endif %}
+        &lt;/pd-gellary&gt;
+        &lt;div class=&quot;pd-bottom-info&quot;&gt;
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when &#x27;tab-activate&#x27; %}
+                {% if block.settings.where_to_show == &#x27;media&#x27; %}
+                  {% render &#x27;product-details-tab&#x27;, product: product, section: section, tabs: tabs, class: &#x27;desktop&#x27; %}
+                {% endif %}
+            {% endcase %}
+          {% endfor %}
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;pd-info-wrapper&quot;&gt;
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when &#x27;@app&#x27; %}
+              &lt;div class=&quot;pd-app-block&quot;&gt;
+                {% render block %}
+              &lt;/div&gt;
+            {% when &#x27;title&#x27; %}
+              &lt;h2 class=&quot;pd-product-title&quot;&gt;{{ product.title }}&lt;/h2&gt;
+            {% when &#x27;tag&#x27; %}
+              {% unless product.metafields.custom.tag_lists == blank %}
+                &lt;div class=&quot;pd-tags-wrapper&quot;&gt;
+                  {% for tag in product.metafields.custom.tag_lists.value %}
+                    &lt;button&gt;{{ tag }}&lt;/button&gt;
+                  {% endfor %}
+                &lt;/div&gt;
+              {% endunless %}
+            {% when &#x27;price&#x27; %}
+              &lt;div class=&quot;pd-product-price&quot;&gt;
+                {% if product.selected_or_first_available_variant.price
+                    &lt; product.selected_or_first_available_variant.compare_at_price
+                %}
+                  &lt;h2&gt;
+                    &lt;span hidden&gt;{{ cart.currency.symbol }}&lt;/span&gt;
+                    {{- product.selected_or_first_available_variant.price | money }}
+                  &lt;/h2&gt;
+                  &lt;h3&gt;
+                    &lt;span hidden&gt;{{ cart.currency.symbol }}&lt;/span&gt;
+                    {{- product.selected_or_first_available_variant.compare_at_price | money }}
+                  &lt;/h3&gt;
+                {% else %}
+                  &lt;h2&gt;
+                    &lt;span hidden&gt;{{ cart.currency.symbol }}&lt;/span&gt;
+                    {{- product.selected_or_first_available_variant.price | money }}
+                  &lt;/h2&gt;
+                {% endif %}
+              &lt;/div&gt;
+            {% when &#x27;text&#x27; %}
+              {% if block.settings.text_block %}
+                &lt;div class=&quot;pd-text-wrapper rethink-sans&quot;&gt;
+                  &lt;p&gt;{{ block.settings.text_block }}&lt;/p&gt;
+                &lt;/div&gt;
+              {% endif %}
+            {% when &#x27;stock&#x27; %}
+              &lt;p class=&quot;pd-product-stock&quot;&gt;
+                {% liquid
+                  if product.selected_or_first_available_variant.available
+                    echo &#x27;In Stock&#x27;
+                  else
+                    echo &#x27;Out Of Stock&#x27;
+                  endif
+                %}
+              &lt;/p&gt;
+
+            {% when &#x27;variant-picker&#x27; %}
+              {% unless product.has_only_default_variant %}
+                &lt;pd-variant
+                  data-product-id=&quot;{{ product.id }}&quot;
+                  data-section-id=&quot;{{ section.id }}&quot;
+                  data-form-id=&quot;{{ formId }}&quot;
+                  data-url=&quot;{{ product.url }}&quot;
+                  {% if update_url == false %}
+                    data-update-url=&quot;false&quot;
+                  {% endif %}
+                  {{ block.shopify_attributes }}
+                &gt;
+                  &lt;form&gt;
+                    &lt;div class=&quot;pd-variant-wrapper&quot;&gt;
+                      {% for option in product.options_with_values %}
+                        &lt;div class=&quot;pd-variant {% if option.name == &#x27;Color&#x27; or option.name == &#x27;color&#x27; %}pd-color-variant{% else %}pd-others-variant{% endif %}&quot;&gt;
+                          &lt;h3 class=&quot;pd-variant-optioin-name&quot;&gt;{{ option.name }} : {{ option.selected_value }}&lt;/h3&gt;
+                          {%- liquid
+                            assign variants_available_arr = product.variants | map: &#x27;available&#x27;
+                            assign variants_option1_arr = product.variants | map: &#x27;option1&#x27;
+                            assign variants_option2_arr = product.variants | map: &#x27;option2&#x27;
+                            assign variants_option3_arr = product.variants | map: &#x27;option3&#x27;
+                          -%}
+                          &lt;div class=&quot;pd-variant-field&quot;&gt;
+                            {% for value in option.values %}
+                              {%- liquid
+                                assign option_disabled = true
+
+                                for option1_name in variants_option1_arr
+                                  case option.position
+                                    when 1
+                                      if variants_option1_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+                                        assign option_disabled = false
+                                      endif
+                                    when 2
+                                      if option1_name == product.selected_or_first_available_variant.option1 and variants_option2_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+                                        assign option_disabled = false
+                                      endif
+                                    when 3
+                                      if option1_name == product.selected_or_first_available_variant.option1 and variants_option2_arr[forloop.index0] == product.selected_or_first_available_variant.option2 and variants_option3_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+                                        assign option_disabled = false
+                                      endif
+                                  endcase
+                                endfor
+                                assign input_id = section.id | append: &#x27;-&#x27; | append: option.position | append: &#x27;-&#x27; | append: forloop.index0
+                              %}
+                              {% if option.name == &#x27;Color&#x27; or option.name == &#x27;color&#x27; %}
+                                {% liquid
+                                  if value contains &#x27; &#x27;
+                                    assign isDouble = true
+                                    assign single = value | downcase | split: &#x27; &#x27;
+                                    assign first = &#x27;#&#x27; | append: single[0]
+                                    assign second = &#x27;#&#x27; | append: single[1]
+
+                                    if replace_colors contains first
+                                      assign firstColor = replace_colors | split: first | last | split: &#x27;,&#x27; | first | remove: &#x27;:&#x27;
+                                    else
+                                      assign firstColor = first | remove: &#x27;#&#x27;
+                                    endif
+                                    if replace_colors contains second
+                                      assign secondColor = replace_colors | split: second | last | split: &#x27;,&#x27; | first | remove: &#x27;:&#x27;
+                                    else
+                                      assign secondColor = second | remove: &#x27;#&#x27;
+                                    endif
+                                  else
+                                    assign self = &#x27;#&#x27; | append: value | downcase
+                                    if replace_colors contains self
+                                      assign singlColor = replace_colors | split: self | last | split: &#x27;,&#x27; | first | remove: &#x27;:&#x27;
+                                    else
+                                      assign singlColor = self
+                                    endif
+                                    assign isDouble = false
+                                  endif
+                                %}
+                                &lt;div class=&quot;pd-variant-value&quot;&gt;
+                                  &lt;input
+                                    type=&quot;radio&quot;
+                                    id=&quot;{{ input_id }}&quot;
+                                    name=&quot;{{ option.name }}&quot;
+                                    {% if option_disabled %}
+                                      class=&quot;disabled&quot;
+                                    {% endif %}
+                                    {% if value == option.selected_value %}
+                                      checked
+                                    {% endif %}
+                                    value=&quot;{{ value }}&quot;
+                                  &gt;
+                                  {% if isDouble %}
+                                    &lt;label
+                                      title=&quot;{{ value }} - {% if option_disabled %}Out Of Stock{% else %}In Stock{% endif %}&quot;
+                                      for=&quot;{{ input_id }}&quot;
+                                      style=&quot;background: linear-gradient(to right, #{{ firstColor }} 50%, #{{ secondColor }} 50%)&quot;
+                                    &gt;&lt;/label&gt;
+                                  {% else %}
+                                    &lt;label
+                                      title=&quot;{{ value }} - {% if option_disabled %}Out Of Stock{% else %}In Stock{% endif %}&quot;
+                                      for=&quot;{{ input_id }}&quot;
+                                      style=&quot;background: #{{ singlColor }}; color: {{ value }}&quot;
+                                    &gt;&lt;/label&gt;
+                                  {% endif %}
+                                &lt;/div&gt;
+                              {% else %}
+                                &lt;div class=&quot;pd-variant-value&quot;&gt;
+                                  &lt;input
+                                    type=&quot;radio&quot;
+                                    id=&quot;{{ input_id }}&quot;
+                                    name=&quot;{{ option.name }}&quot;
+                                    {% if option_disabled %}
+                                      class=&quot;disabled&quot;
+                                    {% endif %}
+                                    {% if value == option.selected_value %}
+                                      checked
+                                    {% endif %}
+                                    value=&quot;{{ value }}&quot;
+                                  &gt;
+                                  &lt;label
+                                    title=&quot;{{ option.name }}[{{ value }}] - {% if option_disabled %}Out Of Stock{% else %}In Stock{% endif %}&quot;
+                                    for=&quot;{{ input_id }}&quot;
+                                  &gt;
+                                    {{- value -}}
+                                  &lt;/label&gt;
+                                &lt;/div&gt;
+                              {% endif %}
+                            {% endfor %}
+                          &lt;/div&gt;
+                        &lt;/div&gt;
+                      {% endfor %}
+                    &lt;/div&gt;
+                  &lt;/form&gt;
+                  &lt;script type=&quot;application/json&quot;&gt;
+                    {{ product.variants | json }}
+                  &lt;/script&gt;
+                &lt;/pd-variant&gt;
+              {% endunless %}
+
+            {% when &#x27;product-form&#x27; %}
+              &lt;pd-form
+                {% unless product.selected_or_first_available_variant.available %}
+                  hidden
+                {% endunless %}
+              &gt;
+                &lt;div class=&quot;pd-form-wrapper&quot;&gt;
+                  {% form &#x27;product&#x27;, product, id: formId %}
+                    &lt;div class=&quot;pd-current-variant-id&quot;&gt;
+                      &lt;input type=&quot;hidden&quot; name=&quot;id&quot; value=&quot;{{ product.selected_or_first_available_variant.id }}&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;input type=&quot;hidden&quot; name=&quot;quantity&quot; value=&quot;1&quot;&gt;
+                    {% if block.settings.active_appstle_subscription %}
+                      &lt;span
+                        class=&quot;appstle_stand_alone_selector&quot;
+                        data-product-handle=&quot;{{ product.handle }}&quot;
+                        data-product-data=&quot;&quot;
+                        style=&quot;display:none;&quot;
+                      &gt;&lt;/span&gt;
+                    {% endif %}
+                    &lt;div class=&quot;pd-atc-button-wrapper&quot;&gt;
+                      &lt;quantity-selector&gt;
+                        &lt;button type=&quot;button&quot; data-value=&quot;-1&quot;&gt;{% render &#x27;quantity-icons&#x27;, name: &#x27;minus&#x27; %}&lt;/button&gt;
+                        &lt;input type=&quot;number&quot; name=&quot;quantity&quot; value=&quot;1&quot; min=&quot;1&quot; max=&quot;20&quot;&gt;
+                        &lt;button type=&quot;button&quot; data-value=&quot;1&quot;&gt;{% render &#x27;quantity-icons&#x27;, name: &#x27;plus&#x27; %}&lt;/button&gt;
+                      &lt;/quantity-selector&gt;
+                      &lt;button
+                        title=&quot;Add To Cart - {{ product.title }}-{{ product.selected_or_first_available_variant.price | money }}&quot;
+                        aria-label=&quot;Add to Cart&quot;
+                        type=&quot;submit&quot;
+                        class=&quot;pd-add-to-card product-quick-add&quot;
+                        {% unless product.selected_or_first_available_variant.available %}
+                          disabled
+                        {% endunless %}
+                      &gt;
+                        {% if product.selected_or_first_available_variant.available %}
+                          ADD TO CART
+                        {% else %}
+                          SOLD OUT
+                        {% endif %}
+                      &lt;/button&gt;
+                    &lt;/div&gt;
+                  {% endform %}
+                &lt;/div&gt;
+              &lt;/pd-form&gt;
+              &lt;button
+                {% if product.selected_or_first_available_variant.available %}
+                  hidden
+                {% endif %}
+                type=&quot;button&quot;
+                class=&quot;notify-stock-button-x product&quot;
+                data-title=&quot;{{ product.title }}&quot;
+                data-variant=&quot;{{ product.selected_or_first_available_variant.id }}&quot;
+              &gt;
+                {{ settings.card_button_label | default: &#x27;Notify Me&#x27; }}
+              &lt;/button&gt;
+
+            {% when &#x27;description-list&#x27; %}
+              {% unless product.metafields.custom.description_lists == blank %}
+                &lt;div class=&quot;pd-check-list-wrapper&quot;&gt;
+                  {% for list in product.metafields.custom.description_lists.value %}
+                    {% unless list == blank %}
+                      &lt;div class=&quot;pd-check-list&quot;&gt;
+                        {% unless block.settings.image == blank %}
+                          {{
+                            block.settings.image
+                            | image_url: width: block.settings.image.width
+                            | image_tag: loading: &#x27;lazy&#x27;
+                          }}
+                        {% endunless %}
+                        &lt;p class=&quot;rethink-sans&quot;&gt;
+                          {{ list }}
+                        &lt;/p&gt;
+                      &lt;/div&gt;
+                    {% endunless %}
+                  {% endfor %}
+                &lt;/div&gt;
+              {% endunless %}
+
+            {% when &#x27;check-list&#x27; %}
+              &lt;div class=&quot;pd-check-list-wrapper&quot;&gt;
+                {% for i in (1..8) %}
+                  {% assign list = &#x27;list&#x27; | append: i %}
+                  {% unless block.settings[list] == blank %}
+                    &lt;div class=&quot;pd-check-list&quot;&gt;
+                      {% unless block.settings.image == blank %}
+                        {{
+                          block.settings.image
+                          | image_url: width: block.settings.image.width
+                          | image_tag: loading: &#x27;lazy&#x27;
+                        }}
+                      {% endunless %}
+                      &lt;p class=&quot;rethink-sans&quot;&gt;
+                        {{ block.settings[list] }}
+                      &lt;/p&gt;
+                    &lt;/div&gt;
+                  {% endunless %}
+                {% endfor %}
+              &lt;/div&gt;
+            {% when &#x27;info-list&#x27; %}
+              &lt;div class=&quot;pd-info-list-wrapper&quot;&gt;
+                {% for i in (1..5) %}
+                  {% assign title = &#x27;title&#x27; | append: i %}
+                  {% assign text = &#x27;text&#x27; | append: i %}
+                  {% assign image = &#x27;image&#x27; | append: i %}
+                  {% unless block.settings[title] == blank or block.settings[text] == blank %}
+                    &lt;div class=&quot;pd-info-list&quot;&gt;
+                      &lt;div class=&quot;ino-list-icon&quot;&gt;
+                        {% unless block.settings[image] == blank %}
+                          {{
+                            block.settings[image]
+                            | image_url: width: block.settings[image].width
+                            | image_tag: loading: &#x27;lazy&#x27;
+                          }}
+                        {% endunless %}
+                      &lt;/div&gt;
+                      &lt;div class=&quot;ino-list-text&quot;&gt;
+                        &lt;h3 class=&quot;info-list-title&quot;&gt;{{ block.settings[title] }}&lt;/h3&gt;
+                        &lt;div class=&quot;info-list-subtext&quot;&gt;{{ block.settings[text] }}&lt;/div&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                  {% endunless %}
+                {% endfor %}
+              &lt;/div&gt;
+            {% when &#x27;tab-activate&#x27; %}
+              {% if block.settings.where_to_show == &#x27;info&#x27; %}
+                {% render &#x27;product-details-tab&#x27;, product: product, section: section, tabs: tabs, class: &#x27;desktop&#x27; %}
+              {% endif %}
+              {% render &#x27;product-details-tab&#x27;, product: product, section: section, tabs: tabs, class: &#x27;mobile&#x27; %}
+            {% when &#x27;intensity-roast&#x27; %}
+              {% unless block.settings.intensity == blank or block.settings.roast == blank %}
+                &lt;div class=&quot;pd-intensity-roast&quot;&gt;
+                  {% unless block.settings.intensity == blank %}
+                    &lt;div class=&quot;ir-item&quot;&gt;
+                      {{ block.settings.intensity_icon }}
+                      &lt;h2&gt;
+                        {{ block.settings.intensity_text -}}
+                        &lt;span&gt; {{ block.settings.intensity }}&lt;/span&gt;
+                      &lt;/h2&gt;
+                    &lt;/div&gt;
+                  {% endunless %}
+                  {% unless block.settings.roast == blank %}
+                    &lt;div class=&quot;ir-item&quot;&gt;
+                      {{ block.settings.roast_icon }}
+                      &lt;h2&gt;
+                        {{ block.settings.roast_text -}}
+                        &lt;span&gt; {{ block.settings.roast }}&lt;/span&gt;
+                      &lt;/h2&gt;
+                    &lt;/div&gt;
+                  {% endunless %}
+                &lt;/div&gt;
+              {% endunless %}
+            {% when &#x27;collection-list&#x27; %}
+              {% unless product.metafields.custom.collections == blank %}
+                &lt;div class=&quot;pd-collections&quot;&gt;
+                  &lt;h3&gt;{{ block.settings.title }}&lt;/h3&gt;
+                  {% for collection in product.metafields.custom.collections.value %}
+                    &lt;a href=&quot;{{ collection.url }}&quot; class=&quot;rethink-sans&quot;&gt;
+                      {{- collection.title | capitalize -}}
+                      {%- unless forloop.last %}, {% endunless -%}
+                    &lt;/a&gt;
+                  {% endfor %}
+                &lt;/div&gt;
+              {% endunless %}
+          {% endcase %}
+        {% endfor %}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script src=&quot;{{ &#x27;product-details-2.js&#x27; | asset_url }}&quot; defer=&quot;defer&quot;&gt;&lt;/script&gt;
+
+{% schema %}
+{
+  &quot;name&quot;: &quot;Product Details 2&quot;,
+  &quot;templates&quot;: [&quot;product&quot;],
+  &quot;settings&quot;: [
+    {
+      &quot;type&quot;: &quot;checkbox&quot;,
+      &quot;id&quot;: &quot;full_width&quot;,
+      &quot;label&quot;: &quot;Full Width Section&quot;,
+      &quot;default&quot;: false
+    },
+    {
+      &quot;type&quot;: &quot;select&quot;,
+      &quot;id&quot;: &quot;slider_direction&quot;,
+      &quot;label&quot;: &quot;Slider Direction&quot;,
+      &quot;info&quot;: &quot;Thumb Vertical OR Horizontal&quot;,
+      &quot;options&quot;: [
+        {
+          &quot;value&quot;: &quot;vertical&quot;,
+          &quot;label&quot;: &quot;Vertical&quot;
+        },
+        {
+          &quot;value&quot;: &quot;horizontal&quot;,
+          &quot;label&quot;: &quot;Horizontal&quot;
+        }
+      ],
+      &quot;default&quot;: &quot;horizontal&quot;
+    },
+    {
+      &quot;type&quot;: &quot;select&quot;,
+      &quot;id&quot;: &quot;slide_type&quot;,
+      &quot;label&quot;: &quot;Slide Type&quot;,
+      &quot;options&quot;: [
+        {
+          &quot;value&quot;: &quot;slide&quot;,
+          &quot;label&quot;: &quot;Slide&quot;
+        },
+        {
+          &quot;value&quot;: &quot;fade&quot;,
+          &quot;label&quot;: &quot;Fade&quot;
+        },
+        {
+          &quot;value&quot;: &quot;flip&quot;,
+          &quot;label&quot;: &quot;Flip&quot;
+        }
+      ],
+      &quot;default&quot;: &quot;slide&quot;
+    },
+    {
+      &quot;type&quot;: &quot;checkbox&quot;,
+      &quot;id&quot;: &quot;show_swiper_thumb&quot;,
+      &quot;label&quot;: &quot;Show Thumb Slider&quot;,
+      &quot;default&quot;: false
+    },
+    {
+      &quot;type&quot;: &quot;checkbox&quot;,
+      &quot;id&quot;: &quot;show_pagination&quot;,
+      &quot;label&quot;: &quot;Show Pagination&quot;,
+      &quot;default&quot;: false
+    },
+    {
+      &quot;type&quot;: &quot;checkbox&quot;,
+      &quot;id&quot;: &quot;show_arrow&quot;,
+      &quot;label&quot;: &quot;Show Arrow&quot;,
+      &quot;default&quot;: false
+    },
+    {
+      &quot;type&quot;: &quot;checkbox&quot;,
+      &quot;id&quot;: &quot;show_badge&quot;,
+      &quot;label&quot;: &quot;Show Badge&quot;,
+      &quot;default&quot;: false
+    },
+    {
+      &quot;type&quot;: &quot;header&quot;,
+      &quot;content&quot;: &quot;Section Spacing Desktop&quot;
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;margin_top&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 100,
+      &quot;step&quot;: 1,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Margin Top&quot;,
+      &quot;default&quot;: 0
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;margin_bottom&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 100,
+      &quot;step&quot;: 1,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Margin Bottom&quot;,
+      &quot;default&quot;: 0
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;padding_top&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 100,
+      &quot;step&quot;: 1,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Padding Top&quot;,
+      &quot;default&quot;: 0
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;padding_bottom&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 100,
+      &quot;step&quot;: 1,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Padding Bottom&quot;,
+      &quot;default&quot;: 0
+    },
+    {
+      &quot;type&quot;: &quot;header&quot;,
+      &quot;content&quot;: &quot;Section Spacing Mobile&quot;
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;margin_top_m&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 100,
+      &quot;step&quot;: 1,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Margin Top&quot;,
+      &quot;default&quot;: 0
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;margin_bottom_m&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 100,
+      &quot;step&quot;: 1,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Margin Bottom&quot;,
+      &quot;default&quot;: 0
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;padding_top_m&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 100,
+      &quot;step&quot;: 1,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Padding Top&quot;,
+      &quot;default&quot;: 0
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;padding_bottom_m&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 100,
+      &quot;step&quot;: 1,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Padding Bottom&quot;,
+      &quot;default&quot;: 0
+    }
+  ],
+  &quot;blocks&quot;: [
+    {
+      &quot;type&quot;: &quot;@app&quot;
+    },
+    {
+      &quot;type&quot;: &quot;title&quot;,
+      &quot;name&quot;: &quot;Title&quot;,
+      &quot;limit&quot;: 1
+    },
+    {
+      &quot;type&quot;: &quot;price&quot;,
+      &quot;name&quot;: &quot;Price&quot;,
+      &quot;limit&quot;: 1
+    },
+    {
+      &quot;type&quot;: &quot;stock&quot;,
+      &quot;name&quot;: &quot;Stock&quot;,
+      &quot;limit&quot;: 1
+    },
+    {
+      &quot;type&quot;: &quot;text&quot;,
+      &quot;name&quot;: &quot;Text&quot;,
+      &quot;settings&quot;: [
+        {
+          &quot;type&quot;: &quot;text&quot;,
+          &quot;id&quot;: &quot;text_block&quot;,
+          &quot;label&quot;: &quot;Text block&quot;
+        }
+      ]
+    },
+    {
+      &quot;type&quot;: &quot;intensity-roast&quot;,
+      &quot;name&quot;: &quot;Internsity Roast&quot;,
+      &quot;limit&quot;: 1,
+      &quot;settings&quot;: [
+        {
+          &quot;type&quot;: &quot;html&quot;,
+          &quot;id&quot;: &quot;intensity_icon&quot;,
+          &quot;label&quot;: &quot;Intersity SVG Icon&quot;
+        },
+        {
+          &quot;type&quot;: &quot;html&quot;,
+          &quot;id&quot;: &quot;roast_icon&quot;,
+          &quot;label&quot;: &quot;Roast SVG Icon&quot;
+        },
+        {
+          &quot;type&quot;: &quot;text&quot;,
+          &quot;label&quot;: &quot;Intensity Text&quot;,
+          &quot;id&quot;: &quot;intensity_text&quot;,
+          &quot;default&quot;: &quot;Intensity&quot;
+        },
+        {
+          &quot;type&quot;: &quot;text&quot;,
+          &quot;label&quot;: &quot;Intensity Value&quot;,
+          &quot;id&quot;: &quot;intensity&quot;
+        },
+        {
+          &quot;type&quot;: &quot;text&quot;,
+          &quot;label&quot;: &quot;Roast Text&quot;,
+          &quot;id&quot;: &quot;roast_text&quot;,
+          &quot;default&quot;: &quot;Roast&quot;
+        },
+        {
+          &quot;type&quot;: &quot;text&quot;,
+          &quot;label&quot;: &quot;Roast Value&quot;,
+          &quot;id&quot;: &quot;roast&quot;
+        }
+      ]
+    },
+    {
+      &quot;type&quot;: &quot;tag&quot;,
+      &quot;name&quot;: &quot;Tags&quot;,
+      &quot;limit&quot;: 1
+    },
+    {
+      &quot;type&quot;: &quot;collection-list&quot;,
+      &quot;name&quot;: &quot;Collection List&quot;,
+      &quot;limit&quot;: 1,
+      &quot;settings&quot;: [
+        {
+          &quot;type&quot;: &quot;text&quot;,
+          &quot;id&quot;: &quot;title&quot;,
+          &quot;label&quot;: &quot;Title&quot;,
+          &quot;default&quot;: &quot;Collections&quot;
+        }
+      ]
+    },
+    {
+      &quot;type&quot;: &quot;variant-picker&quot;,
+      &quot;name&quot;: &quot;Variant Picker&quot;,
+      &quot;limit&quot;: 1
+    },
+    {
+      &quot;type&quot;: &quot;product-form&quot;,
+      &quot;name&quot;: &quot;Product Form&quot;,
+      &quot;limit&quot;: 1,
+      &quot;settings&quot;: [
+        {
+          &quot;type&quot;: &quot;header&quot;,
+          &quot;content&quot;: &quot;FormId: main-product-details-form&quot;
+        },
+        {
+          &quot;type&quot;: &quot;checkbox&quot;,
+          &quot;id&quot;: &quot;active_appstle_subscription&quot;,
+          &quot;label&quot;: &quot;Active Appstle Subscription&quot;,
+          &quot;default&quot;: false
+        }
+      ]
+    },
+    {
+      &quot;type&quot;: &quot;description-list&quot;,
+      &quot;name&quot;: &quot;Description List&quot;,
+      &quot;settings&quot;: [
+        {
+          &quot;type&quot;: &quot;paragraph&quot;,
+          &quot;content&quot;: &quot;Metafield: Description Lists&quot;
+        },
+        {
+          &quot;type&quot;: &quot;image_picker&quot;,
+          &quot;id&quot;: &quot;image&quot;,
+          &quot;label&quot;: &quot;Icon Image&quot;
+        }
+      ]
+    },
+    {
+      &quot;type&quot;: &quot;check-list&quot;,
+      &quot;name&quot;: &quot;Check List&quot;,
+      &quot;settings&quot;: [
+        {
+          &quot;type&quot;: &quot;image_picker&quot;,
+          &quot;id&quot;: &quot;image&quot;,
+          &quot;label&quot;: &quot;Icon Image&quot;
+        },
+        {
+          &quot;type&quot;: &quot;text&quot;,
+          &quot;id&quot;: &quot;list1&quot;,
+          &quot;label&quot;: &quot;List 1&quot;
+        },
+        {
+          &quot;type&quot;: &quot;text&quot;,
+          &quot;id&quot;: &quot;list2&quot;,
+          &quot;label&quot;: &quot;List 2&quot;
+        },
+        {
+          &quot;type&quot;: &quot;text&quot;,
+          &quot;id&quot;: &quot;list3&quot;,
+          &quot;label&quot;: &quot;List 3&quot;
+        },
+        {
+          &quot;type&quot;: &quot;text&quot;,
+          &quot;id&quot;: &quot;list4&quot;,
+          &quot;label&quot;: &quot;List 4&quot;
+        },
+        {
+          &quot;type&quot;: &quot;text&quot;,
+          &quot;id&quot;: &quot;list5&quot;,
+          &quot;label&quot;: &quot;List 5&quot;
+        },
+        {
+          &quot;type&quot;: &quot;text&quot;,
+          &quot;id&quot;: &quot;list6&quot;,
+          &quot;label&quot;: &quot;List 6&quot;
+        },
+        {
+          &quot;type&quot;: &quot;text&quot;,
+          &quot;id&quot;: &quot;list7&quot;,
+          &quot;label&quot;: &quot;List 7&quot;
+        },
+        {
+          &quot;type&quot;: &quot;text&quot;,
+          &quot;id&quot;: &quot;list8&quot;,
+          &quot;label&quot;: &quot;List 8&quot;
+        }
+      ]
+    },
+    {
+      &quot;type&quot;: &quot;info-list&quot;,
+      &quot;name&quot;: &quot;Info List&quot;,
+      &quot;settings&quot;: [
+        {
+          &quot;type&quot;: &quot;header&quot;,
+          &quot;content&quot;: &quot;List 1&quot;
+        },
+        {
+          &quot;type&quot;: &quot;image_picker&quot;,
+          &quot;id&quot;: &quot;image1&quot;,
+          &quot;label&quot;: &quot;Icon Image&quot;
+        },
+        {
+          &quot;type&quot;: &quot;text&quot;,
+          &quot;id&quot;: &quot;title1&quot;,
+          &quot;label&quot;: &quot;Title&quot;
+        },
+        {
+          &quot;type&quot;: &quot;richtext&quot;,
+          &quot;id&quot;: &quot;text1&quot;,
+          &quot;label&quot;: &quot;Text&quot;
+        },
+        {
+          &quot;type&quot;: &quot;header&quot;,
+          &quot;content&quot;: &quot;List 2&quot;
+        },
+        {
+          &quot;type&quot;: &quot;image_picker&quot;,
+          &quot;id&quot;: &quot;image2&quot;,
+          &quot;label&quot;: &quot;Icon Image&quot;
+        },
+        {
+          &quot;type&quot;: &quot;text&quot;,
+          &quot;id&quot;: &quot;title2&quot;,
+          &quot;label&quot;: &quot;Title&quot;
+        },
+        {
+          &quot;type&quot;: &quot;richtext&quot;,
+          &quot;id&quot;: &quot;text2&quot;,
+          &quot;label&quot;: &quot;Text&quot;
+        },
+        {
+          &quot;type&quot;: &quot;header&quot;,
+          &quot;content&quot;: &quot;List 3&quot;
+        },
+        {
+          &quot;type&quot;: &quot;image_picker&quot;,
+          &quot;id&quot;: &quot;image3&quot;,
+          &quot;label&quot;: &quot;Icon Image&quot;
+        },
+        {
+          &quot;type&quot;: &quot;text&quot;,
+          &quot;id&quot;: &quot;title3&quot;,
+          &quot;label&quot;: &quot;Title&quot;
+        },
+        {
+          &quot;type&quot;: &quot;richtext&quot;,
+          &quot;id&quot;: &quot;text3&quot;,
+          &quot;label&quot;: &quot;Text&quot;
+        },
+        {
+          &quot;type&quot;: &quot;header&quot;,
+          &quot;content&quot;: &quot;List 4&quot;
+        },
+        {
+          &quot;type&quot;: &quot;image_picker&quot;,
+          &quot;id&quot;: &quot;image4&quot;,
+          &quot;label&quot;: &quot;Icon Image&quot;
+        },
+        {
+          &quot;type&quot;: &quot;text&quot;,
+          &quot;id&quot;: &quot;title4&quot;,
+          &quot;label&quot;: &quot;Title&quot;
+        },
+        {
+          &quot;type&quot;: &quot;richtext&quot;,
+          &quot;id&quot;: &quot;text4&quot;,
+          &quot;label&quot;: &quot;Text&quot;
+        },
+        {
+          &quot;type&quot;: &quot;header&quot;,
+          &quot;content&quot;: &quot;List 5&quot;
+        },
+        {
+          &quot;type&quot;: &quot;image_picker&quot;,
+          &quot;id&quot;: &quot;image5&quot;,
+          &quot;label&quot;: &quot;Icon Image&quot;
+        },
+        {
+          &quot;type&quot;: &quot;text&quot;,
+          &quot;id&quot;: &quot;title5&quot;,
+          &quot;label&quot;: &quot;Title&quot;
+        },
+        {
+          &quot;type&quot;: &quot;richtext&quot;,
+          &quot;id&quot;: &quot;text5&quot;,
+          &quot;label&quot;: &quot;Text&quot;
+        }
+      ]
+    },
+    {
+      &quot;type&quot;: &quot;tab-activate&quot;,
+      &quot;name&quot;: &quot;Tab Activate&quot;,
+      &quot;limit&quot;: 1,
+      &quot;settings&quot;: [
+        {
+          &quot;type&quot;: &quot;select&quot;,
+          &quot;id&quot;: &quot;where_to_show&quot;,
+          &quot;label&quot;: &quot;Where to show&quot;,
+          &quot;options&quot;: [
+            {
+              &quot;value&quot;: &quot;media&quot;,
+              &quot;label&quot;: &quot;Media Section&quot;
+            },
+            {
+              &quot;value&quot;: &quot;info&quot;,
+              &quot;label&quot;: &quot;Info Section&quot;
+            }
+          ],
+          &quot;default&quot;: &quot;media&quot;
+        }
+      ]
+    },
+    {
+      &quot;type&quot;: &quot;tab&quot;,
+      &quot;name&quot;: &quot;Tab&quot;,
+      &quot;settings&quot;: [
+        {
+          &quot;type&quot;: &quot;checkbox&quot;,
+          &quot;id&quot;: &quot;block_mb&quot;,
+          &quot;label&quot;: &quot;Margin Bottom&quot;,
+          &quot;default&quot;: true
+        },
+        {
+          &quot;type&quot;: &quot;checkbox&quot;,
+          &quot;id&quot;: &quot;open&quot;,
+          &quot;label&quot;: &quot;Open By Default&quot;,
+          &quot;default&quot;: false
+        },
+        {
+          &quot;type&quot;: &quot;select&quot;,
+          &quot;id&quot;: &quot;tab_content&quot;,
+          &quot;label&quot;: &quot;Select Tab Content Type&quot;,
+          &quot;options&quot;: [
+            {
+              &quot;value&quot;: &quot;richtext&quot;,
+              &quot;label&quot;: &quot;Richtext&quot;
+            },
+            {
+              &quot;value&quot;: &quot;page&quot;,
+              &quot;label&quot;: &quot;Page&quot;
+            },
+            {
+              &quot;value&quot;: &quot;blog&quot;,
+              &quot;label&quot;: &quot;Blog&quot;
+            },
+            {
+              &quot;value&quot;: &quot;description&quot;,
+              &quot;label&quot;: &quot;Product Description&quot;
+            }
+          ],
+          &quot;default&quot;: &quot;richtext&quot;
+        },
+        {
+          &quot;type&quot;: &quot;text&quot;,
+          &quot;id&quot;: &quot;heading&quot;,
+          &quot;label&quot;: &quot;Heading&quot;
+        },
+        {
+          &quot;type&quot;: &quot;richtext&quot;,
+          &quot;id&quot;: &quot;richtext&quot;,
+          &quot;label&quot;: &quot;RichText&quot;
+        },
+        {
+          &quot;type&quot;: &quot;page&quot;,
+          &quot;id&quot;: &quot;page&quot;,
+          &quot;label&quot;: &quot;Page&quot;
+        },
+        {
+          &quot;type&quot;: &quot;article&quot;,
+          &quot;id&quot;: &quot;article&quot;,
+          &quot;label&quot;: &quot;Select Blog&quot;
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+</code></pre><h1 id="fe81bf44-f46d-41f6-9371-ad97b5040aba" class="">CSS</h1><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="c49b1011-fd54-4567-baba-3f4e112656d0" class="code"><code class="language-JavaScript">/* code for quantity seector starts  */
+.pd-quantity-selector {
+    margin-bottom: var(--space-between-info-content);
+  h3 {
+    color: #000;
+    font-family: BebasNeue-Regular;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+  }
+}
+.pdq-wrapper {
+  display: grid;
+  grid-template-columns: minmax(0px, 1fr) minmax(0px, 1fr) minmax(0px, 1fr);
+  border: 0.5px solid #d7d7d7;
+  box-sizing: border-box;
+  text-align: center;
+  color: #585858;
+  .__speed {
+    margin-top: 5px;
+    margin-bottom: 0;
+    /* color:  #000; */
+    font-family: BebasNeue-Regular;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: capitalize;
+    @media(max-width:768px){
+        font-size:14px;
+    }
+  }
+  .pdq-price-wrapper {
+    .pdq-price {
+      margin-block: 0;
+      font-size: 16px;
+      font-weight: 600;
+       @media(max-width:768px){
+        font-size:14px;
+      }
+    }
+  }
+  .discount__percent {
+        margin: 5px auto;
+    color: #935838;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 14px;
+    text-transform: capitalize;
+    padding: 3px 6px;
+    background: #f5d8cc;
+    max-width: max-content;
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    transform: translateX(-50%);
+     @media(max-width:768px){
+        font-size:10px;
+        line-height: 10px;
+       width: 100%;
+      }
+  }
+
+  input {
+    display: none;
+  }
+  label {
+    box-sizing: border-box;
+    padding-top: 15px;
+    padding-bottom: 30px;
+    padding-inline: 16px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    
+    .pdq-badge {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -13px);
+      width: max-content;
+      max-width: 100%;
+      height: max-content;
+      text-align: center;
+      background: red;
+      box-sizing: border-box;
+      padding: 8px 15px;
+      margin: 0;
+      color: var(--Background-base, #fff);
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 12px;
+      /* letter-spacing: 0.4px; */
+      text-transform: capitalize;
+      font-family: BebasNeue-Regular;
+      @media(max-width:768px){
+        font-size:9px;
+        line-height: 9px;
+      }
+    }
+    .pdq-badge.badge--2 {
+      background: red;
+    }
+    .pdq-badge.badge--3 {
+      background: blue;
+    }
+  }
+  input:checked + label {
+    border-color: #774b0614;
+    background: #774b0614;
+    .__speed {
+      color: #000;
+    }
+    .pdq-price-wrapper {
+      .pdq-price {
+        color: #000;
+      }
+    }
+  }
+  label:not(:last-child) {
+    border-right: 1px solid #d7d7d7;
+  }
+}
+
+/* code for quantity seector ends  */
+:root{
+  --vertical-slide-width: 80px;
+  --vertical-slide-height: 90px;
+  --vertical-slide-margin-bottom: 8px;
+  --space-between-info-content: 20px;
+  @media(max-width: 1300px) {
+    --vertical-slide-width: 70px;
+  }
+  @media(max-width: 1200px) {
+    --vertical-slide-width: 65px;
+    --space-between-info-content: 16px;
+  }
+}
+.pd-text-wrapper p{
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 140%;
+  color: #465367;
+  letter-spacing: -0.4px;
+  @media(max-width: 768px){
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+.product-details-pw {
+  box-sizing: border-box;
+  padding-right: 40px;
+
+  @media(max-width: 768px) {
+    padding-right: 0px;
+  }
+  *:focus-visible {
+    outline: none;
+    outline-offset: unset;
+    box-shadow: unset;
+  }
+}
+.pd-bcrmd {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 10px;
+    a,span{
+      display: block;
+      color: #C7C7C7;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      text-transform: capitalize;
+      text-decoration: none;
+    }
+  }
+
+  .main-pd-wrapper {
+    display: grid;
+    grid-template-columns: minmax(0px, 1.2fr) minmax(0px, 1fr);
+    grid-column-gap: 40px;
+    margin-top: 15px;
+
+    @media(max-width: 768px) {
+      grid-template-columns: minmax(0px, 1fr);
+      grid-column-gap: 50px;
+    }
+  }
+  .pd-media-thumb-gellary {
+    position: relative;
+  }
+  pd-gellary.direction-horizontal {
+    .pd-scroll-swiper {
+      max-width: 100vw;
+      overflow: hidden;
+      margin-top: 17px;
+      
+      .swiper-slide{
+        font-size: 0;
+        line-height: 0;
+        box-sizing: border-box;
+        border: 1px solid #dccdcd54;
+        cursor: pointer;
+        
+        img{
+          width: 100%;
+          max-width: 150px;
+          height: auto;
+          object-fit: cover;
+          aspect-ratio: 1;
+        }
+      }
+      .swiper-slide-thumb-active{
+        border: 1px solid #ea094b;
+      }
+    }
+  }
+  pd-gellary.direction-vertical {
+    @media(min-width: 769px) {
+      position: relative;
+      display: grid;
+      grid-auto-columns: minmax(0px, var(--vertical-slide-width)) minmax(0px, 1fr);
+      grid-column-gap: 12px;
+      .pd-media-thumb-gellary {
+        grid-column: 2/3;
+        grid-row: 1/2;
+      }
+      .pd-media-scroll-gellary{
+        /* position: absolute;
+        left: 8px;
+        top: 8px; */
+        grid-column: 1/2;
+        grid-row: 1/2;
+        
+        .pd-scroll-swiper {
+          height: calc(100vh - 160px);
+          .swiper-slide {
+            width: var(--vertical-slide-width);
+            height: var(--vertical-slide-height);
+            box-sizing: border-box;
+            border: 1px solid #d8caca69;
+            margin-bottom: var(--vertical-slide-margin-bottom);
+            img{
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+          .swiper-slide-thumb-active{
+            border: 1px solid #ea094b;
+          }
+        }
+      }
+    }
+    
+    @media(max-width: 768px) {
+      .pd-media-scroll-gellary {
+        box-sizing: border-box;
+        padding-inline: var(--page-width-padding-mobile);
+      }
+      .pd-scroll-swiper {
+        max-width: 100vw;
+        overflow: hidden;
+        margin-top: 10px;
+        
+        .swiper-slide{
+          font-size: 0;
+          line-height: 0;
+          box-sizing: border-box;
+          border: 1px solid #dccdcd54;
+          cursor: pointer;
+          
+          img{
+            width: 100%;
+            max-width: 150px;
+            height: auto;
+            object-fit: cover;
+            aspect-ratio: 1;
+          }
+        }
+        .swiper-slide-thumb-active{
+          border: 1px solid #ea094b;
+        }
+      }
+    }
+  }
+
+  .pd-thumb-swiper {
+    max-width: 100vw;
+    overflow: hidden;
+    width: 100%;
+    .swiper-slide{
+      font-size: 0;
+      line-height: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+
+      img, video{
+        @media(min-width: 769px) {
+          max-height: 80vh;
+          width: auto;
+          width: 100%;
+          object-fit: cover;
+        }
+        @media(max-width: 768px) {
+          width: 100%;
+          height: auto;
+          object-fit: cover
+        }
+      }
+    }
+    .swiper-pagination {
+      --swiper-pagination-bullet-horizontal-gap: 2px;
+      --swiper-pagination-bottom: 16px;
+
+      background: rgba(234, 9, 75, 0.05);
+      left: 50%;
+      transform: translateX(-50%);
+      width: max-content;
+      box-sizing: border-box;
+      padding-inline: 10px;
+      padding-block: 5px;
+      display: flex;
+      height: 17px;
+      align-items: center;
+
+      .swiper-pagination-bullet{
+        --swiper-pagination-bullet-width: 7px;
+        --swiper-pagination-bullet-height: 4px;
+        border-radius: 0px;
+      }
+      .swiper-pagination-bullet-active{
+        --swiper-pagination-bullet-width: 12px;
+      }
+      @media(max-width: 768px) {
+        --swiper-pagination-bottom: 8px;
+        left: 16px;
+      }
+    }
+    .swiper-button-prev,
+    .swiper-button-next{
+      display: flex;
+      width: 45px;
+      height: 45px;
+      background: #ffffff26;
+      svg{
+        path{
+          fill: #1a1919;
+        }
+      }
+      @media(max-width: 768px) {
+        --swiper-navigation-sides-offset: 0px;
+        width: 40px;
+        height: 40px;
+        svg{
+          width: 7px;
+        }
+      }
+    }
+    .swiper-button-next:after, 
+    .swiper-button-prev:after {
+      content: &quot;&quot;;
+    }
+  }
+  
+
+  .pd-badge {
+    position: absolute;
+    right: 7px;
+    top: 7px;
+    width: max-content;
+    height: max-content;
+    z-index: 1;
+    display: flex;
+
+    button{
+      background: #EA094B;
+      color: #FFF;
+      font-size: 14px;
+      line-height: normal;
+      text-transform: capitalize;
+      border: none;
+      box-sizing: border-box;
+      padding: 5px 20px;
+      letter-spacing: 0.6px;
+    }
+  }
+
+  .pd-info-wrapper,
+  .pd-media-wrapper{
+    @media(min-width: 769px) {
+      position: sticky;
+      top: 0;
+      height: max-content;
+    }
+  }
+
+
+  .pd-info-wrapper {
+    padding-top: 45px;
+    box-sizing: border-box;
+    @media(max-width: 768px) {
+      box-sizing: border-box;
+      padding-inline: var(--page-width-padding-mobile);
+      padding-top: 32px;
+    }
+  }
+
+  .pd-product-title {
+    color: var(--Color-Text-main, #111827);
+    font-size: 40px;
+    font-style: normal;
+    line-height: 44px;
+    text-transform: uppercase;
+    margin: 0 0 var(--space-between-info-content) 0;
+    @media(max-width: 768px) {
+      font-size: 24px;
+      letter-spacing: 0px;
+      line-height: 1.2;
+    }
+  }
+  .pd-product-price {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--space-between-info-content);
+    gap: 20px;
+    h2{
+      margin: 0;
+      color: var(--Primary-Color, #E60000);
+      font-size: 32px;
+      font-style: normal;
+      line-height: 28px;
+    }
+    h3{
+      margin: 0;
+      color: var(--Content-Base-primary, #111827);
+      font-size: 24px;
+      font-style: normal;
+      line-height: 24px;
+      text-decoration-line: line-through;
+    }
+  }
+  .pd-product-stock {
+    color: #000;
+    font-size: 14px;
+    font-style: normal;
+    line-height: normal;
+    text-transform: capitalize;
+    margin: 33px 0 0 32px;
+    position: relative;
+  }
+  .pd-product-stock:after{
+    content: &quot;&quot;;
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #F5D8CC;
+    left: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .pd-app-block {
+    margin-bottom: var(--space-between-info-content);
+    .skio-group-container--available {
+      box-shadow: unset;
+      border-radius: 0;
+      border: 1px solid #E6E6E6;
+      background: #F5F5F5;
+      color: #272727;
+      font-size: 18px;
+    }
+  }
+
+  .pd-info-list-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 24px;
+
+    .pd-info-list {
+      display: grid;
+      grid-template-columns: 22px minmax(0px, 1fr);
+      grid-column-gap: 21px;
+      align-items: center;
+      .ino-list-icon{
+        display: flex;
+        align-items: center;
+        img{
+          width: 22px;
+          height: auto;
+          aspect-ratio: 1;
+          object-fit: cover;
+        }
+      }
+      .ino-list-text {
+        .info-list-title{
+          color: #000;
+          font-size: 14px;
+          font-style: normal;
+          line-height: normal;
+          margin: 0 0 5px 0;
+        }
+        .info-list-subtext{
+          color: #ABABAB;
+          font-size: 10px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          p:first-child{
+            margin: 0;
+          }
+        }
+
+      }
+    }
+  }
+
+  .pd-check-list-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: var(--space-between-info-content);
+    .pd-check-list {
+      display: grid;
+      grid-template-columns: 18px minmax(0px, 1fr);
+      grid-column-gap: 12px;
+      align-items: center;
+      img{
+        width: 18px;
+        height: auto;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+      }
+      p{
+        color: var(--Color-Text-Subtle, #6B7280);
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px;
+        letter-spacing: -0.42px;
+        margin: 0;
+      }
+    }
+  }
+
+  .pd-form-wrapper{
+    margin-bottom: var(--space-between-info-content);
+    .pd-add-to-card{
+      border: 0;
+      background: #D41317;
+      color: #FFF;
+      text-align: center;
+      font-size: 20px;
+      line-height: 1;
+      text-transform: uppercase;
+      box-sizing: border-box;
+      width: 100%;
+      cursor: pointer;
+      display: block;
+      text-decoration: none;
+      height: 100%;
+      span{
+        font-weight: 400;
+      }
+      @media(max-width: 768px) {
+        font-size: 20px;
+      }
+    }
+    .pd-add-to-card[disabled] {
+      cursor: no-drop;
+      opacity: .8;
+    }
+    .pd-atc-button-wrapper {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-column-gap: 16px;
+      grid-template-rows: 48px;
+      align-items: center;
+      @media(max-width: 768px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 40px 40px;
+        grid-row-gap: 12px;
+      }
+    }
+    quantity-selector {
+      display: grid;
+      grid-template-columns: minmax(0px, 36px) minmax(0px, 80px) minmax(0px, 36px);
+      grid-column-gap: 0px;
+      align-items: center;
+      justify-items: center;
+      border-radius: 4px;
+      border: 1px solid #EBECEF;
+      background: #FFF;
+      height: 100%;
+
+      @media(max-width: 768px) {
+        grid-template-columns: minmax(0px, 36px) minmax(0px, 1fr) minmax(0px, 36px);
+      }
+      
+      button {
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+      }
+      input{
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        border-block: none;
+        border-inline: 1px solid #EBECEF;
+      }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      input[type=number] {
+        -moz-appearance: textfield;
+      }
+    }
+  }
+
+  .pd-variant-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 17px;
+    margin-bottom: var(--space-between-info-content);
+
+    .pd-variant-optioin-name {
+      color: #000;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      text-transform: capitalize;
+      margin: 0 0 10px 0;
+      display: none;
+    }
+
+    .pd-color-variant{
+      .pd-variant-field {
+        display: flex;
+        gap: 22px;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        padding: 0 0 6px 7px;
+      }
+      input + label{
+        width: 25px;
+        height: 25px;
+        border: 2px solid #000;
+        border-radius: 50%;
+        position: relative;
+        font-size: 0px;
+        box-shadow: 0px 0px 0px 2px #fff, 0px 0px 0px 3px #fff, 0px 0px 0px 5px #FFF, 0px 0px 0px 6px #000;
+      }
+      input:checked + label{
+        box-shadow: 0px 0px 0px 2px #fff, 0px 0px 0px 3px #000, 0px 0px 0px 5px #fff, 0px 0px 0px 6px #000;
+      }
+      input.disabled + label:after{
+        position: absolute;
+        content: &quot;&quot;;
+        width: 178%;
+        height: 1px;
+        top: 50%;
+        left: -8px;
+        transform: translateY(-50%) rotate(-45deg);
+        background: #000;
+        z-index: 1;
+        transform-origin: center;
+      }
+    }
+
+    .pd-others-variant{
+      .pd-variant-field {
+        display: flex;
+        gap: 10px;
+      }
+      input + label{
+        width: max-content;
+        border: 1px solid #000;
+        overflow: hidden;
+        padding: 8px 10px;
+        font-size: 14px;
+        line-height: 1;
+        position: relative;
+      }
+      input:checked + label{
+        border-color: #d41317;
+        background: #d41317;
+        color: white;
+        font-weight: 400;
+      }
+      input.disabled + label:after{
+        position: absolute;
+        content: &#x27;&#x27;;
+        width: 100%;
+        height: 1px;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%) rotate(-45deg);
+        background: #000;
+        z-index: 1;
+        transform-origin: center;
+      }
+      input.disabled:checked + label{
+        background: #ea094ba3
+      }
+    }
+
+    .pd-variant-value{
+      display: flex;
+
+      input{
+        display: none;
+      }
+      label{
+        cursor: pointer;
+        display: inline-block;
+        box-sizing: border-box;
+      }
+    }
+
+    @media(max-width: 768px) {
+      margin-top: 17px;
+    }
+  }
+
+  .pd-tags-wrapper{
+    margin-bottom: var(--space-between-info-content);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    @media(max-width: 768px) {
+      margin-top: 0px;
+    }
+    button{
+      color: var(--Primary-Color, #E60000);
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      height: 31px;
+      line-height: 24px;
+      text-transform: uppercase;
+      border: 1px solid var(--Primary-Color, #E60000);
+      background: transparent;
+      padding-block: 4px;
+      padding-inline: 8px;
+      margin: 0;
+      @media(max-width: 768px) {
+        font-size: 16px;
+        height: 22px;
+        line-height: 16px;
+        padding-inline: 6px;
+      }
+    }
+  }
+
+  .pd-intensity-roast {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-between-info-content);
+    .ir-item{
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      svg{
+        width: 16px;
+      }
+      h2{
+        color: #61738F;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        margin: 0;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        span{
+          color: #465367;
+        }
+      }
+    }
+  }
+
+.pd-collections {
+  margin-bottom: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  h3{
+    color: var(--Color-Text-main, #111827);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    margin: 0;
+  }
+  a{
+    color: var(--Color-Text-Subtle, #6B7280);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; 
+    letter-spacing: -0.28px;
+    text-decoration-line: underline;
+    text-transform: capitalize;
+  }
+}</code></pre><h1 id="4f1f8163-4e4a-4dee-9c38-1741c9223f12" class="">JS</h1><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="a2803da5-a75c-4d30-998b-0880c8a5d65c" class="code"><code class="language-JavaScript">
+class ProductDetailsGellary extends HTMLElement{
+  constructor() {
+    super()
+    this.scrollSliderSelector = `.${this.dataset.scrollSelector}`
+    this.thumbSliderSelector = `.${this.dataset.thumbSelector}`
+    
+    this.thumbSlideType = this.dataset.slideType
+    this.scrollSliderDirection = this.dataset.direction
+    this.verticalSlideMarginBottom = 8
+    this.isThumbSlider = this.dataset.isThumb
+
+    this.scrollSlider = null
+    this.thumbSlider = null
+
+    this.initScrollSlider()
+    this.initThumbSlider()
+
+    // if(this.scrollSliderDirection===&#x27;vertical&#x27; &amp;&amp; screen.width &gt; 768 &amp;&amp; this.isThumbSlider === &#x27;true&#x27;) this.querySelector(this.scrollSliderSelector).style.height = this.querySelector(this.thumbSliderSelector).clientHeight - 16 + &#x27;px&#x27;
+  }
+
+  initScrollSlider() {
+    this.scrollSlider = new Swiper(this.scrollSliderSelector, {
+      slidesPerView:  screen.width &gt; 768 ? this.scrollSliderDirection===&#x27;vertical&#x27; ? &#x27;auto&#x27;: 6 : 6,
+      spaceBetween: this.verticalSlideMarginBottom,
+      direction: screen.width &gt; 768 ? this.scrollSliderDirection : &#x27;horizontal&#x27;
+    })
+  }
+
+  initThumbSlider() {
+    this.thumbSlider = new Swiper(this.thumbSliderSelector, {
+      slidesPerView: 1,
+      autoHeight: true,
+      effect: this.thumbSlideType,
+      pagination: {
+       el: &#x27;.swiper-pagination&#x27;,
+       clickable: true
+      },
+      navigation: {
+        nextEl: &#x27;.swiper-button-next&#x27;,
+        prevEl: &#x27;.swiper-button-prev&#x27;,
+      },
+      thumbs: {
+       swiper: this.isThumbSlider === &#x27;true&#x27; ? this.scrollSlider : &#x27;&#x27;,
+      },
+      breakpoints: {
+        100: {
+          autoHeight: true
+        },
+        769: {
+          autoHeight: false
+        }
+      }
+    })
+  }
+}
+customElements.define(&quot;pd-gellary&quot;, ProductDetailsGellary)
+
+
+class QuantitySelector extends HTMLElement{
+  constructor() {
+    super()
+    this.querySelectorAll(&quot;button&quot;).forEach(btn =&gt; btn.addEventListener(&quot;click&quot;, this.handleQtyButton.bind(this)))
+    this.qty_input = this.querySelector(&quot;input&quot;)
+  }
+
+  handleQtyButton(e) {
+    let value = parseInt(e.currentTarget.dataset.value),
+        current_value = parseInt(this.qty_input.value) + value
+    current_value &lt; 1 ? current_value = 1 : current_value
+    this.qty_input.value = current_value
+  }
+}
+customElements.define(&quot;quantity-selector&quot;, QuantitySelector)
+
+
+class ProductVariant extends HTMLElement{
+  constructor() {
+    super()
+    this.sectionId = this.dataset.sectionId
+    this.productId = this.dataset.productId
+    this.swiperClass = `.swiper-${this.productId}-${this.sectionId}`
+    this.section = document.querySelector(`#shopify-section-${this.sectionId}`)
+
+    this.getVariantData()
+    this.getAllSlide()
+
+    this.sliderElement = this.section.querySelector(&quot;pd-gellary&quot;)
+    
+    this.form = this.querySelector(&quot;form&quot;)
+    this.form?.addEventListener(&quot;input&quot;, this.handleInputEvents.bind(this))
+  }
+
+  getAllSlide() {
+    this.slidesEl = document.querySelectorAll(&quot;.pd-thumb-swiper .swiper-slide&quot;)
+    this.slidesArr = []
+    this.slidesEl.forEach(slide =&gt; {
+       this.slidesArr = [...this.slidesArr, {
+         index: parseInt(slide.dataset.index),
+         src: slide.dataset.src
+       }]
+    })
+  }
+  
+  getVariantData() {
+    this.variantData = this.variantData || JSON.parse(this.querySelector(&#x27;[type=&quot;application/json&quot;]&#x27;)?.textContent);
+  }
+  
+  handleInputEvents(e) {
+    this.updateOptions()
+    this.updateMasterId()
+    this.updateURL()
+    this.renderProductInfo()
+    this.updateSlide()
+  }
+
+  updateOptions() {
+    this.options = Array.from(this.querySelectorAll(&#x27;.pd-variant-field&#x27;), (element) =&gt; {
+        return Array.from(element.querySelectorAll(&#x27;input&#x27;)).find((radio) =&gt; radio.checked)?.value;
+    });
+  }
+
+  updateMasterId() {
+    this.currentVariant = this.variantData.find((variant) =&gt; {
+      return !variant.options
+        .map((option, index) =&gt; {
+          return this.options[index] === option;
+        })
+        .includes(false);
+    });
+  }
+  
+  updateURL() {
+    if (!this.currentVariant || this.dataset.updateUrl === &#x27;false&#x27;) return;
+    window.history.replaceState({}, &#x27;&#x27;, `${this.dataset.url}?variant=${this.currentVariant.id}`);
+  }
+  
+  updateSlide() {
+    if(this.currentVariant &amp;&amp; this.currentVariant.featured_image) {
+      let variant = this.slidesArr.find(item =&gt; this.currentVariant.featured_image.src.includes(item.src))
+      // let variant = this.slidesArr.find(item =&gt; item.src ===  this.currentVariant.featured_image.src)
+      if(variant) this.sliderElement.thumbSlider.slideTo(variant.index)
+    }
+  }
+  
+  renderProductInfo() {
+    const requestedVariantId = this.currentVariant.id;  
+    fetch(
+      `${this.dataset.url}?variant=${requestedVariantId}&amp;section_id=${this.sectionId}`
+    )
+    .then((response) =&gt; response.text())
+    .then((responseText) =&gt; {
+      if (this.currentVariant.id !== requestedVariantId || this.section === null) return;
+      
+      const html = new DOMParser().parseFromString(responseText, &#x27;text/html&#x27;);
+      if(this.section.querySelector(&quot;.pd-variant-wrapper&quot;)) this.section.querySelector(&quot;.pd-variant-wrapper&quot;).innerHTML = html.querySelector(&quot;.pd-variant-wrapper&quot;).innerHTML
+      if(this.section.querySelector(&quot;.pd-product-price&quot;)) this.section.querySelector(&quot;.pd-product-price&quot;).innerHTML = html.querySelector(&quot;.pd-product-price&quot;).innerHTML
+      if(this.section.querySelector(&quot;.pd-product-stock&quot;)) this.section.querySelector(&quot;.pd-product-stock&quot;).innerHTML = html.querySelector(&quot;.pd-product-stock&quot;).innerHTML
+      if(this.section.querySelector(&quot;.pd-current-variant-id&quot;)) this.section.querySelector(&quot;.pd-current-variant-id&quot;).innerHTML = html.querySelector(&quot;.pd-current-variant-id&quot;).innerHTML
+      if(this.section.querySelector(&quot;.pd-atc-button-wrapper&quot;)) this.section.querySelector(&quot;.pd-atc-button-wrapper&quot;).innerHTML = html.querySelector(&quot;.pd-atc-button-wrapper&quot;).innerHTML
+      if(this.currentVariant.available) {
+        if(this.section.querySelector(&quot;pd-form&quot;)) this.section.querySelector(&quot;pd-form&quot;).removeAttribute(&#x27;hidden&#x27;)
+        if(this.section.querySelector(&quot;.notify-stock-button-x&quot;)) this.section.querySelector(&quot;.notify-stock-button-x&quot;).setAttribute(&#x27;hidden&#x27;, true)
+      } else {
+        if(this.section.querySelector(&quot;pd-form&quot;)) this.section.querySelector(&quot;pd-form&quot;).setAttribute(&#x27;hidden&#x27;, true)
+        if(this.section.querySelector(&quot;.notify-stock-button-x&quot;)) this.section.querySelector(&quot;.notify-stock-button-x&quot;).removeAttribute(&#x27;hidden&#x27;)
+      }
+    })
+    .catch(err =&gt; console.log(err))
+    .finally(() =&gt; {
+      // initQuickAddProduct()
+    })
+  }
+}
+
+customElements.define(&quot;pd-variant&quot;, ProductVariant)
+</code></pre><h1 id="93cef73b-9d00-4a34-9c92-ddfd0b98a252" class="">Swiper Icons</h1><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="4972709c-dd49-4eb2-95fc-02660a44e7b0" class="code"><code class="language-JavaScript">{% case name %}
+  {% when &#x27;prev&#x27; %}
+    &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;9&quot; height=&quot;16&quot; viewBox=&quot;0 0 9 16&quot; fill=&quot;none&quot;&gt;
+      &lt;path d=&quot;M0.292893 7.29289C-0.097631 7.68342 -0.0976309 8.31658 0.292893 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538407 7.04738 0.538407 6.65685 0.928932L0.292893 7.29289ZM2 7L1 7L1 9L2 9L2 7Z&quot; fill=&quot;#EA094B&quot;/&gt;
+    &lt;/svg&gt;
+  {% when &#x27;next&#x27; %}
+    &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;9&quot; height=&quot;16&quot; viewBox=&quot;0 0 9 16&quot; fill=&quot;none&quot;&gt;
+      &lt;path d=&quot;M8.70711 8.70711C9.09763 8.31658 9.09763 7.68342 8.70711 7.29289L2.34315 0.928932C1.95262 0.538408 1.31946 0.538408 0.928932 0.928932C0.538408 1.31946 0.538408 1.95262 0.928932 2.34315L6.58579 8L0.928932 13.6569C0.538408 14.0474 0.538408 14.6805 0.928932 15.0711C1.31946 15.4616 1.95262 15.4616 2.34315 15.0711L8.70711 8.70711ZM7 9H8V7H7V9Z&quot; fill=&quot;#EA094B&quot;/&gt;
+    &lt;/svg&gt;
+{% endcase %}
+</code></pre><h1 id="1b2738c8-2e74-4995-a0cc-ab1f0c24c3ab" class="">product-details-tab</h1><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="72f01402-ccd4-428a-ab52-66eb73d4eb6c" class="code"><code class="language-JavaScript">&lt;style&gt;
+  .pd-tab-accordion-container{
+    @media(min-width: 769px) {
+      .pd-tab-accordion-desktop{
+        display: block;
+      }
+      .pd-tab-accordion-mobile{
+        display: none;
+      }
+    }
+    @media(max-width: 768px) {
+      .pd-tab-accordion-desktop{
+        display: none;
+      }
+      .pd-tab-accordion-mobile{
+        display: block;
+      }
+    }
+
+    margin-top: 24px;
+    .pd-tab-summery {
+      display: grid;
+      grid-template-columns: 1fr 17px;
+      grid-column-gap: 30px;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 16px 12px 16px 12px;
+      border-top: 1px solid #D9D9D9;
+      cursor: pointer;
+
+      h2{
+        margin: 0;
+        color: #000;
+        font-size: 14px;
+        font-style: normal;
+        line-height: normal;
+        text-transform: uppercase;
+      }
+      .pd-tab-icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        .plus{
+          position: absolute;
+          transition: .4s;
+        }
+        .minus{
+          position: absolute;
+          visibility: hidden;
+          transition: .4s;
+        }
+      }
+
+      @media(max-width: 768px) {
+        grid-template-columns: 1fr 14px;
+        grid-column-gap: 10px;
+        padding: 12px 8px 12px 8px;
+      }
+    }
+    .pd-tabs-wrapper.active{
+      .pd-tab-icons {
+        .plus{
+          visibility: hidden;
+          transition: .4s;
+          transform: rotate(90deg);
+        }
+        .minus{
+          visibility: visible;
+          transition: .4s;
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    .pd-tab-details {
+      box-sizing: border-box;
+      padding-inline: 12px;
+      height: 0px;
+      overflow: hidden;
+
+      .pdt-richtext,
+      .description,
+      .pdt-page{
+        color: #000;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        @media(max-width: 768px) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+&lt;/style&gt;
+
+&lt;div class=&quot;pd-tab-accordion-container&quot;&gt;
+  &lt;div class=&quot;pd-tab-accordion-{{ class }}&quot;&gt;
+    {% for block in tabs %}
+      &lt;div class=&quot;pd-tabs-wrapper&quot;&gt;
+        &lt;div class=&quot;pd-tab-summery&quot;&gt;
+          &lt;h2&gt;{{ block.settings.heading }}&lt;/h2&gt;
+          &lt;div class=&quot;pd-tab-icons&quot;&gt;
+            {% render &#x27;tab-icons&#x27;, name: &#x27;plus&#x27; %}
+            {% render &#x27;tab-icons&#x27;, name: &#x27;minus&#x27; %}
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;pd-tab-details&quot;&gt;
+          {% case block.settings.tab_content %}
+            {% when &#x27;richtext&#x27; %}
+              &lt;div class=&quot;pdt-richtext&quot;&gt;
+                {{ block.settings.richtext }}
+              &lt;/div&gt;
+            {% when &#x27;page&#x27; %}
+              &lt;div class=&quot;pdt-page&quot;&gt;
+                {{ block.settings.page.content }}
+              &lt;/div&gt;
+            {% when &#x27;description&#x27; %}
+              &lt;div class=&quot;pdt-description&quot;&gt;
+                {{ product.description }}
+              &lt;/div&gt;
+            {% when &#x27;blog&#x27; %}
+              &lt;a href=&quot;{{ block.settings.article.url }}&quot; class=&quot;pdt-blog&quot;&gt;
+                {% unless block.settings.article.image == blank %}
+                  {{
+                    block.settings.article.image
+                    | image_url: width: block.settings.article.image.width, crop: &#x27;center&#x27;
+                    | image_tag
+                  }}
+                {% endunless %}
+                {{ block.settings.article.content }}
+              &lt;/a&gt;
+          {% endcase %}
+        &lt;/div&gt;
+      &lt;/div&gt;
+    {% endfor %}
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+  document.addEventListener(&quot;DOMContentLoaded&quot;, e =&gt; {
+    new Accordion(&#x27;.pd-tab-accordion-{{ class }}&#x27;, {
+      closeAll: true,
+      initOpenIndex: 1,
+      duration: 500,
+      activeClass: &#x27;active&#x27;
+    })
+  })
+&lt;/script&gt;
+</code></pre><h1 id="1ad5c036-b2d3-48c4-a40d-b36eeeb7d56a" class="">Product Form Restructured From Kimbo Including Dynamic Buy Button</h1><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="ea71864c-5b55-4c9f-9296-98d3b736c5c5" class="code"><code class="language-JavaScript">              &lt;pd-form
+                {% unless product.selected_or_first_available_variant.available %}
+                  hidden
+                {% endunless %}
+              &gt;
+                &lt;div class=&quot;pd-form-wrapper&quot;&gt;
+                  {% form &#x27;product&#x27;, product, id: formId %}
+                    &lt;div class=&quot;pd-current-variant-id&quot;&gt;
+                      &lt;input type=&quot;hidden&quot; name=&quot;id&quot; value=&quot;{{ product.selected_or_first_available_variant.id }}&quot;&gt;
+                    &lt;/div&gt;
+                    {% if block.settings.active_appstle_subscription %}
+                      &lt;span
+                        class=&quot;appstle_stand_alone_selector&quot;
+                        data-product-handle=&quot;{{ product.handle }}&quot;
+                        data-product-data=&quot;&quot;
+                        style=&quot;display:none;&quot;
+                      &gt;&lt;/span&gt;
+                    {% endif %}
+                    &lt;div class=&quot;pd-atc-button-wrapper&quot;&gt;
+                      &lt;quantity-selector&gt;
+                        &lt;button type=&quot;button&quot; data-value=&quot;-1&quot;&gt;{% render &#x27;quantity-icons&#x27;, name: &#x27;minus&#x27; %}&lt;/button&gt;
+                        &lt;input type=&quot;number&quot; name=&quot;quantity&quot; value=&quot;1&quot; min=&quot;1&quot; max=&quot;20&quot;&gt;
+                        &lt;button type=&quot;button&quot; data-value=&quot;1&quot;&gt;{% render &#x27;quantity-icons&#x27;, name: &#x27;plus&#x27; %}&lt;/button&gt;
+                      &lt;/quantity-selector&gt;
+                      &lt;button
+                        title=&quot;Add To Cart - {{ product.title }}-{{ product.selected_or_first_available_variant.price | money }}&quot;
+                        aria-label=&quot;Add to Cart&quot;
+                        type=&quot;submit&quot;
+                        class=&quot;pd-add-to-card product-quick-add&quot;
+                        {% unless product.selected_or_first_available_variant.available %}
+                          disabled
+                        {% endunless %}
+                      &gt;
+                        {% if product.selected_or_first_available_variant.available %}
+                          Add To Cart
+                        {% else %}
+                          SOLD OUT
+                        {% endif %}
+                      &lt;/button&gt;
+                      {% if product.selected_or_first_available_variant.available %}
+                        {{ form | payment_button }}
+                      {% endif %}
+                      {{ form | payment_terms }}
+                    &lt;/div&gt;
+                  {% endform %}
+                &lt;/div&gt;
+              &lt;/pd-form&gt;</code></pre><p id="acf52df3-6d07-421b-b904-86319b800ada" class="">
+</p><p id="ad299c10-f181-4f9a-b95d-5961e8f6c066" class="">
+</p><h1 id="edf9ae5d-6da7-4139-8570-8c9b5e1eb269" class="">InCase it is another theme except Dawn Add below Code  in global js for tab </h1><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="d0d076ce-1ec2-4b8a-97fa-920fdaa2d884" class="code"><code class="language-JavaScript">// Accordion
+class Accordion {
+  constructor(accordion = &#x27;&#x27;, newOptions) {
+      let options = {
+          initOpenIndex: 1,
+          closeAll: false,
+          duration: 400,
+          activeClass: &#x27;active&#x27;
+      }
+      this.options = { ...options, ...newOptions }
+      this.handleValidAccordions(accordion)
+  }
+
+  handleValidAccordions(accordion) {
+      if (accordion.length &gt; 1)
+          this.accordion = document.querySelector(accordion)
+      else return
+
+      this.setIconsTransition()
+      this.tabItemsArray = Array.from(this.accordion.children);
+      
+      if(this.tabItemsArray.length &gt; 0) {
+          if(this.options.initOpenIndex &gt; this.tabItemsArray.length) this.options.initOpenIndex = this.tabItemsArray.length
+      }
+
+      this.tabItemsArray?.forEach((tabElement, index, arr) =&gt; {
+          let item = this.handleAccordionItems(tabElement)
+          this.contentInitialHeight(item[1])
+          if (index === this.options.initOpenIndex - 1) this.InitialOpen(arr[index])
+          this.handleAccordion(item, index)
+      })
+  }
+
+  setIconsTransition() {
+      if (this.accordion?.querySelectorAll(&quot;svg&quot;)) {
+          this.accordion?.querySelectorAll(&quot;svg&quot;).forEach(svg =&gt; svg.style.transition = `${this.options.duration}ms`)
+      }
+  }
+
+  contentInitialHeight(content) {
+      content.style.height = &quot;0px&quot;
+      content.style.overflow = &#x27;hidden&#x27;
+  }
+
+  handleAccordion(item, index) {
+      item[0].addEventListener(&#x27;click&#x27;, e =&gt; {
+          this.toggle(item)
+          this.currentIndex = index
+          if (this.options.closeAll) this.closeAll()
+      })
+  }
+
+  handleAccordionItems(accordion) {
+      if (accordion.children.length == 2) {
+          let title = accordion.children[0]
+          let content = accordion.children[1]
+          return [title, content]
+      }
+  }
+
+  InitialOpen(accordion) {
+      let item = this.handleAccordionItems(accordion)
+      this.setActiveClass(item)
+      this.open(item)
+  }
+
+  open(item) {
+      let content = item[1]
+      this.transition(content)
+      content.style.height = `${content.scrollHeight}px`
+  }
+
+  close(item) {
+      let content = item[1]
+      content.style.height = `${0}px`
+  }
+
+  toggle(item) {
+      let content = item[1]
+      let height = content.clientHeight
+      this.transition(content)
+      height == 0 ? (this.setActiveClass(item), content.style.height = `${content.scrollHeight}px`) : (this.removeActiveClass(item), content.style.height = &quot;0px&quot;)
+  }
+
+  transition(el) {
+      el.style.transition = `all ${this.options.duration}ms ease`
+  }
+
+  closeAll() {
+      this.tabItemsArray?.forEach((accordion, index, arr) =&gt; {
+          let item = this.handleAccordionItems(accordion)
+          if (index !== this.currentIndex) (this.close(item), this.removeActiveClass(item))
+      })
+  }
+
+  setActiveClass(item) {
+      item[1].parentElement.classList.add(this.options.activeClass)
+  }
+  removeActiveClass(item) {
+      item[1].parentElement.classList.remove(this.options.activeClass)
+  }
+}</code></pre><p id="11dbc280-32a8-8096-92bf-c887e61a851e" class="">
+</p><h1 id="11dbc280-32a8-807a-a54a-e2b65d9782f2" class="">tab-icons</h1><p id="11dbc280-32a8-8082-8762-d0f9c8100a06" class=""><br/><br/></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11dbc280-32a8-809f-954c-f0c8ba9c8c0a" class="code"><code class="language-JavaScript">{% case name %}
+  {% when &#x27;plus&#x27; %}
+    &lt;svg
+      class=&quot;plus {{ class }}&quot;
+      xmlns=&quot;http://www.w3.org/2000/svg&quot;
+      width=&quot;24&quot;
+      height=&quot;24&quot;
+      viewBox=&quot;0 0 24 24&quot;
+      fill=&quot;none&quot;
+    &gt;
+      &lt;path d=&quot;M11.9998 4.79999L11.9998 19.2M19.1998 12L4.7998 12&quot; stroke=&quot;black&quot; stroke-linecap=&quot;round&quot;/&gt;
+    &lt;/svg&gt;
+
+  {% when &#x27;minus&#x27; %}
+    &lt;svg
+      class=&quot;minus {{ class }}&quot;
+      xmlns=&quot;http://www.w3.org/2000/svg&quot;
+      width=&quot;24&quot;
+      height=&quot;24&quot;
+      viewBox=&quot;0 0 24 24&quot;
+      fill=&quot;none&quot;
+    &gt;
+      &lt;path d=&quot;M19.1998 12L4.7998 12&quot; stroke=&quot;black&quot; stroke-linecap=&quot;round&quot;/&gt;
+    &lt;/svg&gt;
+{% endcase %}
+</code></pre><h1 id="11dbc280-32a8-8097-bd77-c5fffdb133c4" class="">quantity icons</h1><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="11dbc280-32a8-8027-ac4e-ded466a932a4" class="code"><code class="language-JavaScript">{% case name %}
+  {% when &#x27;plus&#x27; %}
+    &lt;svg
+      class=&quot;plus {{ class }}&quot;
+      xmlns=&quot;http://www.w3.org/2000/svg&quot;
+      width=&quot;20&quot;
+      height=&quot;20&quot;
+      viewBox=&quot;0 0 20 20&quot;
+      fill=&quot;none&quot;
+    &gt;
+      &lt;path fill-rule=&quot;evenodd&quot; clip-rule=&quot;evenodd&quot; d=&quot;M10 5C10.5523 5 11 5.44772 11 6V9L14 9C14.5523 9 15 9.44772 15 10C15 10.5523 14.5523 11 14 11H11V14C11 14.5523 10.5523 15 10 15C9.44771 15 9 14.5523 9 14V11H6C5.44772 11 5 10.5523 5 10C5 9.44771 5.44772 9 6 9L9 9V6C9 5.44772 9.44771 5 10 5Z&quot; fill=&quot;#374151&quot;/&gt;
+    &lt;/svg&gt;
+  {% when &#x27;minus&#x27; %}
+    &lt;svg
+      class=&quot;minus {{ class }}&quot;
+      xmlns=&quot;http://www.w3.org/2000/svg&quot;
+      width=&quot;20&quot;
+      height=&quot;20&quot;
+      viewBox=&quot;0 0 20 20&quot;
+      fill=&quot;none&quot;
+    &gt;
+      &lt;path fill-rule=&quot;evenodd&quot; clip-rule=&quot;evenodd&quot; d=&quot;M5 10C5 9.44772 5.44772 9 6 9L14 9C14.5523 9 15 9.44772 15 10C15 10.5523 14.5523 11 14 11L6 11C5.44772 11 5 10.5523 5 10Z&quot; fill=&quot;#374151&quot;/&gt;
+    &lt;/svg&gt;
+{% endcase %}
+</code></pre></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

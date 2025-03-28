@@ -1,0 +1,2545 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Gelico Header</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="54eb8366-a16b-4d2b-af1d-c59e81675d75" class="page sans"><header><h1 class="page-title">Gelico Header</h1><p class="page-description"></p></header><div class="page-body"><figure id="bdd7d98f-c9b2-440c-a782-17d524c333b4" class="image"><a href="Gelico%20Header%2054eb8366a16b4d2baf1dc59e81675d75/image.png"><img style="width:707.9791870117188px" src="Gelico%20Header%2054eb8366a16b4d2baf1dc59e81675d75/image.png"/></a></figure><h1 id="516689d1-7a75-48bb-a839-63fc369b2209" class="">Section header</h1><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="b8b14150-2148-4ba6-97c0-ba36d6cf8551" class="code"><code class="language-JavaScript">&lt;style&gt;
+  @media (max-width: 1200px) {
+    .hs1-desktop-header {
+      display: none;
+    }
+  }
+&lt;/style&gt;
+
+&lt;div class=&quot;hs1-desktop-header&quot;&gt;
+  {% case section.settings.header_style %}
+    {% when &#x27;style-1&#x27; %}
+      {% render &#x27;header-style-1&#x27;, section: section %}
+    {% when &#x27;style-2&#x27; %}
+      {% render &#x27;header-style-2&#x27;, section: section %}
+    {% when &#x27;style-3&#x27; %}
+      {% render &#x27;header-style-3&#x27;, section: section %}
+  {% endcase %}
+&lt;/div&gt;
+{% schema %}
+{
+  &quot;name&quot;: &quot;Galiko Header&quot;,
+  &quot;settings&quot;: [
+    {
+      &quot;type&quot;: &quot;select&quot;,
+      &quot;id&quot;: &quot;header_style&quot;,
+      &quot;label&quot;: &quot;Header Style&quot;,
+      &quot;options&quot;: [
+        {
+          &quot;value&quot;: &quot;style-1&quot;,
+          &quot;label&quot;: &quot;Style 1&quot;
+        },
+        {
+          &quot;value&quot;: &quot;style-2&quot;,
+          &quot;label&quot;: &quot;Style 2&quot;
+        },
+        {
+          &quot;value&quot;: &quot;style-3&quot;,
+          &quot;label&quot;: &quot;Style 3&quot;
+        }
+      ],
+      &quot;default&quot;: &quot;style-1&quot;
+    },
+    {
+      &quot;type&quot;: &quot;link_list&quot;,
+      &quot;id&quot;: &quot;main_menu&quot;,
+      &quot;label&quot;: &quot;Select Main Menu&quot;
+    },
+    {
+      &quot;type&quot;: &quot;textarea&quot;,
+      &quot;id&quot;: &quot;enable_megamenu&quot;,
+      &quot;label&quot;: &quot;Enable Megamenu&quot;,
+      &quot;default&quot;: &quot;Spring Shop, Designers, New Arrivals&quot;,
+      &quot;info&quot;: &quot;Spring Shop, Designers, New Arrivals&quot;
+    },
+    {
+      &quot;type&quot;: &quot;select&quot;,
+      &quot;id&quot;: &quot;megamenu_image_position&quot;,
+      &quot;label&quot;: &quot;Megamenu Image Position&quot;,
+      &quot;options&quot;: [
+        {
+          &quot;value&quot;: &quot;left&quot;,
+          &quot;label&quot;: &quot;Left&quot;
+        },
+        {
+          &quot;value&quot;: &quot;right&quot;,
+          &quot;label&quot;: &quot;Right&quot;
+        }
+      ],
+      &quot;default&quot;: &quot;right&quot;
+    },
+    {
+      &quot;type&quot;: &quot;header&quot;,
+      &quot;content&quot;: &quot;Header Logo&quot;
+    },
+    {
+      &quot;type&quot;: &quot;image_picker&quot;,
+      &quot;id&quot;: &quot;logo_desktop&quot;,
+      &quot;label&quot;: &quot;Logo Desktop&quot;
+    },
+    {
+      &quot;type&quot;: &quot;image_picker&quot;,
+      &quot;id&quot;: &quot;logo_mobile&quot;,
+      &quot;label&quot;: &quot;Logo Mobile&quot;
+    },
+    {
+      &quot;type&quot;: &quot;text&quot;,
+      &quot;id&quot;: &quot;shop_name&quot;,
+      &quot;label&quot;: &quot;Shop Name&quot;,
+      &quot;info&quot;: &quot;Shop Name&quot;,
+      &quot;default&quot;: &quot;GALIKO&quot;
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;logo_width_desktop&quot;,
+      &quot;label&quot;: &quot;Logo Width Desktop&quot;,
+      &quot;default&quot;: 100,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 200,
+      &quot;step&quot;: 2,
+      &quot;unit&quot;: &quot;px&quot;
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;logo_width_mobile&quot;,
+      &quot;label&quot;: &quot;Logo Width Mobile&quot;,
+      &quot;default&quot;: 100,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 200,
+      &quot;step&quot;: 2,
+      &quot;unit&quot;: &quot;px&quot;
+    },
+    {
+      &quot;type&quot;: &quot;header&quot;,
+      &quot;content&quot;: &quot;t:sections.header.settings.header__3.content&quot;,
+      &quot;info&quot;: &quot;t:sections.header.settings.header__4.info&quot;
+    },
+    {
+      &quot;type&quot;: &quot;checkbox&quot;,
+      &quot;id&quot;: &quot;enable_country_selector&quot;,
+      &quot;default&quot;: true,
+      &quot;label&quot;: &quot;t:sections.header.settings.enable_country_selector.label&quot;
+    },
+    {
+      &quot;type&quot;: &quot;header&quot;,
+      &quot;content&quot;: &quot;t:sections.header.settings.header__5.content&quot;,
+      &quot;info&quot;: &quot;t:sections.header.settings.header__6.info&quot;
+    },
+    {
+      &quot;type&quot;: &quot;checkbox&quot;,
+      &quot;id&quot;: &quot;enable_language_selector&quot;,
+      &quot;default&quot;: true,
+      &quot;label&quot;: &quot;t:sections.header.settings.enable_language_selector.label&quot;
+    },
+    {
+      &quot;type&quot;: &quot;header&quot;,
+      &quot;content&quot;: &quot;Header Icons&quot;
+    },
+    {
+      &quot;type&quot;: &quot;html&quot;,
+      &quot;id&quot;: &quot;search_icon&quot;,
+      &quot;label&quot;: &quot;Search Icon&quot;,
+      &quot;info&quot;: &quot;Copy Paste Search Icon SVG HTML Code&quot;
+    },
+    {
+      &quot;type&quot;: &quot;html&quot;,
+      &quot;id&quot;: &quot;usre_icon&quot;,
+      &quot;label&quot;: &quot;User Icon&quot;,
+      &quot;info&quot;: &quot;Copy Paste User Icon SVG HTML Code&quot;
+    },
+    {
+      &quot;type&quot;: &quot;html&quot;,
+      &quot;id&quot;: &quot;cart_icon&quot;,
+      &quot;label&quot;: &quot;Cart Icon&quot;,
+      &quot;info&quot;: &quot;Copy Paste Cart Icon SVG HTML Code&quot;
+    }
+  ],
+  &quot;blocks&quot;: [
+    {
+      &quot;type&quot;: &quot;megamenu-image&quot;,
+      &quot;name&quot;: &quot;Megamenu Image&quot;,
+      &quot;settings&quot;: [
+        {
+          &quot;type&quot;: &quot;text&quot;,
+          &quot;id&quot;: &quot;menu_title&quot;,
+          &quot;label&quot;: &quot;Menu Title&quot;,
+          &quot;default&quot;: &quot;Spring Shop&quot;,
+          &quot;info&quot;: &quot;Spring Shop, Designers, New Arrivals&quot;
+        },
+        {
+          &quot;type&quot;: &quot;header&quot;,
+          &quot;content&quot;: &quot;First image&quot;
+        },
+        {
+          &quot;type&quot;: &quot;image_picker&quot;,
+          &quot;id&quot;: &quot;image1&quot;,
+          &quot;label&quot;: &quot;First Image&quot;
+        },
+        {
+          &quot;type&quot;: &quot;url&quot;,
+          &quot;id&quot;: &quot;url1&quot;,
+          &quot;label&quot;: &quot;First Image URL&quot;
+        },
+        {
+          &quot;type&quot;: &quot;header&quot;,
+          &quot;content&quot;: &quot;Second image&quot;
+        },
+        {
+          &quot;type&quot;: &quot;image_picker&quot;,
+          &quot;id&quot;: &quot;image2&quot;,
+          &quot;label&quot;: &quot;Second Image&quot;
+        },
+        {
+          &quot;type&quot;: &quot;url&quot;,
+          &quot;id&quot;: &quot;url2&quot;,
+          &quot;label&quot;: &quot;Second Image URL&quot;
+        }
+      ]
+    }
+  ],
+  &quot;presets&quot;: [
+    {
+      &quot;name&quot;: &quot;Galiko Header&quot;
+    }
+  ]
+}
+{% endschema %}
+</code></pre><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">Snippets For Header Style 1</summary><div class="indented"><figure id="1678a33a-1b50-46ab-a059-1aba2c1462fe" class="image"><a href="Gelico%20Header%2054eb8366a16b4d2baf1dc59e81675d75/image%201.png"><img style="width:679.9896240234375px" src="Gelico%20Header%2054eb8366a16b4d2baf1dc59e81675d75/image%201.png"/></a></figure><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Code Snippet</summary><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2b1765c1-0da9-4337-9cd7-9de0dca818e6" class="code"><code class="language-JavaScript">&lt;style&gt;
+  #shopify-section-{{ section.id}} {
+    background: #fff;
+  }
+  .header-style-1-container {
+    position: relative;
+  }
+  .hs1-top-wrapper {
+    display: grid;
+    grid-template-columns: 1fr {{ section.settings.logo_width_desktop | append: &#x27;px&#x27; }} 1fr;
+    align-items: center;
+  }
+  .hs1-icons-section {
+    justify-self: flex-end;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .hs1-icons-section a{
+    text-decoration: none;
+  }
+  .hs1-icons-section a svg{
+    width: 28px;
+  }
+  .hs1-logo-section {
+    text-decoration: none;
+  }
+  .hs1-logo-section img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .hs1-shop-name{
+    color: #000;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: center;
+  }
+  .event-none{
+    pointer-events: none;
+  }
+&lt;/style&gt;
+
+{{ &#x27;gelico-dropdown-menu.css&#x27; | asset_url | stylesheet_tag }}
+{{ &#x27;gelico-megamenu.css&#x27; | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign enable_megamenu = section.settings.enable_megamenu | strip | strip_html | downcase | remove: &#x27; &#x27; | split: &#x27;,&#x27;
+  assign menuLength = section.settings.main_menu.links.size
+  assign offset_large_device = 5
+  # assign offset_medium_device = 5
+%}
+
+&lt;div class=&quot;header-style-1-container&quot;&gt;
+  &lt;div class=&quot;page-width&quot;&gt;
+    &lt;div class=&quot;header-style-1-wrapper&quot;&gt;
+      &lt;div class=&quot;hs1-top-wrapper&quot;&gt;
+        &lt;div class=&quot;hs1-localization-section&quot;&gt;
+          &lt;div class=&quot;hs1-localization-wrapper&quot;&gt;
+            {% render &#x27;gelico-localization&#x27;, section: section %}
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;a href=&quot;/&quot; class=&quot;hs1-logo-section&quot;&gt;
+          {% liquid
+            assign logo_desktop = section.settings.logo_desktop
+            assign logo_mobile = section.settings.logo_mobile
+            if logo_mobile == blank
+              assign logo_mobile = logo_desktop
+            endif
+          %}
+          {% unless logo_desktop == blank %}
+            &lt;picture&gt;
+              &lt;source media=&quot;(min-width:650px)&quot; srcset=&quot;{{ logo_desktop | image_url: width: logo_desktop.width }}&quot;&gt;
+              {{ logo_mobile | image_url: width: logo_mobile.width | image_tag: loading: &#x27;lazy&#x27; }}
+            &lt;/picture&gt;
+          {% else %}
+            &lt;h2 class=&quot;hs1-shop-name&quot;&gt;{{ section.settings.shop_name }}&lt;/h2&gt;
+          {% endunless %}
+        &lt;/a&gt;
+        &lt;div class=&quot;hs1-icons-section&quot;&gt;
+          {% unless section.settings.search_icon == blank %}
+            &lt;a href=&quot;/search&quot;&gt;
+              {{ section.settings.search_icon }}
+            &lt;/a&gt;
+          {% else %}
+            &lt;a href=&quot;/search&quot;&gt;
+              {% render &#x27;gelico-icons&#x27;, name: &#x27;search&#x27; %}
+            &lt;/a&gt;
+          {% endunless %}
+          {% unless section.settings.usre_icon == blank %}
+            &lt;a href=&quot;/account&quot;&gt;
+              {{ section.settings.usre_icon }}
+            &lt;/a&gt;
+          {% else %}
+            &lt;a href=&quot;/account&quot;&gt;
+              {% render &#x27;gelico-icons&#x27;, name: &#x27;user&#x27; %}
+            &lt;/a&gt;
+          {% endunless %}
+          {% unless section.settings.cart_icon == blank %}
+            &lt;a href=&quot;/cart&quot;&gt;
+              {{ section.settings.cart_icon }}
+            &lt;/a&gt;
+          {% else %}
+            &lt;a href=&quot;/cart&quot;&gt;
+              {% render &#x27;gelico-icons&#x27;, name: &#x27;cart&#x27; %}
+            &lt;/a&gt;
+          {% endunless %}
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;hs1-menu-wrapper&quot;&gt;
+        &lt;ul class=&quot;hs1-first-layer-ul&quot;&gt;
+          {% for link in section.settings.main_menu.links limit: offset_large_device %}
+            {% liquid
+              assign filrstLabeTitle = link.title | strip | downcase | remove: &#x27; &#x27;
+              assign isMegaEnable = false
+              if enable_megamenu contains filrstLabeTitle
+                assign isMegaEnable = true
+              endif
+            %}
+            &lt;li class=&quot;hs1-first-layer-li {% if isMegaEnable %}hs1-megamenu-li{% else %}hs1-dropdown-li{% endif %}&quot;&gt;
+              &lt;div class=&quot;hs1-menu-icon-wrapper&quot;&gt;
+                {% unless link.links == blank %}
+                  &lt;a href=&quot;{{ link.url }}&quot; class=&quot;hs1-first-layer-a event-none&quot;&gt;{{ link.title }}&lt;/a&gt;
+                  &lt;div class=&quot;hs1-icon-wrapper&quot;&gt;
+                    {% render &#x27;gelico-icons&#x27;, name: &#x27;plus&#x27;, class: &#x27;first-layer hs1-plus-icon&#x27; %}
+                    {% render &#x27;gelico-icons&#x27;, name: &#x27;minus&#x27;, class: &#x27;first-layer hs1-minus-icon&#x27; %}
+                  &lt;/div&gt;
+                {% else %}
+                  &lt;a href=&quot;{{ link.url }}&quot; class=&quot;hs1-first-layer-a&quot;&gt;{{ link.title }}&lt;/a&gt;
+                {% endunless %}
+              &lt;/div&gt;
+              {% unless link.links == blank %}
+                {% if isMegaEnable %}
+                  {% render &#x27;gelico-header-megamenu&#x27;, link: link, section: section %}
+
+                {% else %}
+                  {% render &#x27;gelico-header-dropdown-menu&#x27;, link: link %}
+                {% endif %}
+              {% endunless %}
+            &lt;/li&gt;
+          {% endfor %}
+          {% if menuLength &gt; 7 %}
+            &lt;li class=&quot;hs1-first-layer-li hs1-dropdown-li&quot;&gt;
+              &lt;div class=&quot;hs1-menu-icon-wrapper&quot;&gt;
+                &lt;a href=&quot;{{ link.url }}&quot; class=&quot;hs1-first-layer-a event-none&quot;&gt;MORE&lt;/a&gt;
+                &lt;div class=&quot;hs1-icon-wrapper&quot;&gt;
+                  {% render &#x27;gelico-icons&#x27;, name: &#x27;plus&#x27;, class: &#x27;first-layer hs1-plus-icon&#x27; %}
+                  {% render &#x27;gelico-icons&#x27;, name: &#x27;minus&#x27;, class: &#x27;first-layer hs1-minus-icon&#x27; %}
+                &lt;/div&gt;
+              &lt;/div&gt;
+              {% render &#x27;gelico-header-more-menu&#x27;, section: section, offset: offset_large_device, hs: &#x27;hs1&#x27; %}
+            &lt;/li&gt;
+          {% endif %}
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  let megamenuSecondLayerLi = document.querySelectorAll(&#x27;.hs1-megamenu-li&#x27;);
+
+  megamenuSecondLayerLi.forEach((megamenuLi) =&gt; {
+    let megamenuThirdLayerLi = megamenuLi.querySelectorAll(&#x27;.hs1-megamenu-second-layer-li&#x27;),
+      megamenuSecondlayerUl = megamenuLi.querySelector(&#x27;.hs1-megamenu-second-layer-ul&#x27;),
+      maxTLHeight = 0;
+
+    console.log(megamenuThirdLayerLi);
+    megamenuThirdLayerLi.forEach((li) =&gt; {
+      if (maxTLHeight &lt; li.clientHeight) {
+        maxTLHeight = li.clientHeight;
+      }
+    });
+    megamenuSecondlayerUl.style.maxHeight = maxTLHeight + 25 + &#x27;px&#x27;;
+  });
+&lt;/script&gt;
+</code></pre></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Code Style Assets</summary><div class="indented"><ul id="35c26689-6d54-4045-8cd5-94e27a7ef278" class="toggle"><li><details open=""><summary>gelico-dropdown-menu.css</summary><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="114ea0a2-dc03-4f5b-a7bb-f87919b5a4dc" class="code"><code class="language-JavaScript">  .hs1-first-layer-ul,
+  .hs1-second-layer-ul,
+  .hs1-third-layer-ul {
+    list-style: none;
+  }
+  .hs1-first-layer-ul {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 58px;
+    padding: 0;
+    margin: 0;
+  }
+  .hs1-first-layer-li {
+    box-sizing: border-box;
+    padding: 0 0 18px 0;
+  } 
+
+  .hs1-first-layer-a,
+  .hs1-second-layer-a,
+  .hs1-third-layer-a {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+  .hs1-dropdown-wrapper li {
+    position: relative;
+  }
+  .hs1-second-layer-wrapper {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 300px;
+    height: 100%;
+    display: none;
+    padding: 0;
+    margin: 0;
+  }
+  .hs1-second-layer-ul,
+  .hs1-third-layer-ul {
+    padding: 7px 0px 7px 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+  }
+
+  .hs1-second-layer-li {
+    position: relative;
+    padding: 10px 30px;
+    box-sizing: border-box;
+  }
+  .hs1-second-layer-li:not(:last-child),
+  .hs1-third-layer-li:not(:last-child) {
+    border-bottom: 1px solid #efefef;
+  }
+  .hs1-third-layer-li {
+    position: relative;
+    padding: 5px 30px;
+    box-sizing: border-box;
+  }
+  .hs1-third-layer-wrapper {
+    position: absolute;
+    left: calc(100%);
+    top: 0;
+    width: 300px;
+    height: 100%;
+    display: none;
+    padding: 0;
+    margin: 0;
+  }
+  .hs1-dropdown-li {
+    position: relative;
+  }
+  .hs1-dropdown-li:hover .hs1-second-layer-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    min-width: max-content;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0px 0 0px 0px;
+  }
+  .hs1-second-layer-li:hover .hs1-third-layer-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    min-width: max-content;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0px 0 0px 0px;
+  }
+  .hs1-menu-icon-wrapper {
+    display: flex;
+  }
+  .hs1-menu-icon-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .hs1-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .hs1-plus-icon,
+  .hs1-minus-icon {
+    position: absolute;
+    transform-origin: center;
+    width: 9px;
+    height: 9px;
+  }
+  .hs1-minus-icon {
+    visibility: hidden;
+  }
+  .hs1-dropdown-li:hover .first-layer.hs1-plus-icon {
+    visibility: hidden;
+  }
+  .hs1-dropdown-li:hover .first-layer.hs1-minus-icon {
+    visibility: visible;
+  }
+  .hs1-second-layer-li:hover .second-layer.hs1-plus-icon {
+    visibility: hidden;
+  }
+  .hs1-second-layer-li:hover .second-layer.hs1-minus-icon {
+    visibility: visible;
+  }
+
+  @media (max-width: 1150px) {
+    .hs1-first-layer-ul {
+      gap: 30px;
+    }
+ 
+    .hs1-first-layer-ul li a {
+      font-size: 13px;
+    }
+  }</code></pre></details></li></ul><ul id="24bb21ff-c886-4211-b82b-28f4488e9b7f" class="toggle"><li><details open=""><summary>gelico-megamenu.css</summary><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="915d346a-659a-4657-8e8b-840cb9c51097" class="code"><code class="language-JavaScript">.hs1-megamenu-container {
+    position: absolute;
+    left: 0;
+    top: calc(100%);
+    width: 100%;
+    min-height: 300px;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 20px 0 30px 0;
+    border-top: 1px solid #000;
+    visibility: hidden;
+    z-index: -999;
+  }
+  .hs1-megamenu-li:hover .hs1-megamenu-container{
+    z-index: 99;
+    visibility: visible;
+    transition: .2s;
+  }
+  .hs1-megamenu-li:hover .first-layer.hs1-plus-icon {
+    visibility: hidden;
+  }
+  .hs1-megamenu-li:hover .first-layer.hs1-minus-icon {
+    visibility: visible;
+  }
+  
+  .hs1-megamenu-wrapper {
+    display: grid;
+    grid-gap: 40px;
+  }
+  .hs1-mega-image-wrapper {
+    display: grid;
+    grid-gap: 15px;
+  }
+  .hs1-mega-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+  .hs1-megamenu-second-layer-ul{
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    column-gap: 40px;
+    max-height: 400px;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .hs1-megamenu-third-layer-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .hs1-megamenu-second-layer-li {
+    max-width: 23%;
+  }
+  .hs1-megamenu-second-layer-a,
+  .hs1-megamenu-third-layer-a {
+    text-decoration: none;
+  }
+  .hs1-megamenu-second-layer-a {
+    display: block;
+    border-bottom: 1px solid #000;
+    color: #000;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    box-sizing: border-box;
+    padding: 0 0 10px 0;
+    margin: 0 0 12px 0;
+  }
+  .hs1-megamenu-third-layer-a {
+    text-transform: capitalize;
+    color: #000;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+  }</code></pre></details></li></ul></div></details></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">Snippets For Header Style 2</summary><div class="indented"><figure id="4c20a127-fb66-4454-9c6e-4fbd5294abc7" class="image"><a href="Gelico%20Header%2054eb8366a16b4d2baf1dc59e81675d75/image.png"><img style="width:679.9791870117188px" src="Gelico%20Header%2054eb8366a16b4d2baf1dc59e81675d75/image.png"/></a></figure><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Code Snippet</summary><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="d2523de6-de84-49b1-b045-3e8bee698232" class="code"><code class="language-JavaScript">&lt;style&gt;
+  #shopify-section-{{ section.id}} {
+    background: #fff;
+  }
+  .header-style-2-container {
+    position: relative;
+  }
+  .header-style-2-wrapper {
+    display: grid;
+    grid-template-columns: {{ section.settings.logo_width_desktop | append: &#x27;px&#x27; }} 1fr auto;
+    grid-gap: 40px;
+    align-items: stretch;
+  }
+
+  .hs2-first-layer-ul {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 58px;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+  }
+
+  .hs2-icons-section {
+    justify-self: flex-end;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .hs2-icons-section a{
+    text-decoration: none;
+    display: flex;
+  }
+  .hs2-icons-section a svg{
+    width: 28px;
+  }
+  .hs2-logo-section {
+    text-decoration: none;
+  }
+  .hs2-logo-section img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .hs2-shop-name{
+    color: #000;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: center;
+  }
+  .event-none{
+    pointer-events: none;
+  }
+  .header-style-2-icons-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+
+  @media(min-width: 1750px) {
+    .hs2-menu-medium-device {
+        display: none !important;
+    }
+    .hs2-menu-small-device {
+        display: none !important;
+    }
+  }
+  @media(max-width: 1749px) {
+    .hs2-menu-small-device {
+          display: none !important;
+    }
+    .hs2-menu-large-device {
+        display: none !important;
+    }
+  }
+
+  @media(max-width: 1549px) {
+    .hs2-menu-medium-device {
+        display: none !important;
+    }
+    .hs2-menu-small-device {
+        display: flex !important;
+    }
+  }
+&lt;/style&gt;
+
+{{ &#x27;gelico-dropdown-menu-style-2.css&#x27; | asset_url | stylesheet_tag }}
+{{ &#x27;gelico-megamenu-style-2.css&#x27; | asset_url | stylesheet_tag }}
+
+{% liquid
+  # assign enable_megamenu = section.settings.enable_megamenu | strip | strip_html | downcase | remove: &#x27; &#x27; | split: &#x27;,&#x27;
+  # assign menuLength = section.settings.main_menu.links.size
+  assign offset_large_device = 7
+  assign offset_medium_device = 6
+  assign offset_small_device = 4
+%}
+
+&lt;div class=&quot;header-style-2-container&quot;&gt;
+  &lt;div class=&quot;page-width&quot;&gt;
+    &lt;div class=&quot;header-style-2-wrapper&quot;&gt;
+      &lt;a href=&quot;/&quot; class=&quot;hs2-logo-section&quot;&gt;
+        {% liquid
+          assign logo_desktop = section.settings.logo_desktop
+          assign logo_mobile = section.settings.logo_mobile
+          if logo_mobile == blank
+            assign logo_mobile = logo_desktop
+          endif
+        %}
+        {% unless logo_desktop == blank %}
+          &lt;picture&gt;
+            &lt;source media=&quot;(min-width:650px)&quot; srcset=&quot;{{ logo_desktop | image_url: width: logo_desktop.width }}&quot;&gt;
+            {{ logo_mobile | image_url: width: logo_mobile.width | image_tag: loading: &#x27;lazy&#x27; }}
+          &lt;/picture&gt;
+        {% else %}
+          &lt;h2 class=&quot;hs2-shop-name&quot;&gt;{{ section.settings.shop_name }}&lt;/h2&gt;
+        {% endunless %}
+      &lt;/a&gt;
+      &lt;div class=&quot;header-style-2-menu-wrapper&quot;&gt;
+        &lt;ul class=&quot;hs2-first-layer-ul hs2-menu-large-device&quot;&gt;
+          {% render &#x27;gelico-header-style-2-menu&#x27;, section: section, offset: offset_large_device %}
+        &lt;/ul&gt;
+        &lt;ul class=&quot;hs2-first-layer-ul hs2-menu-medium-device&quot;&gt;
+          {% render &#x27;gelico-header-style-2-menu&#x27;, section: section, offset: offset_medium_device %}
+        &lt;/ul&gt;
+        &lt;ul class=&quot;hs2-first-layer-ul hs2-menu-small-device&quot;&gt;
+          {% render &#x27;gelico-header-style-2-menu&#x27;, section: section, offset: offset_small_device %}
+        &lt;/ul&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;header-style-2-icons-wrapper&quot;&gt;
+        &lt;div class=&quot;hs2-localization-wrapper&quot;&gt;
+          {% render &#x27;gelico-localization&#x27;, section: section %}
+        &lt;/div&gt;
+        &lt;div class=&quot;hs2-icons-section&quot;&gt;
+          {% unless section.settings.search_icon == blank %}
+            &lt;a href=&quot;/search&quot;&gt;
+              {{ section.settings.search_icon }}
+            &lt;/a&gt;
+          {% else %}
+            &lt;a href=&quot;/search&quot;&gt;
+              {% render &#x27;gelico-icons&#x27;, name: &#x27;search&#x27; %}
+            &lt;/a&gt;
+          {% endunless %}
+          {% unless section.settings.usre_icon == blank %}
+            &lt;a href=&quot;/account&quot;&gt;
+              {{ section.settings.usre_icon }}
+            &lt;/a&gt;
+          {% else %}
+            &lt;a href=&quot;/account&quot;&gt;
+              {% render &#x27;gelico-icons&#x27;, name: &#x27;user&#x27; %}
+            &lt;/a&gt;
+          {% endunless %}
+          {% unless section.settings.cart_icon == blank %}
+            &lt;a href=&quot;/cart&quot;&gt;
+              {{ section.settings.cart_icon }}
+            &lt;/a&gt;
+          {% else %}
+            &lt;a href=&quot;/cart&quot;&gt;
+              {% render &#x27;gelico-icons&#x27;, name: &#x27;cart&#x27; %}
+            &lt;/a&gt;
+          {% endunless %}
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  let megamenuSecondLayerLi = document.querySelectorAll(&#x27;.hs2-megamenu-li&#x27;);
+
+  megamenuSecondLayerLi.forEach((megamenuLi) =&gt; {
+    let megamenuThirdLayerLi = megamenuLi.querySelectorAll(&#x27;.hs2-megamenu-second-layer-li&#x27;),
+      megamenuSecondlayerUl = megamenuLi.querySelector(&#x27;.hs2-megamenu-second-layer-ul&#x27;),
+      maxTLHeight = 0;
+
+    console.log(megamenuThirdLayerLi);
+    megamenuThirdLayerLi.forEach((li) =&gt; {
+      if (maxTLHeight &lt; li.clientHeight) {
+        maxTLHeight = li.clientHeight;
+      }
+    });
+    megamenuSecondlayerUl.style.maxHeight = maxTLHeight + 25 + &#x27;px&#x27;;
+  });
+&lt;/script&gt;
+</code></pre><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">gelico-header-style-2-menu</summary><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="f02ca3e1-73aa-4647-909a-ff85e017535f" class="code"><code class="language-JavaScript">{% liquid
+  assign enable_megamenu = section.settings.enable_megamenu | strip | strip_html | downcase | remove: &#x27; &#x27; | split: &#x27;,&#x27;
+  assign menuLength = section.settings.main_menu.links.size
+%}
+
+{% for link in section.settings.main_menu.links limit: offset %}
+  {% liquid
+    assign filrstLabeTitle = link.title | strip | downcase | remove: &#x27; &#x27;
+    assign isMegaEnable = false
+    if enable_megamenu contains filrstLabeTitle
+      assign isMegaEnable = true
+    endif
+  %}
+  &lt;li class=&quot;hs2-first-layer-li {% if isMegaEnable %}hs2-megamenu-li{% else %}hs2-dropdown-li{% endif %}&quot;&gt;
+    &lt;div class=&quot;hs2-menu-icon-wrapper&quot;&gt;
+      {% unless link.links == blank %}
+        &lt;a href=&quot;{{ link.url }}&quot; class=&quot;hs2-first-layer-a event-none&quot;&gt;{{ link.title }}&lt;/a&gt;
+        &lt;div class=&quot;hs2-icon-wrapper&quot;&gt;
+          {% render &#x27;gelico-icons&#x27;, name: &#x27;plus&#x27;, class: &#x27;first-layer hs2-plus-icon&#x27; %}
+          {% render &#x27;gelico-icons&#x27;, name: &#x27;minus&#x27;, class: &#x27;first-layer hs2-minus-icon&#x27; %}
+        &lt;/div&gt;
+      {% else %}
+        &lt;a href=&quot;{{ link.url }}&quot; class=&quot;hs2-first-layer-a&quot;&gt;{{ link.title }}&lt;/a&gt;
+      {% endunless %}
+    &lt;/div&gt;
+    {% unless link.links == blank %}
+      {% if isMegaEnable %}
+        {% render &#x27;gelico-header-megamenu-style-2&#x27;, link: link, section: section %}
+
+      {% else %}
+        {% render &#x27;gelico-header-dropdown-menu-style-2&#x27;, link: link %}
+      {% endif %}
+    {% endunless %}
+  &lt;/li&gt;
+{% endfor %}
+{% if menuLength &gt; 7 %}
+  &lt;li class=&quot;hs2-first-layer-li hs2-dropdown-li&quot;&gt;
+    &lt;div class=&quot;hs2-menu-icon-wrapper&quot;&gt;
+      &lt;a href=&quot;{{ link.url }}&quot; class=&quot;hs2-first-layer-a event-none&quot;&gt;MORE&lt;/a&gt;
+      &lt;div class=&quot;hs2-icon-wrapper&quot;&gt;
+        {% render &#x27;gelico-icons&#x27;, name: &#x27;plus&#x27;, class: &#x27;first-layer hs2-plus-icon&#x27; %}
+        {% render &#x27;gelico-icons&#x27;, name: &#x27;minus&#x27;, class: &#x27;first-layer hs2-minus-icon&#x27; %}
+      &lt;/div&gt;
+    &lt;/div&gt;
+    {% render &#x27;gelico-header-more-menu&#x27;, section: section, offset: offset, hs: &#x27;hs2&#x27; %}
+  &lt;/li&gt;
+{% endif %}
+</code></pre><ul id="ab567c1b-e0c4-4441-9172-62ffbb128967" class="toggle"><li><details open=""><summary>gelico-header-megamenu-style-2</summary><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="4beefd13-8ddd-4e92-acdc-33a39c07bdef" class="code"><code class="language-JavaScript">{% liquid
+  assign imageBlocks = section.blocks | where: &#x27;type&#x27;, &#x27;megamenu-image&#x27;
+  assign imageBlockSize = 0
+  assign imageSize = 0
+
+  for block in imageBlocks
+    assign menu_title = block.settings.menu_title | strip | downcase
+    assign link_title = link.title | strip | downcase
+    if menu_title == link_title
+      for i in (1..2)
+        assign imageId = &#x27;image&#x27; | append: i
+        unless block.settings[imageId] == blank
+          assign imageSize = imageSize | plus: 1
+        endunless
+      endfor
+      assign imageBlockSize = imageBlockSize | plus: 1
+    endif
+  endfor
+
+  assign imageSize = imageSize | at_most: 2
+
+  if imageSize &gt; 0
+    if imageSize == 1
+      if section.settings.megamenu_image_position == &#x27;left&#x27;
+        assign grid_columns = &#x27;minmax(0px, 2fr) minmax(0px, 5fr)&#x27;
+      else
+        assign grid_columns = &#x27;minmax(0px, 5fr) minmax(0px, 2fr)&#x27;
+      endif
+      assign image_grid_colunmns = &#x27;minmax(0px, 1fr)&#x27;
+    elsif imageSize == 2
+      if section.settings.megamenu_image_position == &#x27;left&#x27;
+        assign grid_columns = &#x27;minmax(0px, 3fr) minmax(0px, 4fr)&#x27;
+      else
+        assign grid_columns = &#x27;minmax(0px, 4fr) minmax(0px, 3fr)&#x27;
+      endif
+      assign image_grid_colunmns = &#x27;minmax(0px, 1fr) minmax(0px, 1fr)&#x27;
+    endif
+  else
+    assign grid_columns = &#x27;minmax(0px, 1fr)&#x27;
+  endif
+%}
+
+&lt;div class=&quot;hs2-megamenu-container&quot;&gt;
+  &lt;div class=&quot;page-width&quot;&gt;
+    &lt;div class=&quot;hs2-megamenu-wrapper&quot; style=&quot;grid-template-columns: {{ grid_columns }};&quot;&gt;
+      {% if section.settings.megamenu_image_position == &#x27;right&#x27; %}
+        &lt;div class=&quot;hs2-mega-list-wrapper&quot;&gt;
+          &lt;ul class=&quot;hs2-megamenu-second-layer-ul&quot;&gt;
+            {% for childLink in link.links %}
+              &lt;li class=&quot;hs2-megamenu-second-layer-li&quot;&gt;
+                &lt;a href=&quot;{{ childLink.url }}&quot; class=&quot;hs2-megamenu-second-layer-a&quot;&gt;{{ childLink.title | upcase }}&lt;/a&gt;
+                {% unless childLink.links == blank %}
+                  &lt;ul class=&quot;hs2-megamenu-third-layer-ul&quot;&gt;
+                    {% for grandchildLink in childLink.links %}
+                      &lt;li class=&quot;hs2-megamenu-third-layer-li&quot;&gt;
+                        &lt;a href=&quot;{{ grandchildLink.url }}&quot; class=&quot;hs2-megamenu-third-layer-a&quot;&gt;
+                          {{- grandchildLink.title | downcase -}}
+                        &lt;/a&gt;
+                      &lt;/li&gt;
+                    {% endfor %}
+                  &lt;/ul&gt;
+                {% endunless %}
+              &lt;/li&gt;
+            {% endfor %}
+          &lt;/ul&gt;
+        &lt;/div&gt;
+        {% if imageSize &gt; 0 %}
+          &lt;div class=&quot;hs2-mega-image-wrapper&quot; style=&quot;grid-template-columns: {{ image_grid_colunmns }}&quot;&gt;
+            {% for block in imageBlocks %}
+              {% if menu_title == link_title %}
+                {% for i in (1..2) %}
+                  {% liquid
+                    assign imageId = &#x27;image&#x27; | append: i
+                    assign imageUrl = &#x27;url&#x27; | append: i
+                    assign megamenu_image = block.settings[imageId]
+                    assign megamenu_image_url = block.settings[imageUrl]
+                  %}
+                  {% unless megamenu_image == blank %}
+                    &lt;a href=&quot;{{ megamenu_image_url }}&quot; class=&quot;hs2-mega-image-block&quot;&gt;
+                      {{
+                        megamenu_image
+                        | image_url: width: 400, height: 440, crop: &#x27;center&#x27;, quality: 80, format: &#x27;jpg&#x27;
+                        | image_tag: loading: &#x27;lazy&#x27;, class: &#x27;hs2-mega-image&#x27;
+                      }}
+                    &lt;/a&gt;
+                  {% endunless %}
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+          &lt;/div&gt;
+        {% endif %}
+      {% else %}
+        {% if imageSize &gt; 0 %}
+          &lt;div class=&quot;hs2-mega-image-wrapper&quot; style=&quot;grid-template-columns: {{ image_grid_colunmns }}&quot;&gt;
+            {% for block in imageBlocks %}
+              {% if menu_title == link_title %}
+                {% for i in (1..2) %}
+                  {% liquid
+                    assign imageId = &#x27;image&#x27; | append: i
+                    assign imageUrl = &#x27;url&#x27; | append: i
+                    assign megamenu_image = block.settings[imageId]
+                    assign megamenu_image_url = block.settings[imageUrl]
+                  %}
+                  {% unless megamenu_image == blank %}
+                    &lt;a href=&quot;{{ megamenu_image_url }}&quot; class=&quot;hs2-mega-image-block&quot;&gt;
+                      {{
+                        megamenu_image
+                        | image_url: width: 400, height: 440, crop: &#x27;center&#x27;, quality: 80, format: &#x27;jpg&#x27;
+                        | image_tag: loading: &#x27;lazy&#x27;, class: &#x27;hs2-mega-image&#x27;
+                      }}
+                    &lt;/a&gt;
+                  {% endunless %}
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+          &lt;/div&gt;
+        {% endif %}
+        &lt;div class=&quot;hs2-mega-list-wrapper&quot;&gt;
+          &lt;ul class=&quot;hs2-megamenu-second-layer-ul&quot;&gt;
+            {% for childLink in link.links %}
+              &lt;li class=&quot;hs2-megamenu-second-layer-li&quot;&gt;
+                &lt;a href=&quot;{{ childLink.url }}&quot; class=&quot;hs2-megamenu-second-layer-a&quot;&gt;{{ childLink.title | upcase }}&lt;/a&gt;
+                {% unless childLink.links == blank %}
+                  &lt;ul class=&quot;hs2-megamenu-third-layer-ul&quot;&gt;
+                    {% for grandchildLink in childLink.links %}
+                      &lt;li class=&quot;hs2-megamenu-third-layer-li&quot;&gt;
+                        &lt;a href=&quot;{{ grandchildLink.url }}&quot; class=&quot;hs2-megamenu-third-layer-a&quot;&gt;
+                          {{- grandchildLink.title | downcase -}}
+                        &lt;/a&gt;
+                      &lt;/li&gt;
+                    {% endfor %}
+                  &lt;/ul&gt;
+                {% endunless %}
+              &lt;/li&gt;
+            {% endfor %}
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      {% endif %}
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre></details></li></ul><ul id="80ca5379-72ac-4899-9026-e9971010146d" class="toggle"><li><details open=""><summary>gelico-header-dropdown-menu-style-2</summary><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="fffbc280-32a8-8037-ada5-ed05a01ea194" class="code"><code class="language-JavaScript">&lt;div class=&quot;hs2-second-layer-wrapper&quot;&gt;
+  &lt;ul class=&quot;hs2-second-layer-ul&quot;&gt;
+    {% for childLink in link.links %}
+      &lt;li class=&quot;hs2-second-layer-li&quot;&gt;
+        &lt;div class=&quot;hs2-menu-icon-wrapper&quot;&gt;
+          {% unless childLink.links == blank %}
+            &lt;a class=&quot;hs2-second-layer-a event-none&quot; href=&quot;{{ childLink.url }}&quot;&gt;
+              {{- childLink.title -}}
+            &lt;/a&gt;
+            &lt;div class=&quot;hs2-icon-wrapper&quot;&gt;
+              {% render &#x27;gelico-icons&#x27;, name: &#x27;plus&#x27;, class: &#x27;second-layer hs2-plus-icon&#x27; %}
+              {% render &#x27;gelico-icons&#x27;, name: &#x27;minus&#x27;, class: &#x27;second-layer hs2-minus-icon&#x27; %}
+            &lt;/div&gt;
+          {% else %}
+            &lt;a class=&quot;hs2-second-layer-a&quot; href=&quot;{{ childLink.url }}&quot;&gt;{{ childLink.title }}&lt;/a&gt;
+          {% endunless %}
+        &lt;/div&gt;
+        {% unless childLink.links == blank %}
+          &lt;div class=&quot;hs2-third-layer-wrapper&quot;&gt;
+            &lt;ul class=&quot;hs2-third-layer-ul&quot;&gt;
+              {% for grandChildLink in childLink.links %}
+                &lt;li class=&quot;hs2-third-layer-li&quot;&gt;
+                  &lt;a class=&quot;hs2-third-layer-a&quot; href=&quot;{{ grandChildLink.url }}&quot;&gt;
+                    {{- grandChildLink.title -}}
+                  &lt;/a&gt;
+                &lt;/li&gt;
+              {% endfor %}
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        {% endunless %}
+      &lt;/li&gt;
+    {% endfor %}
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre></details></li></ul><ul id="317c57b4-2776-43b6-ab28-fc1a1c1ce28c" class="toggle"><li><details open=""><summary>gelico-header-more-menu</summary><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="6f925853-486f-40b8-b854-3c40133ba26e" class="code"><code class="language-JavaScript">&lt;div class=&quot;{{ hs }}-second-layer-wrapper&quot;&gt;
+  &lt;ul class=&quot;{{ hs }}-second-layer-ul&quot;&gt;
+    {% for link in section.settings.main_menu.links offset: offset %}
+      &lt;li class=&quot;{{ hs }}-second-layer-li&quot;&gt;
+        &lt;div class=&quot;{{ hs }}-menu-icon-wrapper&quot;&gt;
+          {% unless link.links == blank %}
+            &lt;a class=&quot;{{ hs }}-second-layer-a event-none&quot; href=&quot;{{ link.url }}&quot;&gt;
+              {{- link.title -}}
+            &lt;/a&gt;
+            &lt;div class=&quot;{{ hs }}-icon-wrapper&quot;&gt;
+              {% liquid
+                assign plusIconClass = &#x27;second-layer &#x27; | append: hs | append: &#x27;-plus-icon&#x27;
+                assign minusIconClass = &#x27;second-layer &#x27; | append: hs | append: &#x27;-minus-icon&#x27;
+              %}
+              {% render &#x27;gelico-icons&#x27;, name: &#x27;plus&#x27;, class: plusIconClass %}
+              {% render &#x27;gelico-icons&#x27;, name: &#x27;minus&#x27;, class: minusIconClass %}
+            &lt;/div&gt;
+          {% else %}
+            &lt;a class=&quot;{{ hs }}-second-layer-a&quot; href=&quot;{{ link.url }}&quot;&gt;{{ link.title }}&lt;/a&gt;
+          {% endunless %}
+        &lt;/div&gt;
+        {% unless link.links == blank %}
+          &lt;div class=&quot;{{ hs }}-third-layer-wrapper&quot;&gt;
+            &lt;ul class=&quot;{{ hs }}-third-layer-ul&quot;&gt;
+              {% for grandChildLink in link.links %}
+                &lt;li class=&quot;{{ hs }}-third-layer-li&quot;&gt;
+                  &lt;a class=&quot;{{ hs }}-third-layer-a&quot; href=&quot;{{ grandChildLink.url }}&quot;&gt;
+                    {{- grandChildLink.title -}}
+                  &lt;/a&gt;
+                &lt;/li&gt;
+              {% endfor %}
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        {% endunless %}
+      &lt;/li&gt;
+    {% endfor %}
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre></details></li></ul></div></details></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Code Style Assets</summary><div class="indented"><ul id="5bf68265-0d1a-4397-9cec-511f18fac505" class="toggle"><li><details open=""><summary>gelico-dropdown-menu-style-2.css</summary><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="f35ea37c-6281-4268-aba9-14727b8b3e91" class="code"><code class="language-JavaScript">.hs2-first-layer-ul,
+.hs2-second-layer-ul,
+.hs2-third-layer-ul {
+  list-style: none;
+}
+
+.hs2-first-layer-li {
+  box-sizing: border-box;
+  padding: 0 0 0px 0;
+  height: 100%;
+  display: flex;
+} 
+
+.hs2-first-layer-a,
+.hs2-second-layer-a,
+.hs2-third-layer-a {
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+.hs2-dropdown-wrapper li {
+  position: relative;
+}
+.hs2-second-layer-wrapper {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 300px;
+  height: 100%;
+  display: none;
+  padding: 0;
+  margin: 0;
+}
+.hs2-second-layer-ul,
+.hs2-third-layer-ul {
+  padding: 7px 0px 7px 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.hs2-second-layer-li {
+  position: relative;
+  padding: 10px 30px;
+  box-sizing: border-box;
+}
+.hs2-second-layer-li:not(:last-child),
+.hs2-third-layer-li:not(:last-child) {
+  border-bottom: 1px solid #efefef;
+}
+.hs2-third-layer-li {
+  position: relative;
+  padding: 5px 30px;
+  box-sizing: border-box;
+}
+.hs2-third-layer-wrapper {
+  position: absolute;
+  left: calc(100%);
+  top: 0;
+  width: 300px;
+  height: 100%;
+  display: none;
+  padding: 0;
+  margin: 0;
+}
+.hs2-dropdown-li {
+  position: relative;
+}
+.hs2-dropdown-li:hover .hs2-second-layer-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  min-width: max-content;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0px 0 0px 0px;
+}
+.hs2-second-layer-li:hover .hs2-third-layer-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  min-width: max-content;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0px 0 0px 0px;
+}
+.hs2-menu-icon-wrapper {
+  display: flex;
+}
+.hs2-menu-icon-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.hs2-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.hs2-plus-icon,
+.hs2-minus-icon {
+  position: absolute;
+  transform-origin: center;
+  width: 9px;
+  height: 9px;
+}
+.hs2-minus-icon {
+  visibility: hidden;
+}
+.hs2-dropdown-li:hover .first-layer.hs2-plus-icon {
+  visibility: hidden;
+}
+.hs2-dropdown-li:hover .first-layer.hs2-minus-icon {
+  visibility: visible;
+}
+.hs2-second-layer-li:hover .second-layer.hs2-plus-icon {
+  visibility: hidden;
+}
+.hs2-second-layer-li:hover .second-layer.hs2-minus-icon {
+  visibility: visible;
+}
+
+@media (max-width: 1150px) {
+  .hs2-first-layer-ul {
+    gap: 30px;
+  }
+
+  .hs2-first-layer-ul li a {
+    font-size: 13px;
+  }
+}</code></pre></details></li></ul><ul id="d155b5a2-3e8e-410a-8b4e-e2929cced2f4" class="toggle"><li><details open=""><summary>gelico-megamenu-style-2.css</summary><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="b1254a19-2641-4cd5-a1b2-7de1603f4633" class="code"><code class="language-JavaScript">.hs2-megamenu-container {
+    position: absolute;
+    left: 0;
+    top: calc(100%);
+    width: 100%;
+    min-height: 300px;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 20px 0 30px 0;
+    border-top: 1px solid #000;
+    visibility: hidden;
+    z-index: -999;
+  }
+  .hs2-megamenu-li:hover .hs2-megamenu-container{
+    z-index: 99;
+    visibility: visible;
+    transition: .2s;
+  }
+  .hs2-megamenu-li:hover .first-layer.hs2-plus-icon {
+    visibility: hidden;
+  }
+  .hs2-megamenu-li:hover .first-layer.hs2-minus-icon {
+    visibility: visible;
+  }
+  
+  .hs2-megamenu-wrapper {
+    display: grid;
+    grid-gap: 40px;
+  }
+  .hs2-mega-image-wrapper {
+    display: grid;
+    grid-gap: 15px;
+  }
+  .hs2-mega-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+  .hs2-megamenu-second-layer-ul{
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    column-gap: 40px;
+    max-height: 400px;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .hs2-megamenu-third-layer-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .hs2-megamenu-second-layer-li {
+    max-width: 23%;
+  }
+  .hs2-megamenu-second-layer-a,
+  .hs2-megamenu-third-layer-a {
+    text-decoration: none;
+  }
+  .hs2-megamenu-second-layer-a {
+    display: block;
+    border-bottom: 1px solid #000;
+    color: #000;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    box-sizing: border-box;
+    padding: 0 0 10px 0;
+    margin: 0 0 12px 0;
+  }
+  .hs2-megamenu-third-layer-a {
+    text-transform: capitalize;
+    color: #000;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+  }</code></pre></details></li></ul></div></details></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">Snippets For Header Style 3</summary><div class="indented"><figure id="f7892b40-265d-4417-b8ba-4f8a920503b2" class="image"><a href="Gelico%20Header%2054eb8366a16b4d2baf1dc59e81675d75/image%202.png"><img style="width:679.9896240234375px" src="Gelico%20Header%2054eb8366a16b4d2baf1dc59e81675d75/image%202.png"/></a></figure><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Code Snippet</summary><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="01c67b2f-ea48-473d-9680-9f1c4bd824c4" class="code"><code class="language-JavaScript">&lt;style&gt;
+  #shopify-section-{{ section.id}} {
+    background: #fff;
+  }
+  .header-style-2-container {
+    position: relative;
+  }
+  .header-style-2-wrapper {
+    display: grid;
+    grid-template-columns: minmax(0px, 1fr) {{ section.settings.logo_width_desktop | append: &#x27;px&#x27; }} minmax(0px, 1fr);
+    grid-gap: 40px;
+    align-items: stretch;
+  }
+
+  .hs2-first-layer-ul {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+    align-items: center;
+    gap: 58px;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+  }
+
+  .hs2-icons-section {
+    justify-self: flex-end;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .hs2-icons-section a{
+    text-decoration: none;
+    display: flex;
+  }
+  .hs2-icons-section a svg{
+    width: 28px;
+  }
+  .hs2-logo-section {
+    text-decoration: none;
+  }
+  .hs2-logo-section img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .hs2-shop-name{
+    color: #000;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: center;
+  }
+  .event-none{
+    pointer-events: none;
+  }
+  .header-style-2-icons-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    justify-self: flex-end;
+  }
+
+  @media(min-width: 1750px) {
+    .hs2-menu-medium-device {
+        display: none !important;
+    }
+    .hs2-menu-small-device {
+        display: none !important;
+    }
+  }
+  @media(max-width: 1749px) {
+    .hs2-menu-small-device {
+          display: none !important;
+    }
+    .hs2-menu-large-device {
+        display: none !important;
+    }
+  }
+
+  @media(max-width: 1549px) {
+    .hs2-menu-medium-device {
+        display: none !important;
+    }
+    .hs2-menu-small-device {
+        display: flex !important;
+    }
+  }
+&lt;/style&gt;
+
+{{ &#x27;gelico-dropdown-menu-style-2.css&#x27; | asset_url | stylesheet_tag }}
+{{ &#x27;gelico-megamenu-style-2.css&#x27; | asset_url | stylesheet_tag }}
+
+{% liquid
+  # assign enable_megamenu = section.settings.enable_megamenu | strip | strip_html | downcase | remove: &#x27; &#x27; | split: &#x27;,&#x27;
+  # assign menuLength = section.settings.main_menu.links.size
+  assign offset_large_device = 4
+  assign offset_medium_device = 4
+  assign offset_small_device = 3
+%}
+
+&lt;div class=&quot;header-style-2-container&quot;&gt;
+  &lt;div class=&quot;page-width&quot;&gt;
+    &lt;div class=&quot;header-style-2-wrapper&quot;&gt;
+      &lt;div class=&quot;header-style-2-menu-wrapper&quot;&gt;
+        &lt;ul class=&quot;hs2-first-layer-ul hs2-menu-large-device&quot;&gt;
+          {% render &#x27;gelico-header-style-2-menu&#x27;, section: section, offset: offset_large_device %}
+        &lt;/ul&gt;
+        &lt;ul class=&quot;hs2-first-layer-ul hs2-menu-medium-device&quot;&gt;
+          {% render &#x27;gelico-header-style-2-menu&#x27;, section: section, offset: offset_medium_device %}
+        &lt;/ul&gt;
+        &lt;ul class=&quot;hs2-first-layer-ul hs2-menu-small-device&quot;&gt;
+          {% render &#x27;gelico-header-style-2-menu&#x27;, section: section, offset: offset_small_device %}
+        &lt;/ul&gt;
+      &lt;/div&gt;
+      &lt;a href=&quot;/&quot; class=&quot;hs2-logo-section&quot;&gt;
+        {% liquid
+          assign logo_desktop = section.settings.logo_desktop
+          assign logo_mobile = section.settings.logo_mobile
+          if logo_mobile == blank
+            assign logo_mobile = logo_desktop
+          endif
+        %}
+        {% unless logo_desktop == blank %}
+          &lt;picture&gt;
+            &lt;source media=&quot;(min-width:650px)&quot; srcset=&quot;{{ logo_desktop | image_url: width: logo_desktop.width }}&quot;&gt;
+            {{ logo_mobile | image_url: width: logo_mobile.width | image_tag: loading: &#x27;lazy&#x27; }}
+          &lt;/picture&gt;
+        {% else %}
+          &lt;h2 class=&quot;hs2-shop-name&quot;&gt;{{ section.settings.shop_name }}&lt;/h2&gt;
+        {% endunless %}
+      &lt;/a&gt;
+      &lt;div class=&quot;header-style-2-icons-wrapper&quot;&gt;
+        &lt;div class=&quot;hs2-localization-wrapper&quot;&gt;
+          {% render &#x27;gelico-localization&#x27;, section: section %}
+        &lt;/div&gt;
+        &lt;div class=&quot;hs2-icons-section&quot;&gt;
+          {% unless section.settings.search_icon == blank %}
+            &lt;a href=&quot;/search&quot;&gt;
+              {{ section.settings.search_icon }}
+            &lt;/a&gt;
+          {% else %}
+            &lt;a href=&quot;/search&quot;&gt;
+              {% render &#x27;gelico-icons&#x27;, name: &#x27;search&#x27; %}
+            &lt;/a&gt;
+          {% endunless %}
+          {% unless section.settings.usre_icon == blank %}
+            &lt;a href=&quot;/account&quot;&gt;
+              {{ section.settings.usre_icon }}
+            &lt;/a&gt;
+          {% else %}
+            &lt;a href=&quot;/account&quot;&gt;
+              {% render &#x27;gelico-icons&#x27;, name: &#x27;user&#x27; %}
+            &lt;/a&gt;
+          {% endunless %}
+          {% unless section.settings.cart_icon == blank %}
+            &lt;a href=&quot;/cart&quot;&gt;
+              {{ section.settings.cart_icon }}
+            &lt;/a&gt;
+          {% else %}
+            &lt;a href=&quot;/cart&quot;&gt;
+              {% render &#x27;gelico-icons&#x27;, name: &#x27;cart&#x27; %}
+            &lt;/a&gt;
+          {% endunless %}
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  let megamenuSecondLayerLi = document.querySelectorAll(&#x27;.hs2-megamenu-li&#x27;);
+
+  megamenuSecondLayerLi.forEach((megamenuLi) =&gt; {
+    let megamenuThirdLayerLi = megamenuLi.querySelectorAll(&#x27;.hs2-megamenu-second-layer-li&#x27;),
+      megamenuSecondlayerUl = megamenuLi.querySelector(&#x27;.hs2-megamenu-second-layer-ul&#x27;),
+      maxTLHeight = 0;
+
+    console.log(megamenuThirdLayerLi);
+    megamenuThirdLayerLi.forEach((li) =&gt; {
+      if (maxTLHeight &lt; li.clientHeight) {
+        maxTLHeight = li.clientHeight;
+      }
+    });
+    megamenuSecondlayerUl.style.maxHeight = maxTLHeight + 25 + &#x27;px&#x27;;
+  });
+&lt;/script&gt;
+</code></pre><ul id="0a3052e5-ca9b-453a-9664-8e945535cab7" class="toggle"><li><details open=""><summary>gelico-header-megamenu-style-2</summary><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="8a6ef0c8-3589-4ccd-aa3b-1d6a4ade3e44" class="code"><code class="language-JavaScript">{% liquid
+  assign imageBlocks = section.blocks | where: &#x27;type&#x27;, &#x27;megamenu-image&#x27;
+  assign imageBlockSize = 0
+  assign imageSize = 0
+
+  for block in imageBlocks
+    assign menu_title = block.settings.menu_title | strip | downcase
+    assign link_title = link.title | strip | downcase
+    if menu_title == link_title
+      for i in (1..2)
+        assign imageId = &#x27;image&#x27; | append: i
+        unless block.settings[imageId] == blank
+          assign imageSize = imageSize | plus: 1
+        endunless
+      endfor
+      assign imageBlockSize = imageBlockSize | plus: 1
+    endif
+  endfor
+
+  assign imageSize = imageSize | at_most: 2
+
+  if imageSize &gt; 0
+    if imageSize == 1
+      if section.settings.megamenu_image_position == &#x27;left&#x27;
+        assign grid_columns = &#x27;minmax(0px, 2fr) minmax(0px, 5fr)&#x27;
+      else
+        assign grid_columns = &#x27;minmax(0px, 5fr) minmax(0px, 2fr)&#x27;
+      endif
+      assign image_grid_colunmns = &#x27;minmax(0px, 1fr)&#x27;
+    elsif imageSize == 2
+      if section.settings.megamenu_image_position == &#x27;left&#x27;
+        assign grid_columns = &#x27;minmax(0px, 3fr) minmax(0px, 4fr)&#x27;
+      else
+        assign grid_columns = &#x27;minmax(0px, 4fr) minmax(0px, 3fr)&#x27;
+      endif
+      assign image_grid_colunmns = &#x27;minmax(0px, 1fr) minmax(0px, 1fr)&#x27;
+    endif
+  else
+    assign grid_columns = &#x27;minmax(0px, 1fr)&#x27;
+  endif
+%}
+
+&lt;div class=&quot;hs2-megamenu-container&quot;&gt;
+  &lt;div class=&quot;page-width&quot;&gt;
+    &lt;div class=&quot;hs2-megamenu-wrapper&quot; style=&quot;grid-template-columns: {{ grid_columns }};&quot;&gt;
+      {% if section.settings.megamenu_image_position == &#x27;right&#x27; %}
+        &lt;div class=&quot;hs2-mega-list-wrapper&quot;&gt;
+          &lt;ul class=&quot;hs2-megamenu-second-layer-ul&quot;&gt;
+            {% for childLink in link.links %}
+              &lt;li class=&quot;hs2-megamenu-second-layer-li&quot;&gt;
+                &lt;a href=&quot;{{ childLink.url }}&quot; class=&quot;hs2-megamenu-second-layer-a&quot;&gt;{{ childLink.title | upcase }}&lt;/a&gt;
+                {% unless childLink.links == blank %}
+                  &lt;ul class=&quot;hs2-megamenu-third-layer-ul&quot;&gt;
+                    {% for grandchildLink in childLink.links %}
+                      &lt;li class=&quot;hs2-megamenu-third-layer-li&quot;&gt;
+                        &lt;a href=&quot;{{ grandchildLink.url }}&quot; class=&quot;hs2-megamenu-third-layer-a&quot;&gt;
+                          {{- grandchildLink.title | downcase -}}
+                        &lt;/a&gt;
+                      &lt;/li&gt;
+                    {% endfor %}
+                  &lt;/ul&gt;
+                {% endunless %}
+              &lt;/li&gt;
+            {% endfor %}
+          &lt;/ul&gt;
+        &lt;/div&gt;
+        {% if imageSize &gt; 0 %}
+          &lt;div class=&quot;hs2-mega-image-wrapper&quot; style=&quot;grid-template-columns: {{ image_grid_colunmns }}&quot;&gt;
+            {% for block in imageBlocks %}
+              {% if menu_title == link_title %}
+                {% for i in (1..2) %}
+                  {% liquid
+                    assign imageId = &#x27;image&#x27; | append: i
+                    assign imageUrl = &#x27;url&#x27; | append: i
+                    assign megamenu_image = block.settings[imageId]
+                    assign megamenu_image_url = block.settings[imageUrl]
+                  %}
+                  {% unless megamenu_image == blank %}
+                    &lt;a href=&quot;{{ megamenu_image_url }}&quot; class=&quot;hs2-mega-image-block&quot;&gt;
+                      {{
+                        megamenu_image
+                        | image_url: width: 400, height: 440, crop: &#x27;center&#x27;, quality: 80, format: &#x27;jpg&#x27;
+                        | image_tag: loading: &#x27;lazy&#x27;, class: &#x27;hs2-mega-image&#x27;
+                      }}
+                    &lt;/a&gt;
+                  {% endunless %}
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+          &lt;/div&gt;
+        {% endif %}
+      {% else %}
+        {% if imageSize &gt; 0 %}
+          &lt;div class=&quot;hs2-mega-image-wrapper&quot; style=&quot;grid-template-columns: {{ image_grid_colunmns }}&quot;&gt;
+            {% for block in imageBlocks %}
+              {% if menu_title == link_title %}
+                {% for i in (1..2) %}
+                  {% liquid
+                    assign imageId = &#x27;image&#x27; | append: i
+                    assign imageUrl = &#x27;url&#x27; | append: i
+                    assign megamenu_image = block.settings[imageId]
+                    assign megamenu_image_url = block.settings[imageUrl]
+                  %}
+                  {% unless megamenu_image == blank %}
+                    &lt;a href=&quot;{{ megamenu_image_url }}&quot; class=&quot;hs2-mega-image-block&quot;&gt;
+                      {{
+                        megamenu_image
+                        | image_url: width: 400, height: 440, crop: &#x27;center&#x27;, quality: 80, format: &#x27;jpg&#x27;
+                        | image_tag: loading: &#x27;lazy&#x27;, class: &#x27;hs2-mega-image&#x27;
+                      }}
+                    &lt;/a&gt;
+                  {% endunless %}
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+          &lt;/div&gt;
+        {% endif %}
+        &lt;div class=&quot;hs2-mega-list-wrapper&quot;&gt;
+          &lt;ul class=&quot;hs2-megamenu-second-layer-ul&quot;&gt;
+            {% for childLink in link.links %}
+              &lt;li class=&quot;hs2-megamenu-second-layer-li&quot;&gt;
+                &lt;a href=&quot;{{ childLink.url }}&quot; class=&quot;hs2-megamenu-second-layer-a&quot;&gt;{{ childLink.title | upcase }}&lt;/a&gt;
+                {% unless childLink.links == blank %}
+                  &lt;ul class=&quot;hs2-megamenu-third-layer-ul&quot;&gt;
+                    {% for grandchildLink in childLink.links %}
+                      &lt;li class=&quot;hs2-megamenu-third-layer-li&quot;&gt;
+                        &lt;a href=&quot;{{ grandchildLink.url }}&quot; class=&quot;hs2-megamenu-third-layer-a&quot;&gt;
+                          {{- grandchildLink.title | downcase -}}
+                        &lt;/a&gt;
+                      &lt;/li&gt;
+                    {% endfor %}
+                  &lt;/ul&gt;
+                {% endunless %}
+              &lt;/li&gt;
+            {% endfor %}
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      {% endif %}
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre></details></li></ul><p id="a8d4f11d-7722-4d24-9ee8-9188d8493607" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Assets</summary><div class="indented"><ul id="a5c01a90-cefc-4d20-8bef-edf9e06d9360" class="toggle"><li><details open=""><summary>gelico-header-megamenu-style-2</summary><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="8821edd6-f404-4e9e-b900-20f646ddc938" class="code"><code class="language-JavaScript">{% liquid
+  assign imageBlocks = section.blocks | where: &#x27;type&#x27;, &#x27;megamenu-image&#x27;
+  assign imageBlockSize = 0
+  assign imageSize = 0
+
+  for block in imageBlocks
+    assign menu_title = block.settings.menu_title | strip | downcase
+    assign link_title = link.title | strip | downcase
+    if menu_title == link_title
+      for i in (1..2)
+        assign imageId = &#x27;image&#x27; | append: i
+        unless block.settings[imageId] == blank
+          assign imageSize = imageSize | plus: 1
+        endunless
+      endfor
+      assign imageBlockSize = imageBlockSize | plus: 1
+    endif
+  endfor
+
+  assign imageSize = imageSize | at_most: 2
+
+  if imageSize &gt; 0
+    if imageSize == 1
+      if section.settings.megamenu_image_position == &#x27;left&#x27;
+        assign grid_columns = &#x27;minmax(0px, 2fr) minmax(0px, 5fr)&#x27;
+      else
+        assign grid_columns = &#x27;minmax(0px, 5fr) minmax(0px, 2fr)&#x27;
+      endif
+      assign image_grid_colunmns = &#x27;minmax(0px, 1fr)&#x27;
+    elsif imageSize == 2
+      if section.settings.megamenu_image_position == &#x27;left&#x27;
+        assign grid_columns = &#x27;minmax(0px, 3fr) minmax(0px, 4fr)&#x27;
+      else
+        assign grid_columns = &#x27;minmax(0px, 4fr) minmax(0px, 3fr)&#x27;
+      endif
+      assign image_grid_colunmns = &#x27;minmax(0px, 1fr) minmax(0px, 1fr)&#x27;
+    endif
+  else
+    assign grid_columns = &#x27;minmax(0px, 1fr)&#x27;
+  endif
+%}
+
+&lt;div class=&quot;hs2-megamenu-container&quot;&gt;
+  &lt;div class=&quot;page-width&quot;&gt;
+    &lt;div class=&quot;hs2-megamenu-wrapper&quot; style=&quot;grid-template-columns: {{ grid_columns }};&quot;&gt;
+      {% if section.settings.megamenu_image_position == &#x27;right&#x27; %}
+        &lt;div class=&quot;hs2-mega-list-wrapper&quot;&gt;
+          &lt;ul class=&quot;hs2-megamenu-second-layer-ul&quot;&gt;
+            {% for childLink in link.links %}
+              &lt;li class=&quot;hs2-megamenu-second-layer-li&quot;&gt;
+                &lt;a href=&quot;{{ childLink.url }}&quot; class=&quot;hs2-megamenu-second-layer-a&quot;&gt;{{ childLink.title | upcase }}&lt;/a&gt;
+                {% unless childLink.links == blank %}
+                  &lt;ul class=&quot;hs2-megamenu-third-layer-ul&quot;&gt;
+                    {% for grandchildLink in childLink.links %}
+                      &lt;li class=&quot;hs2-megamenu-third-layer-li&quot;&gt;
+                        &lt;a href=&quot;{{ grandchildLink.url }}&quot; class=&quot;hs2-megamenu-third-layer-a&quot;&gt;
+                          {{- grandchildLink.title | downcase -}}
+                        &lt;/a&gt;
+                      &lt;/li&gt;
+                    {% endfor %}
+                  &lt;/ul&gt;
+                {% endunless %}
+              &lt;/li&gt;
+            {% endfor %}
+          &lt;/ul&gt;
+        &lt;/div&gt;
+        {% if imageSize &gt; 0 %}
+          &lt;div class=&quot;hs2-mega-image-wrapper&quot; style=&quot;grid-template-columns: {{ image_grid_colunmns }}&quot;&gt;
+            {% for block in imageBlocks %}
+              {% if menu_title == link_title %}
+                {% for i in (1..2) %}
+                  {% liquid
+                    assign imageId = &#x27;image&#x27; | append: i
+                    assign imageUrl = &#x27;url&#x27; | append: i
+                    assign megamenu_image = block.settings[imageId]
+                    assign megamenu_image_url = block.settings[imageUrl]
+                  %}
+                  {% unless megamenu_image == blank %}
+                    &lt;a href=&quot;{{ megamenu_image_url }}&quot; class=&quot;hs2-mega-image-block&quot;&gt;
+                      {{
+                        megamenu_image
+                        | image_url: width: 400, height: 440, crop: &#x27;center&#x27;, quality: 80, format: &#x27;jpg&#x27;
+                        | image_tag: loading: &#x27;lazy&#x27;, class: &#x27;hs2-mega-image&#x27;
+                      }}
+                    &lt;/a&gt;
+                  {% endunless %}
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+          &lt;/div&gt;
+        {% endif %}
+      {% else %}
+        {% if imageSize &gt; 0 %}
+          &lt;div class=&quot;hs2-mega-image-wrapper&quot; style=&quot;grid-template-columns: {{ image_grid_colunmns }}&quot;&gt;
+            {% for block in imageBlocks %}
+              {% if menu_title == link_title %}
+                {% for i in (1..2) %}
+                  {% liquid
+                    assign imageId = &#x27;image&#x27; | append: i
+                    assign imageUrl = &#x27;url&#x27; | append: i
+                    assign megamenu_image = block.settings[imageId]
+                    assign megamenu_image_url = block.settings[imageUrl]
+                  %}
+                  {% unless megamenu_image == blank %}
+                    &lt;a href=&quot;{{ megamenu_image_url }}&quot; class=&quot;hs2-mega-image-block&quot;&gt;
+                      {{
+                        megamenu_image
+                        | image_url: width: 400, height: 440, crop: &#x27;center&#x27;, quality: 80, format: &#x27;jpg&#x27;
+                        | image_tag: loading: &#x27;lazy&#x27;, class: &#x27;hs2-mega-image&#x27;
+                      }}
+                    &lt;/a&gt;
+                  {% endunless %}
+                {% endfor %}
+              {% endif %}
+            {% endfor %}
+          &lt;/div&gt;
+        {% endif %}
+        &lt;div class=&quot;hs2-mega-list-wrapper&quot;&gt;
+          &lt;ul class=&quot;hs2-megamenu-second-layer-ul&quot;&gt;
+            {% for childLink in link.links %}
+              &lt;li class=&quot;hs2-megamenu-second-layer-li&quot;&gt;
+                &lt;a href=&quot;{{ childLink.url }}&quot; class=&quot;hs2-megamenu-second-layer-a&quot;&gt;{{ childLink.title | upcase }}&lt;/a&gt;
+                {% unless childLink.links == blank %}
+                  &lt;ul class=&quot;hs2-megamenu-third-layer-ul&quot;&gt;
+                    {% for grandchildLink in childLink.links %}
+                      &lt;li class=&quot;hs2-megamenu-third-layer-li&quot;&gt;
+                        &lt;a href=&quot;{{ grandchildLink.url }}&quot; class=&quot;hs2-megamenu-third-layer-a&quot;&gt;
+                          {{- grandchildLink.title | downcase -}}
+                        &lt;/a&gt;
+                      &lt;/li&gt;
+                    {% endfor %}
+                  &lt;/ul&gt;
+                {% endunless %}
+              &lt;/li&gt;
+            {% endfor %}
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      {% endif %}
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre></details></li></ul><ul id="a229325f-da8d-4e46-a826-dad2752ca62e" class="toggle"><li><details open=""><summary>gelico-header-dropdown-menu-style-2</summary><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="c133b682-0d96-4125-9081-72ff431f84d5" class="code"><code class="language-JavaScript">&lt;div class=&quot;hs2-second-layer-wrapper&quot;&gt;
+  &lt;ul class=&quot;hs2-second-layer-ul&quot;&gt;
+    {% for childLink in link.links %}
+      &lt;li class=&quot;hs2-second-layer-li&quot;&gt;
+        &lt;div class=&quot;hs2-menu-icon-wrapper&quot;&gt;
+          {% unless childLink.links == blank %}
+            &lt;a class=&quot;hs2-second-layer-a event-none&quot; href=&quot;{{ childLink.url }}&quot;&gt;
+              {{- childLink.title -}}
+            &lt;/a&gt;
+            &lt;div class=&quot;hs2-icon-wrapper&quot;&gt;
+              {% render &#x27;gelico-icons&#x27;, name: &#x27;plus&#x27;, class: &#x27;second-layer hs2-plus-icon&#x27; %}
+              {% render &#x27;gelico-icons&#x27;, name: &#x27;minus&#x27;, class: &#x27;second-layer hs2-minus-icon&#x27; %}
+            &lt;/div&gt;
+          {% else %}
+            &lt;a class=&quot;hs2-second-layer-a&quot; href=&quot;{{ childLink.url }}&quot;&gt;{{ childLink.title }}&lt;/a&gt;
+          {% endunless %}
+        &lt;/div&gt;
+        {% unless childLink.links == blank %}
+          &lt;div class=&quot;hs2-third-layer-wrapper&quot;&gt;
+            &lt;ul class=&quot;hs2-third-layer-ul&quot;&gt;
+              {% for grandChildLink in childLink.links %}
+                &lt;li class=&quot;hs2-third-layer-li&quot;&gt;
+                  &lt;a class=&quot;hs2-third-layer-a&quot; href=&quot;{{ grandChildLink.url }}&quot;&gt;
+                    {{- grandChildLink.title -}}
+                  &lt;/a&gt;
+                &lt;/li&gt;
+              {% endfor %}
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        {% endunless %}
+      &lt;/li&gt;
+    {% endfor %}
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre></details></li></ul></div></details></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0">Global Snippets</summary><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="55042703-016e-4a4a-a5f6-7f56e2810282" class="code"><code class="language-JavaScript">{%- liquid
+  assign currencies = localization.available_countries | map: &#x27;currency&#x27; | map: &#x27;iso_code&#x27; | uniq
+  assign popular_countries = localization.available_countries | where: &#x27;popular?&#x27; | sort: &#x27;name&#x27;
+
+  # assign show_country_filter = false
+  if localization.available_countries.size &gt; 9
+    # assign show_country_filter = true
+  endif
+
+  # assign show_popular_countries = false
+  if localization.available_countries.size &gt; 9 and popular_countries.size &gt; 1
+    # assign show_popular_countries = true
+  endif
+
+  # assign show_currencies = false
+  if currencies.size &gt; 1
+    # assign show_currencies = true
+  endif
+%}
+
+&lt;style&gt;
+  .gelico-localization-wrapper *:focus-visible {
+    outline: none;
+    outline-offset: 0;
+    box-shadow: none;
+  }
+  .gelico-localization-wrapper {
+    display: flex;
+    gap: 25px;
+  }
+  .gelico-localization-wrapper select {
+    border: none;
+    background: transparent;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5IiBoZWlnaHQ9IjkiIHZpZXdCb3g9IjAgMCA5IDkiIGZpbGw9Im5vbmUiPg0KICA8bGluZSB5MT0iNC41IiB4Mj0iOSIgeTI9IjQuNSIgc3Ryb2tlPSJibGFjayIvPg0KICA8bGluZSB4MT0iNC41IiB5MT0iOSIgeDI9IjQuNSIgeTI9IjIuMTg1NTdlLTA4IiBzdHJva2U9ImJsYWNrIi8+DQo8L3N2Zz4=);
+    background-repeat: no-repeat;
+    background-position: top 49% right;
+    appearance: none;
+    -webkit-appearance: none;
+    color: black;
+    box-sizing: border-box;
+    padding-right: 8px;
+  }
+&lt;/style&gt;
+
+&lt;div class=&quot;gelico-localization-wrapper&quot;&gt;
+  {%- if section.settings.enable_language_selector and localization.available_languages.size &gt; 1 -%}
+    &lt;gelico-localizationform&gt;
+      {%- form &#x27;localization&#x27;, class: &#x27;gelico-localization-lang-form&#x27; -%}
+        &lt;select name=&quot;language_code&quot;&gt;
+          {%- for language in localization.available_languages -%}
+            &lt;option
+              value=&quot;{{ language.iso_code }}&quot;
+              {% if language.iso_code == localization.language.iso_code %}
+                selected
+              {% endif %}
+            &gt;
+              {{ language.iso_code | capitalize }} &amp;nbsp;
+            &lt;/option&gt;
+          {%- endfor -%}
+        &lt;/select&gt;
+      {%- endform -%}
+    &lt;/gelico-localizationform&gt;
+  {%- endif -%}
+
+  {%- if section.settings.enable_country_selector and localization.available_countries.size &gt; 1 -%}
+    &lt;gelico-localizationform&gt;
+      {%- form &#x27;localization&#x27;, class: &#x27;gelico-localization-country-form&#x27; -%}
+        &lt;select name=&quot;country_code&quot;&gt;
+          {%- for country in localization.available_countries -%}
+            &lt;option
+              value=&quot;{{ country.iso_code }}&quot;
+              {% if country.iso_code == localization.country.iso_code %}
+                selected
+              {% endif %}
+            &gt;
+              {{ country.iso_code }} |
+              {{ country.currency.iso_code }}
+            &lt;/option&gt;
+          {%- endfor -%}
+        &lt;/select&gt;
+      {%- endform -%}
+    &lt;/gelico-localizationform&gt;
+  {% endif %}
+&lt;/div&gt;
+</code></pre></div></details><p id="d991000e-7e8a-47bf-a1aa-a368f4cd1025" class="">
+</p><figure id="9fe6c215-5c19-444a-9531-26aa19744384" class="link-to-page"><a href="Gelico%20Header%2054eb8366a16b4d2baf1dc59e81675d75/Custom%20Announcement%20Bar%209fe6c2155c19444a953126aa19744384.html">Custom Announcement Bar</a></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

@@ -1,0 +1,2112 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Custom feature product with color swatch</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="4c170955-e18c-4a76-9dd9-271cc4a13ff4" class="page sans"><header><h1 class="page-title">Custom feature product with color swatch</h1><p class="page-description"></p></header><div class="page-body"><figure id="0bd2dbac-d7e4-490c-9d15-1692ed5c4b47" class="image"><a href="Custom%20feature%20product%20with%20color%20swatch%204c170955e18c4a769dd9271cc4a13ff4/Untitled.png"><img style="width:708px" src="Custom%20feature%20product%20with%20color%20swatch%204c170955e18c4a769dd9271cc4a13ff4/Untitled.png"/></a></figure><h1 id="18a89592-35bb-46a6-a710-900f5ffb012a" class="">Code Snippet</h1><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="4561ab2c-c2da-4072-becb-5bfa5a9fb7bb" class="code"><code class="language-JavaScript">{% liquid
+  assign id = section.id
+  assign formId = &#x27;main-product-details-form&#x27;
+  assign update_url = true
+  assign replace_colors = settings.color_swatch_code | strip_newlines | strip | remove: &#x27; &#x27; | downcase
+  assign slider_direction = section.settings.slider_direction
+%}
+
+&lt;style&gt;
+    #shopify-section-{{id}} {
+      box-sizing: border-box;
+      margin-top: {{section.settings.margin_top | append: &#x27;px&#x27;}};
+      margin-bottom: {{section.settings.margin_bottom | append: &#x27;px&#x27;}};
+      padding-top: {{section.settings.padding_top | append: &#x27;px&#x27;}};
+      padding-bottom: {{section.settings.padding_bottom | append: &#x27;px&#x27;}};
+    }
+
+    @media(max-width: 768px) {
+      #shopify-section-{{id}} {
+        margin-top: {{section.settings.margin_top_m | append: &#x27;px&#x27;}};
+        margin-bottom: {{section.settings.margin_bottom_m | append: &#x27;px&#x27;}};
+        padding-top: {{section.settings.padding_top_m | append: &#x27;px&#x27;}};
+        padding-bottom: {{section.settings.padding_bottom_m | append: &#x27;px&#x27;}};
+        max-width: 100vw;
+        overflow: hidden;
+      }
+    }
+    @media screen and (min-width: 1201px){
+      .sec-{{ id }} .page-width{
+        display: grid;
+        grid-template-columns: 1fr 600px;
+        grid-gap: 64px;
+      }
+    }
+
+
+
+  #shopify-section-{{id}} {
+    h1.section-title {
+      color: var(--Dark--, #2B2B2B);
+      text-align: center;
+      font-size: 40px;
+      font-style: normal;
+      line-height: 44px;
+      text-transform: uppercase;
+      font-family: &quot;Gill Sans Nova Semibold&quot;;
+      margin-bottom: 64px;
+      @media(max-width:768px){
+          font-size:32px;
+          line-height: 36px;
+          margin-bottom: 32px;
+    }
+  }
+  }
+&lt;/style&gt;
+
+{{ &#x27;custom-featured-product.css&#x27; | asset_url | stylesheet_tag }}
+{% unless section.settings.product == blank %}
+  {% assign product = section.settings.product %}
+{% endunless %}
+
+&lt;div class=&quot;sec-{{ id }}&quot;&gt;
+  &lt;h1 class=&quot;section-title&quot;&gt;{{ section.settings.title }}&lt;/h1&gt;
+  &lt;div class=&quot;{% unless section.settings.full_width %}page-width{% endunless %}&quot;&gt;
+    &lt;div class=&quot;featured-image-pd&quot;&gt;
+      {% if product.featured_image %}
+        {{ product.featured_image | image_url: width: 1024 | image_tag }}
+      {% endif %}
+    &lt;/div&gt;
+    &lt;div class=&quot;main-pd-wrapper&quot;&gt;
+      &lt;div class=&quot;pd-media-wrapper&quot;&gt;
+        &lt;pd-gellary
+          data-thumb-selector=&quot;pd-thumb-swiper&quot;
+          data-scroll-selector=&quot;pd-scroll-swiper&quot;
+          data-slide-type=&quot;{{ section.settings.slide_type }}&quot;
+          data-direction=&quot;{{ slider_direction }}&quot;
+          class=&quot;direction-{{ slider_direction }}&quot;
+        &gt;
+          &lt;div class=&quot;pd-media-thumb-gellary&quot;&gt;
+            &lt;div class=&quot;swiper pd-thumb-swiper&quot;&gt;
+              &lt;div class=&quot;swiper-wrapper&quot;&gt;
+                {% for media in product.media %}
+                  &lt;div
+                    class=&quot;swiper-slide&quot;
+                    data-src=&quot;{{ media | image_url }}&quot;
+                    data-index=&quot;{{ forloop.index0 }}&quot;
+                  &gt;
+                    &lt;div class=&quot;pd-thumb-media-wrapper&quot;&gt;
+                      {% case media.media_type %}
+                        {% when &#x27;video&#x27; %}
+                          {{
+                            media
+                            | video_tag: autoplay: true, loop: true, muted: true, controls: false, image_size: &#x27;600x&#x27;
+                          }}
+                        {% when &#x27;image&#x27; %}
+                          {% unless media == blank %}
+                            {% if forloop.first %}
+                              {{ media | image_url: width: media.width | image_tag }}
+                            {% else %}
+                              {{ media | image_url: width: media.width | image_tag: loading: &#x27;lazy&#x27; }}
+                            {% endif %}
+                          {% endunless %}
+                      {% endcase %}
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                {% endfor %}
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          {% if section.settings.show_swiper_thumb and product.media.size &gt; 1 %}
+            &lt;div class=&quot;pd-media-scroll-gellary&quot;&gt;
+              &lt;div class=&quot;swiper pd-scroll-swiper&quot;&gt;
+                &lt;div class=&quot;swiper-wrapper&quot;&gt;
+                  {% for media in product.media %}
+                    &lt;div
+                      class=&quot;swiper-slide {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}&quot;
+                      {% if settings.animations_reveal_on_scroll %}
+                        data-cascade
+                        style=&quot;--animation-order: {{ forloop.index }};&quot;
+                      {% endif %}
+                    &gt;
+                      {{ media | image_url: width: 150 | image_tag: loading: &#x27;lazy&#x27; }}
+                    &lt;/div&gt;
+                  {% endfor %}
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          {% endif %}
+        &lt;/pd-gellary&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;pd-info-wrapper&quot;&gt;
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when &#x27;@app&#x27; %}
+              &lt;div class=&quot;pd-app-block&quot;&gt;
+                {% render block %}
+              &lt;/div&gt;
+            {% when &#x27;vendor&#x27; %}
+              {% if product.vendor != blank %}
+                &lt;p class=&quot;pd-product-vendor {% if block.settings.mb %}mb{% endif %}&quot;&gt;{{ product.type }}&lt;/p&gt;
+              {% endif %}
+            {% when &#x27;title&#x27; %}
+              &lt;a href=&quot;{{ product.url }}&quot; class=&quot;pd-product-title {% if block.settings.mb %}mb{% endif %}&quot;&gt;
+                {{- product.title -}}
+              &lt;/a&gt;
+            {% when &#x27;price&#x27; %}
+              &lt;div class=&quot;pd-product-price {% if block.settings.mb %}mb{% endif %}&quot;&gt;
+                {% if product.selected_or_first_available_variant.price
+                    &lt; product.selected_or_first_available_variant.compare_at_price
+                %}
+                  &lt;h2&gt;
+                    {{- product.selected_or_first_available_variant.price | money }}
+                  &lt;/h2&gt;
+                  &lt;h3&gt;
+                    {{- product.selected_or_first_available_variant.compare_at_price | money }}
+                  &lt;/h3&gt;
+                  &lt;label class=&quot;price--discount&quot;&gt;
+                    {% liquid
+                      assign discount = product.selected_or_first_available_variant.compare_at_price | minus: product.selected_or_first_available_variant.price
+                    %}
+                    {{
+                      discount
+                      | times: 100.0
+                      | divided_by: product.selected_or_first_available_variant.compare_at_price
+                      | round
+                      | append: &#x27;%&#x27;
+                    }}
+                    Off&lt;/label
+                  &gt;
+                {% else %}
+                  &lt;h2&gt;
+                    {{- product.selected_or_first_available_variant.price | money }}
+                  &lt;/h2&gt;
+                {% endif %}
+              &lt;/div&gt;
+
+            {% when &#x27;stock&#x27; %}
+              &lt;p class=&quot;pd-product-stock {% if block.settings.mb %}mb{% endif %}&quot;&gt;
+                {% liquid
+                  if product.selected_or_first_available_variant.available
+                    echo product.selected_or_first_available_variant.inventory_quantity | append: &#x27; items in Stock&#x27;
+                  else
+                    echo &#x27;Out Of Stock&#x27;
+                  endif
+                %}
+              &lt;/p&gt;
+
+            {% when &#x27;variant-picker&#x27; %}
+              {% unless product.has_only_default_variant %}
+                &lt;pd-variant
+                  data-product-id=&quot;{{ product.id }}&quot;
+                  data-section-id=&quot;{{ section.id }}&quot;
+                  data-form-id=&quot;{{ formId }}&quot;
+                  data-url=&quot;{{ product.url }}&quot;
+                  {% if update_url == false %}
+                    data-update-url=&quot;false&quot;
+                  {% endif %}
+                  {{ block.shopify_attributes }}
+                &gt;
+                  &lt;form&gt;
+                    &lt;div class=&quot;pd-variant-wrapper {% if block.settings.mb %}mb{% endif %}&quot;&gt;
+                      {% for option in product.options_with_values %}
+                        {% assign optionName = option.name | downcase %}
+                        {% assign activeSwatch = block.settings.active_color_swatch %}
+                        &lt;div class=&quot;pd-variant {% if optionName == &#x27;color&#x27; and activeSwatch %}pd-color-variant{% else %}pd-others-variant{% endif %}&quot;&gt;
+                          {%- liquid
+                            assign variants_available_arr = product.variants | map: &#x27;available&#x27;
+                            assign variants_option1_arr = product.variants | map: &#x27;option1&#x27;
+                            assign variants_option2_arr = product.variants | map: &#x27;option2&#x27;
+                            assign variants_option3_arr = product.variants | map: &#x27;option3&#x27;
+                          -%}
+                          &lt;div class=&quot;pd-variant-field&quot;&gt;
+                            {% for value in option.values %}
+                              {%- liquid
+                                assign option_disabled = true
+
+                                for option1_name in variants_option1_arr
+                                  case option.position
+                                    when 1
+                                      if variants_option1_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+                                        assign option_disabled = false
+                                      endif
+                                    when 2
+                                      if option1_name == product.selected_or_first_available_variant.option1 and variants_option2_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+                                        assign option_disabled = false
+                                      endif
+                                    when 3
+                                      if option1_name == product.selected_or_first_available_variant.option1 and variants_option2_arr[forloop.index0] == product.selected_or_first_available_variant.option2 and variants_option3_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+                                        assign option_disabled = false
+                                      endif
+                                  endcase
+                                endfor
+                                assign input_id = section.id | append: &#x27;-&#x27; | append: option.position | append: &#x27;-&#x27; | append: forloop.index0
+                              %}
+                              {% if optionName == &#x27;color&#x27; and activeSwatch %}
+                                {% liquid
+                                  if value contains &#x27; &#x27;
+                                    assign isDouble = true
+                                    assign single = value | downcase | split: &#x27; &#x27;
+                                    assign first = &#x27;#&#x27; | append: single[0]
+                                    assign second = &#x27;#&#x27; | append: single[1]
+
+                                    if replace_colors contains first
+                                      assign firstColor = replace_colors | split: first | last | split: &#x27;,&#x27; | first | remove: &#x27;:&#x27;
+                                    else
+                                      assign firstColor = first | remove: &#x27;#&#x27;
+                                    endif
+                                    if replace_colors contains second
+                                      assign secondColor = replace_colors | split: second | last | split: &#x27;,&#x27; | first | remove: &#x27;:&#x27;
+                                    else
+                                      assign secondColor = second | remove: &#x27;#&#x27;
+                                    endif
+                                  else
+                                    assign self = &#x27;#&#x27; | append: value | downcase
+                                    if replace_colors contains self
+                                      assign singlColor = replace_colors | split: self | last | split: &#x27;,&#x27; | first | remove: &#x27;:&#x27;
+                                    else
+                                      assign singlColor = self
+                                    endif
+                                    assign isDouble = false
+                                  endif
+                                %}
+                                &lt;div class=&quot;pd-variant-value&quot;&gt;
+                                  &lt;input
+                                    type=&quot;radio&quot;
+                                    id=&quot;{{ input_id }}&quot;
+                                    name=&quot;{{ option.name }}&quot;
+                                    {% if option_disabled %}
+                                      class=&quot;disabled&quot;
+                                    {% endif %}
+                                    {% if value == option.selected_value %}
+                                      checked
+                                    {% endif %}
+                                    value=&quot;{{ value }}&quot;
+                                  &gt;
+                                  {% if isDouble %}
+                                    &lt;label
+                                      title=&quot;{{ value }} - {% if option_disabled %}Out Of Stock{% else %}In Stock{% endif %}&quot;
+                                      for=&quot;{{ input_id }}&quot;
+                                      style=&quot;background: linear-gradient(to right, #{{ firstColor }} 50%, #{{ secondColor }} 50%)&quot;
+                                    &gt;
+                                      {%- if option_disabled %}
+                                        {% render &#x27;line&#x27; %}
+                                      {% endif -%}
+                                    &lt;/label&gt;
+                                  {% else %}
+                                    &lt;label
+                                      title=&quot;{{ value }} - {% if option_disabled %}Out Of Stock{% else %}In Stock{% endif %}&quot;
+                                      for=&quot;{{ input_id }}&quot;
+                                      style=&quot;background: #{{ singlColor }}; color: {{ value }}&quot;
+                                    &gt;
+                                      {% if option_disabled %}
+                                        {% render &#x27;line&#x27; %}
+                                      {% endif %}
+                                    &lt;/label&gt;
+                                  {% endif %}
+                                &lt;/div&gt;
+                              {% else %}
+                                &lt;div class=&quot;pd-variant-value&quot;&gt;
+                                  &lt;input
+                                    type=&quot;radio&quot;
+                                    id=&quot;{{ input_id }}&quot;
+                                    name=&quot;{{ option.name }}&quot;
+                                    {% if option_disabled %}
+                                      class=&quot;disabled&quot;
+                                    {% endif %}
+                                    {% if value == option.selected_value %}
+                                      checked
+                                    {% endif %}
+                                    value=&quot;{{ value }}&quot;
+                                  &gt;
+                                  &lt;label
+                                    title=&quot;{{ option.name }}[{{ value }}] - {% if option_disabled %}Out Of Stock{% else %}In Stock{% endif %}&quot;
+                                    for=&quot;{{ input_id }}&quot;
+                                  &gt;
+                                    {% if option_disabled %}
+                                      {% render &#x27;line&#x27; %}
+                                    {% endif %}
+                                    {{- value -}}
+                                  &lt;/label&gt;
+                                &lt;/div&gt;
+                              {% endif %}
+                            {% endfor %}
+                          &lt;/div&gt;
+                        &lt;/div&gt;
+                      {% endfor %}
+                    &lt;/div&gt;
+                  &lt;/form&gt;
+                  &lt;script type=&quot;application/json&quot;&gt;
+                    {{ product.variants | json }}
+                  &lt;/script&gt;
+                &lt;/pd-variant&gt;
+              {% endunless %}
+
+            {% when &#x27;product-form&#x27; %}
+              &lt;pd-form&gt;
+                &lt;div class=&quot;pd-form-wrapper {% if block.settings.mb %}mb{% endif %}&quot;&gt;
+                  {% form &#x27;product&#x27;, product, id: formId %}
+                    &lt;div class=&quot;pd-current-variant-id&quot;&gt;
+                      &lt;input type=&quot;hidden&quot; name=&quot;id&quot; value=&quot;{{ product.selected_or_first_available_variant.id }}&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;input type=&quot;hidden&quot; name=&quot;quantity&quot; value=&quot;1&quot;&gt;
+                    {% if block.settings.active_appstle_subscription %}
+                      &lt;span
+                        class=&quot;appstle_stand_alone_selector&quot;
+                        data-product-handle=&quot;{{ product.handle }}&quot;
+                        data-product-data=&quot;&quot;
+                        style=&quot;display:none;&quot;
+                      &gt;&lt;/span&gt;
+                    {% endif %}
+
+                    &lt;div class=&quot;pd-atc-button-wrapper&quot;&gt;
+                      &lt;p class=&quot;quantity-label hidden&quot;&gt;QUANTITY&lt;/p&gt;
+                      &lt;quantity-selector&gt;
+                        &lt;button type=&quot;button&quot; data-value=&quot;-1&quot;&gt;{% render &#x27;all-icons&#x27;, name: &#x27;decrement&#x27; %}&lt;/button&gt;
+                        &lt;input type=&quot;number&quot; name=&quot;quantity&quot; value=&quot;1&quot; min=&quot;1&quot; max=&quot;20&quot;&gt;
+                        &lt;button type=&quot;button&quot; data-value=&quot;1&quot;&gt;{% render &#x27;all-icons&#x27;, name: &#x27;increment&#x27; %}&lt;/button&gt;
+                      &lt;/quantity-selector&gt;
+                      &lt;button
+                        title=&quot;Add To Cart - {{ product.title }}-{{ product.selected_or_first_available_variant.price | money }}&quot;
+                        aria-label=&quot;Add to Cart&quot;
+                        type=&quot;submit&quot;
+                        class=&quot;pd-add-to-card product-quick-add product-form__submit&quot;
+                        {% unless product.selected_or_first_available_variant.available %}
+                          disabled
+                        {% endunless %}
+                      &gt;
+                        {% if product.selected_or_first_available_variant.available %}
+                          Shop Now
+                        {% else %}
+                          sold out
+                        {% endif %}
+                      &lt;/button&gt;
+                    &lt;/div&gt;
+                  {% endform %}
+                &lt;/div&gt;
+              &lt;/pd-form&gt;
+          {% endcase %}
+        {% endfor %}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script src=&quot;{{ &#x27;custom-featured-product.js&#x27; | asset_url }}&quot; defer=&quot;defer&quot;&gt;&lt;/script&gt;
+
+{% schema %}
+{
+  &quot;name&quot;: &quot;Custom Featured Product&quot;,
+  &quot;templates&quot;: [&quot;index&quot;],
+  &quot;settings&quot;: [
+    {
+      &quot;type&quot;: &quot;checkbox&quot;,
+      &quot;id&quot;: &quot;full_width&quot;,
+      &quot;label&quot;: &quot;Full Width Section&quot;,
+      &quot;default&quot;: false
+    },
+    {
+      &quot;type&quot;: &quot;text&quot;,
+      &quot;id&quot;: &quot;title&quot;,
+      &quot;label&quot;: &quot;Title&quot;
+    },
+    {
+      &quot;type&quot;: &quot;product&quot;,
+      &quot;id&quot;: &quot;product&quot;,
+      &quot;label&quot;: &quot;Product&quot;
+    },
+    {
+      &quot;type&quot;: &quot;select&quot;,
+      &quot;id&quot;: &quot;slider_direction&quot;,
+      &quot;label&quot;: &quot;Slider Direction&quot;,
+      &quot;info&quot;: &quot;Thumb Vertical OR Horizontal&quot;,
+      &quot;options&quot;: [
+        {
+          &quot;value&quot;: &quot;vertical&quot;,
+          &quot;label&quot;: &quot;Vertical&quot;
+        },
+        {
+          &quot;value&quot;: &quot;horizontal&quot;,
+          &quot;label&quot;: &quot;Horizontal&quot;
+        }
+      ],
+      &quot;default&quot;: &quot;horizontal&quot;
+    },
+    {
+      &quot;type&quot;: &quot;select&quot;,
+      &quot;id&quot;: &quot;slide_type&quot;,
+      &quot;label&quot;: &quot;Slide Type&quot;,
+      &quot;options&quot;: [
+        {
+          &quot;value&quot;: &quot;slide&quot;,
+          &quot;label&quot;: &quot;Slide&quot;
+        },
+        {
+          &quot;value&quot;: &quot;fade&quot;,
+          &quot;label&quot;: &quot;Fade&quot;
+        },
+        {
+          &quot;value&quot;: &quot;flip&quot;,
+          &quot;label&quot;: &quot;Flip&quot;
+        }
+      ],
+      &quot;default&quot;: &quot;slide&quot;
+    },
+    {
+      &quot;type&quot;: &quot;checkbox&quot;,
+      &quot;id&quot;: &quot;show_swiper_thumb&quot;,
+      &quot;label&quot;: &quot;Show Thumb Slider&quot;,
+      &quot;default&quot;: false
+    },
+    {
+      &quot;type&quot;: &quot;header&quot;,
+      &quot;content&quot;: &quot;Section Spacing Desktop&quot;
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;margin_top&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 100,
+      &quot;step&quot;: 1,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Margin Top&quot;,
+      &quot;default&quot;: 0
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;margin_bottom&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 100,
+      &quot;step&quot;: 1,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Margin Bottom&quot;,
+      &quot;default&quot;: 0
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;padding_top&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 100,
+      &quot;step&quot;: 1,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Padding Top&quot;,
+      &quot;default&quot;: 0
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;padding_bottom&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 100,
+      &quot;step&quot;: 1,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Padding Bottom&quot;,
+      &quot;default&quot;: 0
+    },
+    {
+      &quot;type&quot;: &quot;header&quot;,
+      &quot;content&quot;: &quot;Section Spacing Mobile&quot;
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;margin_top_m&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 100,
+      &quot;step&quot;: 1,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Margin Top&quot;,
+      &quot;default&quot;: 0
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;margin_bottom_m&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 100,
+      &quot;step&quot;: 1,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Margin Bottom&quot;,
+      &quot;default&quot;: 0
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;padding_top_m&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 100,
+      &quot;step&quot;: 1,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Padding Top&quot;,
+      &quot;default&quot;: 0
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;padding_bottom_m&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 100,
+      &quot;step&quot;: 1,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Padding Bottom&quot;,
+      &quot;default&quot;: 0
+    }
+  ],
+  &quot;blocks&quot;: [
+    {
+      &quot;type&quot;: &quot;@app&quot;
+    },
+    {
+      &quot;type&quot;: &quot;vendor&quot;,
+      &quot;name&quot;: &quot;Vendor&quot;,
+      &quot;limit&quot;: 1
+    },
+    {
+      &quot;type&quot;: &quot;title&quot;,
+      &quot;name&quot;: &quot;Title&quot;,
+      &quot;limit&quot;: 1,
+      &quot;settings&quot;: [
+        {
+          &quot;type&quot;: &quot;checkbox&quot;,
+          &quot;id&quot;: &quot;mb&quot;,
+          &quot;label&quot;: &quot;Margin Bottom&quot;,
+          &quot;default&quot;: true
+        }
+      ]
+    },
+    {
+      &quot;type&quot;: &quot;price&quot;,
+      &quot;name&quot;: &quot;Price&quot;,
+      &quot;limit&quot;: 1,
+      &quot;settings&quot;: [
+        {
+          &quot;type&quot;: &quot;checkbox&quot;,
+          &quot;id&quot;: &quot;mb&quot;,
+          &quot;label&quot;: &quot;Margin Bottom&quot;,
+          &quot;default&quot;: true
+        }
+      ]
+    },
+    {
+      &quot;type&quot;: &quot;stock&quot;,
+      &quot;name&quot;: &quot;Stock&quot;,
+      &quot;limit&quot;: 1,
+      &quot;settings&quot;: [
+        {
+          &quot;type&quot;: &quot;checkbox&quot;,
+          &quot;id&quot;: &quot;mb&quot;,
+          &quot;label&quot;: &quot;Margin Bottom&quot;,
+          &quot;default&quot;: true
+        }
+      ]
+    },
+    {
+      &quot;type&quot;: &quot;variant-picker&quot;,
+      &quot;name&quot;: &quot;Variant Picker&quot;,
+      &quot;limit&quot;: 1,
+      &quot;settings&quot;: [
+        {
+          &quot;type&quot;: &quot;checkbox&quot;,
+          &quot;id&quot;: &quot;mb&quot;,
+          &quot;label&quot;: &quot;Margin Bottom&quot;,
+          &quot;default&quot;: true
+        },
+        {
+          &quot;type&quot;: &quot;checkbox&quot;,
+          &quot;id&quot;: &quot;active_color_swatch&quot;,
+          &quot;default&quot;: false,
+          &quot;label&quot;: &quot;Active Color Swatch&quot;
+        }
+      ]
+    },
+    {
+      &quot;type&quot;: &quot;product-form&quot;,
+      &quot;name&quot;: &quot;Product Form&quot;,
+      &quot;limit&quot;: 1,
+      &quot;settings&quot;: [
+        {
+          &quot;type&quot;: &quot;checkbox&quot;,
+          &quot;id&quot;: &quot;mb&quot;,
+          &quot;label&quot;: &quot;Margin Bottom&quot;,
+          &quot;default&quot;: true
+        },
+        {
+          &quot;type&quot;: &quot;header&quot;,
+          &quot;content&quot;: &quot;FormId: main-product-details-form&quot;
+        }
+      ]
+    }
+  ],
+  &quot;presets&quot;: [
+    {
+      &quot;name&quot;: &quot;Custom Featured Product&quot;
+    }
+  ]
+}
+{% endschema %}
+</code></pre><h1 id="dd01d79b-2876-4556-9e18-c84cb665cec3" class="">Code Style</h1><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="ba749f0b-5ca1-4699-aa2a-40a4dfe50d63" class="code"><code class="language-CSS">:root {
+  --vertical-slide-width: 90px;
+  --vertical-slide-margin-bottom: 8px;
+  --space-between-info-content: 15px;
+  @media (max-width: 1300px) {
+    --vertical-slide-width: 70px;
+  }
+  @media (max-width: 1200px) {
+    --vertical-slide-width: 65px;
+  }
+}
+.featured-image-pd {
+  border-radius: 16px;
+  overflow: hidden;
+  @media (max-width: 1201px) {
+    margin: 0 0 24px;
+  }
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* .main-pd-wrapper {
+  display: grid;
+  grid-template-columns: minmax(0px, 1fr) minmax(0px, 1fr);
+  grid-column-gap: 34px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: minmax(0px, 1fr);
+    grid-column-gap: 50px;
+    row-gap: 0px;
+  }
+} */
+.pd-media-thumb-gellary {
+  position: relative;
+}
+.pd-media-scroll-gellary {
+  display: none;
+}
+pd-gellary.direction-horizontal {
+  .pd-scroll-swiper {
+    max-width: 100vw;
+    overflow: hidden;
+    margin-top: 17px;
+
+    .swiper-slide {
+      font-size: 0;
+      line-height: 0;
+      box-sizing: border-box;
+      border: 1px solid #dccdcd54;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+        max-width: 150px;
+        height: auto;
+        object-fit: cover;
+        aspect-ratio: 1;
+      }
+    }
+    .swiper-slide-thumb-active {
+      border: 1px solid #ea094b;
+    }
+  }
+}
+pd-gellary.direction-vertical {
+  @media (min-width: 769px) {
+    /* display: grid;
+    grid-auto-columns: minmax(0px, var(--vertical-slide-width)) minmax(0px, 1fr);
+    grid-column-gap: 12px; */
+    .pd-media-thumb-gellary {
+      /* grid-column: 2/3;
+      grid-row: 1/2; */
+    }
+    .pd-media-scroll-gellary {
+      /* grid-column: 1/2;
+      grid-row: 1/2; */
+
+      .pd-scroll-swiper {
+        /* height: 633px; */
+
+        .swiper-slide {
+          width: var(--vertical-slide-width);
+          height: var(--vertical-slide-width);
+          box-sizing: border-box;
+          border: 1px solid #d8caca69;
+          margin-bottom: var(--vertical-slide-margin-bottom);
+          img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1;
+            object-fit: cover;
+          }
+        }
+        .swiper-slide-thumb-active {
+          border: 1px solid #000;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .pd-scroll-swiper {
+      max-width: 100vw;
+      overflow: hidden;
+      margin-top: 17px;
+
+      .swiper-slide {
+        font-size: 0;
+        line-height: 0;
+        box-sizing: border-box;
+        border: 1px solid #dccdcd54;
+        cursor: pointer;
+
+        img {
+          width: 100%;
+          max-width: 150px;
+          height: auto;
+          object-fit: cover;
+          aspect-ratio: 1;
+        }
+      }
+      .swiper-slide-thumb-active {
+        border: 1px solid #000;
+      }
+    }
+  }
+}
+
+.pd-thumb-swiper {
+  max-width: 100vw;
+  overflow: hidden;
+  width: 100%;
+  .swiper-slide {
+    font-size: 0;
+    line-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img,
+    video {
+      width: 100%;
+      max-width: 370px;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+  .swiper-pagination {
+    --swiper-pagination-bullet-horizontal-gap: 2px;
+    --swiper-pagination-bottom: 16px;
+    margin: 20px 0 0;
+    position: static;
+    /* background: rgba(234, 9, 75, 0.05); */
+    left: 26px;
+    /* width: max-content; */
+    box-sizing: border-box;
+    padding-inline: 10px;
+    padding-block: 5px;
+    display: flex;
+    /* height: 17px; */
+    align-items: center;
+    justify-content: center;
+    .swiper-pagination-bullet {
+      /* --swiper-pagination-bullet-width: 7px;
+      --swiper-pagination-bullet-height: 4px; */
+      /* border-radius: 0px; */
+    }
+    .swiper-pagination-bullet-active {
+      /* --swiper-pagination-bullet-width: 12px; */
+      background: #002768;
+    }
+    @media (max-width: 768px) {
+      --swiper-pagination-bottom: 8px;
+      left: 16px;
+      /* left: 50%;
+        transform: translateX(-50%); */
+    }
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--Border-Base-main, #d1d5db);
+    background: var(--Background-base, #fff);
+    @media (max-width: 768px) {
+      --swiper-navigation-sides-offset: 0px;
+      width: 32px;
+      height: 32px;
+    }
+    svg {
+      width: 24px;
+      height: 24px;
+      @media (max-width: 768px) {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+.pd-media-wrapper {
+  border-radius: 16px;
+  background: #f6f3f3;
+  margin: 0 0 24px;
+  padding: 40px 16px;
+  @media (max-width: 768px) {
+    padding: 40px 16px;
+  }
+}
+.pd-info-wrapper {
+  /* margin-right: 100px; */
+  @media (max-width: 768px) {
+    margin: 0;
+    /* padding: 0 16px; */
+  }
+}
+/* .pd-info-wrapper,
+.pd-media-wrapper {
+  @media (min-width: 769px) {
+    position: sticky;
+    top: 0;
+    height: max-content;
+  }
+} */
+.mb {
+  margin-bottom: 12px;
+  @media (max-width: 768px) {
+    margin-bottom: 12px;
+  }
+}
+.pd-product-vendor {
+  color: #494949;
+  font-family: &quot;Gill Sans Nova Book&quot;;
+  font-size: 14px;
+  line-height: 18px; /* 128.571% */
+  text-transform: capitalize;
+}
+.pd-product-title {
+  font-family: &quot;Gill Sans Nova Semibold&quot;;
+  color: #000;
+  font-size: 28px;
+  line-height: 36px;
+  text-transform: capitalize;
+  text-decoration: none;
+  display: block;
+  @media (max-width: 768px) {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+.product-type {
+  font-size: 24px;
+  line-height: 28px;
+  margin-top: 0;
+  margin-bottom: 12px;
+  @media (max-width: 768px) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+.pd-app-block {
+  margin-block: 5px;
+}
+.pd-product-price {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  h2 {
+    font-family: &quot;Gill Sans Nova Semibold&quot;;
+    color: #2b2b2b;
+    font-size: 24px;
+    font-style: normal;
+    line-height: 24px;
+    text-transform: uppercase;
+    margin: 0;
+    @media (max-width: 768px) {
+      font-size: 20px;
+      line-height: 20px;
+    }
+  }
+  h3 {
+    margin: 0;
+    color: #2b2b2b;
+    text-decoration: line-through;
+    text-decoration-line: strikethrough;
+    font-family: &quot;Gill Sans Nova Semibold&quot;;
+    font-size: 18px;
+    line-height: 24px;
+    opacity: 0.5;
+    @media (max-width: 768px) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+  label.price--discount {
+    color: #fff;
+    font-size: 15px;
+    background: #d32b30;
+    padding: 5px 15px;
+    text-transform: uppercase;
+    display: none;
+  }
+}
+.pd-product-desc * {
+  font-family: &quot;Gill Sans Nova Book&quot;;
+  color: #000;
+  font-size: 18px;
+  line-height: 20px; /* 225% */
+  text-transform: capitalize;
+  @media (max-width: 768px) {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+.pd-product-desc ul {
+  margin: 0;
+}
+.pd-product-stock {
+  color: #000;
+  font-size: 14px;
+  font-style: normal;
+  line-height: normal;
+  text-transform: capitalize;
+  margin: 14px 0 0 1rem;
+  position: relative;
+  @media (max-width: 768px) {
+    margin: 10px 0 0 1rem;
+  }
+}
+.pd-product-stock:before {
+  content: &quot;&quot;;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #ebff04;
+  left: -12px;
+  border-radius: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.pd-product-stock:after {
+  content: &quot;&quot;;
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: #d9d9d9;
+  left: 0;
+  /* top: 50%; */
+  transform: translateX(-10px);
+  bottom: -15px;
+}
+@media screen and (max-width: 768px) {
+  .pd-product-stock:after {
+    bottom: -10px;
+  }
+}
+
+.pd-app-block {
+  .jdgm-widget{ 
+    margin-block: 24px 32px;
+  }
+  .jdgm-prev-badge__text {
+    color: #494949;
+    font-family: Gill Sans Nova Book;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    text-transform: capitalize;
+  }
+  .jdgm-star.jdgm-star {
+    font-size: 16px;
+  }
+  .jdgm-star.jdgm-star {
+    color: #000;
+  }
+  #appstle_subscription_widget0 .appstle_subscription_wrapper {
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+}
+
+.pd-form-wrapper {
+  /* margin-top: var(--space-between-info-content); */
+  .pd-add-to-card {
+    border: 0;
+    /* grid-row: 3/4; */
+    color: #fff;
+    text-align: center;
+    font-size: 24px;
+    line-height: 32px;
+    text-transform: capitalize;
+    box-sizing: border-box;
+    /* width: 50%; */
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    height: 100%;
+    border-radius: 40px;
+    background: #050505;
+    font-family: &quot;Gill Sans Nova Medium&quot;;
+    padding-block: 8px;
+    @media (max-width: 768px) {
+      font-size: 20px;
+      line-height: 24px;
+      padding-block: 12px;
+    }
+  }
+  .pd-add-to-card.buy-now {
+    @media (max-width: 768px) {
+      grid-row: 4/5;
+    }
+  }
+  .pd-add-to-card[disabled] {
+    cursor: no-drop;
+    opacity: 0.8;
+  }
+  .pd-atc-button-wrapper {
+    display: grid;
+    /* grid-template-columns: auto 1fr; */
+    grid-template-columns: 120px 1fr;
+    grid-column-gap: 16px;
+    grid-template-rows: 48px;
+    align-items: center;
+    /* margin-block: 32px; */
+    gap: 16px;
+
+    @media (max-width: 768px) {
+      /* grid-template-columns: 1fr; */
+      /* grid-template-rows: 40px 40px;
+      grid-row-gap: 12px; */
+    }
+  }
+  .quantity-label {
+    color: #494949;
+    font-family: &quot;Gill Sans Nova Book&quot;;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    text-transform: uppercase;
+  }
+  quantity-selector {
+    display: grid;
+    grid-template-columns: minmax(0px, 36px) minmax(0px, 200px) minmax(
+        0px,
+        36px
+      );
+    grid-column-gap: 0px;
+    align-items: center;
+    justify-items: center;
+    border-radius: 40px;
+    border: 1px solid #d1d5db;
+    background: #fff;
+    height: 100%;
+    /* width: max-content; */
+    margin-block: 16px;
+    /* grid-row: 2/3; */
+
+    @media (max-width: 768px) {
+      grid-template-columns: minmax(0px, 36px) minmax(0px, 200px) minmax(
+          0px,
+          36px
+        );
+    }
+
+    button {
+      border: none;
+      outline: none;
+      box-shadow: none;
+      background: transparent;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+    input {
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      border: none;
+      outline: none;
+      box-shadow: none;
+      background: transparent;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input[type=&quot;number&quot;] {
+      -moz-appearance: textfield;
+    }
+  }
+}
+.pd-product-text {
+  color: var(--Content-Base-subtle, #9ca3af);
+  text-align: center;
+  font-family: &quot;maze-general-sans-medium&quot;;
+  font-size: 16px;
+  line-height: normal;
+  text-transform: capitalize;
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+}
+.pd-variant-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+  /* margin-top: 30px; */
+  @media (max-width: 768px) {
+    row-gap: 15px;
+  }
+
+  .pd-variant-optioin-name {
+    color: #494949;
+    font-size: 18px;
+    font-family: &quot;Gill Sans Nova Book&quot;;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    text-transform: uppercase;
+    margin: 0 0 10px 0;
+    span {
+      color: var(--Dark--, #2b2b2b);
+      font-family: &quot;Gill Sans Nova Medium&quot;;
+      text-transform: capitalize;
+    }
+  }
+
+  .pd-color-variant {
+    .pd-variant-field {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+      /* padding: 0 0 6px 7px; */
+    }
+    input + label {
+      width: 32px;
+      height: 32px;
+      /* border: 2px solid #000; */
+      /* border-radius: 50%; */
+      position: relative;
+      font-size: 0px;
+      /* box-shadow: 0px 0px 0px 2px #fff, 0px 0px 0px 3px #fff,
+        0px 0px 0px 5px #fff, 0px 0px 0px 6px #000; */
+    }
+    input:checked + label {
+      border: 1px solid var(--Secondary, #d9ba78);
+      /* box-shadow: 0px 0px 0px 2px #fff, 0px 0px 0px 3px #000,
+        0px 0px 0px 5px #fff, 0px 0px 0px 6px #000; */
+    }
+    /* input.disabled + label:after {
+      position: absolute;
+      content: &quot;&quot;;
+      width: 178%;
+      height: 1px;
+      top: 50%;
+      left: -8px;
+      transform: translateY(-50%) rotate(-45deg);
+      background: #000;
+      z-index: 1;
+      transform-origin: center;
+    }
+  } */
+
+    .pd-others-variant {
+      .pd-variant-field {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      input + label {
+        color: #000;
+        width: max-content;
+        border: 1px solid #000;
+        overflow: hidden;
+        padding: 10px 25px;
+        font-family: hn500;
+        font-size: 20px;
+        /* font-weight: 600; */
+        line-height: 1;
+        position: relative;
+        @media (max-width: 768px) {
+          font-size: 18px;
+          padding: 5px 10px;
+        }
+      }
+      input:checked + label {
+        border-color: #ebff04;
+        background: #ebff04;
+        font-weight: 700;
+      }
+      input.disabled + label {
+        svg {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: 0;
+        }
+      }
+    }
+
+    .pd-variant-value {
+      display: flex;
+
+      input {
+        display: none;
+      }
+      label {
+        cursor: pointer;
+        display: inline-block;
+        box-sizing: border-box;
+      }
+    }
+
+    @media (max-width: 768px) {
+      margin-top: 17px;
+    }
+  }
+}
+</code></pre><h1 id="7f6d8d02-2c99-4748-b739-8f7989a9805b" class="">JS Code</h1><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="59e72b5d-1927-4c17-ac7d-104c9a82e81b" class="code"><code class="language-CSS">
+class ProductDetailsGellary extends HTMLElement{
+  constructor() {
+    super()
+    this.scrollSliderSelector = `.${this.dataset.scrollSelector}`
+    this.thumbSliderSelector = `.${this.dataset.thumbSelector}`
+    
+    this.thumbSlideType = this.dataset.slideType
+    this.scrollSliderDirection = this.dataset.direction
+    this.verticalSlideMarginBottom = 8
+
+    this.scrollSlider = null
+    this.thumbSlider = null
+
+    this.initScrollSlider()
+    this.initThumbSlider()
+
+    // if(this.scrollSliderDirection===&#x27;vertical&#x27; &amp;&amp; screen.width &gt; 768) this.querySelector(this.scrollSliderSelector).style.height = this.querySelector(this.thumbSliderSelector).clientHeight + &#x27;px&#x27;
+  }
+
+  initScrollSlider() {
+    this.scrollSlider = new Swiper(this.scrollSliderSelector, {
+      slidesPerView:  screen.width &gt; 768 ? this.scrollSliderDirection===&#x27;vertical&#x27; ? &#x27;auto&#x27;: 6 : 6,
+      spaceBetween: this.verticalSlideMarginBottom,
+      direction: screen.width &gt; 768 ? this.scrollSliderDirection : &#x27;horizontal&#x27;,
+    })
+  }
+
+  initThumbSlider() {
+    this.thumbSlider = new Swiper(this.thumbSliderSelector, {
+      slidesPerView: 1,
+      effect: this.thumbSlideType,
+      // autoHeight: true,
+      pagination: {
+       el: &#x27;.swiper-pagination&#x27;,
+       clickable: true
+      },
+      navigation: {
+        nextEl: &#x27;.swiper-button-next&#x27;,
+        prevEl: &#x27;.swiper-button-prev&#x27;,
+      },
+      thumbs: {
+        swiper: this.scrollSlider,
+      }
+    })
+  }
+}
+customElements.define(&quot;pd-gellary&quot;, ProductDetailsGellary)
+
+class QuantitySelector extends HTMLElement{
+  constructor() {
+    super()
+    this.querySelectorAll(&quot;button&quot;).forEach(btn =&gt; btn.addEventListener(&quot;click&quot;, this.handleQtyButton.bind(this)))
+    this.qty_input = this.querySelector(&quot;input&quot;)
+  }
+
+  handleQtyButton(e) {
+    let value = parseInt(e.currentTarget.dataset.value),
+        current_value = parseInt(this.qty_input.value) + value
+    current_value &lt; 1 ? current_value = 1 : current_value
+    this.qty_input.value = current_value
+  }
+}
+customElements.define(&quot;quantity-selector&quot;, QuantitySelector)
+
+
+class ProductVariant extends HTMLElement{
+  constructor() {
+    super()
+    this.sectionId = this.dataset.sectionId
+    this.productId = this.dataset.productId
+    this.swiperClass = `.swiper-${this.productId}-${this.sectionId}`
+    this.section = document.querySelector(`#shopify-section-${this.sectionId}`)
+
+    this.getVariantData()
+    this.getAllSlide()
+
+    this.sliderElement = this.section.querySelector(&quot;pd-gellary&quot;)
+    
+    this.form = this.querySelector(&quot;form&quot;)
+    this.form?.addEventListener(&quot;input&quot;, this.handleInputEvents.bind(this))
+  }
+
+  getAllSlide() {
+    this.slidesEl = document.querySelectorAll(&quot;.pd-thumb-swiper .swiper-slide&quot;)
+    this.slidesArr = []
+    this.slidesEl.forEach(slide =&gt; {
+       this.slidesArr = [...this.slidesArr, {
+         index: parseInt(slide.dataset.index),
+         src: slide.dataset.src
+       }]
+    })
+  }
+  
+  getVariantData() {
+    this.variantData = this.variantData || JSON.parse(this.querySelector(&#x27;[type=&quot;application/json&quot;]&#x27;)?.textContent);
+  }
+  
+  handleInputEvents(e) {
+    this.updateOptions()
+    this.updateMasterId()
+    // this.updateURL()
+    this.renderProductInfo()
+    this.updateSlide()
+  }
+
+  updateOptions() {
+    this.options = Array.from(this.querySelectorAll(&#x27;.pd-variant-field&#x27;), (element) =&gt; {
+        return Array.from(element.querySelectorAll(&#x27;input&#x27;)).find((radio) =&gt; radio.checked)?.value;
+    });
+  }
+
+  updateMasterId() {
+    this.currentVariant = this.variantData.find((variant) =&gt; {
+      return !variant.options
+        .map((option, index) =&gt; {
+          return this.options[index] === option;
+        })
+        .includes(false);
+    });
+  }
+  
+  updateURL() {
+    if (!this.currentVariant || this.dataset.updateUrl === &#x27;false&#x27;) return;
+    window.history.replaceState({}, &#x27;&#x27;, `${this.dataset.url}?variant=${this.currentVariant.id}`);
+  }
+  
+  updateSlide() {
+    if(this.currentVariant &amp;&amp; this.currentVariant.featured_image) {
+      let variant = this.slidesArr.find(item =&gt; this.currentVariant.featured_image.src.includes(item.src))
+      // let variant = this.slidesArr.find(item =&gt; item.src ===  this.currentVariant.featured_image.src)
+      if(variant) this.sliderElement.thumbSlider.slideTo(variant.index)
+    }
+  }
+  
+  renderProductInfo() {
+    const requestedVariantId = this.currentVariant.id;  
+    fetch(
+      `${this.dataset.url}?variant=${requestedVariantId}&amp;section_id=${this.sectionId}`
+    )
+    .then((response) =&gt; response.text())
+    .then((responseText) =&gt; {
+      if (this.currentVariant.id !== requestedVariantId || this.section === null) return;
+      
+      const html = new DOMParser().parseFromString(responseText, &#x27;text/html&#x27;);
+      if(this.section.querySelector(&quot;.pd-variant-wrapper&quot;)) this.section.querySelector(&quot;.pd-variant-wrapper&quot;).innerHTML = html.querySelector(&quot;.pd-variant-wrapper&quot;).innerHTML
+      if(this.section.querySelector(&quot;.pd-product-price&quot;)) this.section.querySelector(&quot;.pd-product-price&quot;).innerHTML = html.querySelector(&quot;.pd-product-price&quot;).innerHTML
+      if(this.section.querySelector(&quot;.pd-product-stock&quot;)) this.section.querySelector(&quot;.pd-product-stock&quot;).innerHTML = html.querySelector(&quot;.pd-product-stock&quot;).innerHTML
+      if(this.section.querySelector(&quot;.pd-current-variant-id&quot;)) this.section.querySelector(&quot;.pd-current-variant-id&quot;).innerHTML = html.querySelector(&quot;.pd-current-variant-id&quot;).innerHTML
+      if(this.section.querySelector(&quot;.pd-atc-button-wrapper&quot;)) this.section.querySelector(&quot;.pd-atc-button-wrapper&quot;).innerHTML = html.querySelector(&quot;.pd-atc-button-wrapper&quot;).innerHTML
+
+    })
+    .catch(err =&gt; console.log(err))
+    .finally(() =&gt; {
+       customFormSubmit()
+    })
+  }
+}
+
+customElements.define(&quot;pd-variant&quot;, ProductVariant)
+</code></pre><p id="0f6f8d2b-6856-4d7a-b8b2-adbfadfb886d" class="">
+</p><p id="0850f5aa-8bb2-45a8-bdf7-053b6a5163d7" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

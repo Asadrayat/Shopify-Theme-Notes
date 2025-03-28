@@ -1,0 +1,1217 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Footer</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="0747e8c1-b680-4b88-bd8a-69139c151bb1" class="page sans"><header><h1 class="page-title">Footer</h1><p class="page-description"></p></header><div class="page-body"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1eea0084-5b15-49de-bd88-3f9a85d41f56" class="code"><code class="language-JavaScript">&lt;style&gt;
+    footer {
+     margin-top: {{ section.settings.margin_top }}px;
+     margin-bottom: {{ section.settings.margin_bottom }}px;
+     padding-top: {{ section.settings.padding_top }}px;
+     padding-bottom: {{ section.settings.padding_bottom }}px;
+     background: #FCE8D8;
+    }
+    .cf_county-selector,
+    .svg__wrapper-error{
+      display: none;
+    }
+    .fm__title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #000000;
+      line-height: 24px;
+      margin-bottom: 20px;
+    }
+    .submenu,
+    .cf__list-payment li{
+      list-style: none;
+      margin-bottom: 12px;
+    }
+    .submenu a{
+      text-decoration: none;
+      color: #000;
+      line-height: 26px;
+    }
+    .submenu a:hover{
+      text-decoration: underline;
+    }
+    .custom-newsletter p{
+      color: #000000;
+      font-size: 16px;
+    }
+    .custom-newsletter {
+      justify-self: end;
+      width: 80%;
+    }
+    .footer__top-wrapper {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+    }
+    .footer-menu {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+    }
+    .email_inp {
+        width: 100%;
+        border: none;
+        border: 1px solid rgb(191 193 191);
+        padding: 15px 13px;
+        outline: none;
+        margin-top: 16px;
+    }
+    .email_inp:focus-visible{
+      outline: none;
+      outline-offset: 0;
+      box-shadow: unset;
+    }
+
+    .email_inp::placeholder{
+      color: #000;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+    .btn_submit{
+      margin-top: 24px;
+      background: var(--Primary-Color, #000000);
+      padding: 16px 25px;
+      color: var(--White, var(--White, #FFF));
+      font-size: 16px;
+      font-weight: 400;
+      max-width: 150px;
+      cursor: pointer;
+      border: none;
+      transition: background-color .1s,color .1s,border-color .1s,opacity .1s;
+    }
+    .btn_submit:hover{
+      background: rgb(254 196 140);
+    }
+    .form__message {
+      justify-content: center;
+    }
+    .cf-errror_msg {
+      display: unset;
+      color: #000;
+    }
+    .footer__bottom-content {
+      margin-top: 10rem;
+      display: flex;
+      justify-content: space-between;
+    }
+    .copyright__content {
+      font-size: 13px;
+      line-height: 18px;
+      color: #000;
+    }
+    .cf__list-payment {
+      display: flex;
+      gap: 12px;
+    }
+    .social__icon-wrapper {
+      display: flex;
+      gap: 10px;
+      --icon-size: 23px;
+      margin-top: 30px;
+    }
+    .social__icon .icon {
+      height: 24PX;
+      width: 24PX;
+      color: #000;
+    }
+  @media screen and (max-width: 890px){
+     footer {
+       margin-top: {{ section.settings.margin_top-m }}px;
+       margin-bottom: {{ section.settings.margin_bottom-m }}px;
+       padding-top: {{ section.settings.padding_top-m }}px;
+       padding-bottom: {{ section.settings.padding_bottom-padding_bottom-m }}px;
+    }
+    .footer__top-wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+    }  
+    .footer-menu {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-self: start;
+    }  
+    .footer-menu ul{
+      padding: 0;
+    }  
+   .custom-newsletter {
+      justify-self: start;
+      width: 100%;
+    }
+    .cf__list-payment {
+      padding: 0;
+      flex-wrap: wrap;
+    }
+    .footer__bottom-content {
+      flex-direction: column-reverse;
+    }
+    .copyright__country-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+    .copyright__content {
+      text-wrap: nowrap;
+      letter-spacing: 0;
+    }
+    .cf__region .disclosure .disclosure__button {
+      margin: 0;
+    }
+  }
+&lt;/style&gt;
+
+&lt;footer class=&quot;footer color-{{ section.settings.color_scheme }} &quot;&gt;
+  &lt;div class=&quot;footer__top-wrapper width page-width&quot;&gt;
+    &lt;div class=&quot;footer-menu&quot;&gt;
+      {% for block in section.blocks %}
+        {% if block.type == &#x27;navigation&#x27; %}
+          &lt;ul&gt;
+            &lt;h2 class=&quot;fm__title &quot;&gt;{{ block.settings.linklist.title }}&lt;/h2&gt;
+            {% for link in block.settings.linklist.links %}
+              &lt;li class=&quot;menu__wrapper submenu&quot;&gt;
+                &lt;a class=&quot;menu&quot; href=&quot;{{ link.url }}&quot;&gt;{{ link.title }}&lt;/a&gt;
+              &lt;/li&gt;
+            {% endfor %}
+          &lt;/ul&gt;
+        {% endif %}
+      {% endfor %}
+    &lt;/div&gt;
+    &lt;div class=&quot;custom-newsletter&quot;&gt;
+      &lt;h2 class=&quot;fm__title&quot;&gt;Newsletter&lt;/h2&gt;
+      &lt;p&gt;{{ section.settings.rte }}&lt;/p&gt;
+      &lt;div class=&quot;form__wrapper&quot;&gt;
+        {% form &#x27;customer&#x27;, class: &#x27;newsletter-form&#x27; %}
+          &lt;input type=&quot;hidden&quot; name=&quot;contact[tags]&quot; value=&quot;newsletter&quot;&gt;
+          &lt;div
+            class=&quot;newsletter-form__field-wrapper{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}&quot;
+            {% if settings.animations_reveal_on_scroll %}
+              data-cascade
+              style=&quot;--animation-order: {{ forloop.index }};&quot;
+            {% endif %}
+          &gt;
+            {%- if form.errors -%}
+              &lt;small
+                class=&quot;newsletter-form__message form__message cf-errror_msg&quot;
+                id=&quot;Newsletter-error--{{ section.id }}&quot;
+              &gt;
+                &lt;div class=&quot;svg__wrapper-error&quot;&gt;{%- render &#x27;icon-error&#x27; -%}&lt;/div&gt;
+                {{- form.errors.translated_fields.email | capitalize }}
+                {{ form.errors.messages.email -}}
+              &lt;/small&gt;
+            {%- endif -%}
+            &lt;div class=&quot;&quot;&gt;
+              &lt;input
+                id=&quot;NewsletterForm--{{ section.id }}&quot;
+                type=&quot;email&quot;
+                name=&quot;contact[email]&quot;
+                class=&quot;email_inp&quot;
+                value=&quot;{{ form.email }}&quot;
+                aria-required=&quot;true&quot;
+                autocorrect=&quot;off&quot;
+                autocapitalize=&quot;off&quot;
+                autocomplete=&quot;email&quot;
+                {% if form.errors %}
+                  autofocus
+                  aria-invalid=&quot;true&quot;
+                  aria-describedby=&quot;Newsletter-error--{{ section.id }}&quot;
+                {% elsif form.posted_successfully? %}
+                  aria-describedby=&quot;Newsletter-success--{{ section.id }}&quot;
+                {% endif %}
+                placeholder=&quot;Your email&quot;
+                required
+              &gt;
+              &lt;div&gt;
+                &lt;button
+                  type=&quot;submit&quot;
+                  class=&quot;btn_submit&quot;
+                  name=&quot;commit&quot;
+                  id=&quot;Subscribe&quot;
+                  aria-label=&quot;{{ &#x27;newsletter.button_label&#x27; | t }}&quot;
+                &gt;
+                  Sign Up
+                &lt;/button&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          {%- if form.posted_successfully? -%}
+            &lt;h3
+              class=&quot;newsletter-form__message newsletter-form__message--success form__message&quot;
+              id=&quot;Newsletter-success--{{ section.id }}&quot;
+              tabindex=&quot;-1&quot;
+              autofocus
+            &gt;
+              {% render &#x27;icon-success&#x27; -%}
+              {{- &#x27;newsletter.success&#x27; | t }}
+            &lt;/h3&gt;
+          {%- endif -%}
+        {% endform %}
+      &lt;/div&gt;
+      &lt;div class=&quot;social__icon-wrapper&quot;&gt;
+        &lt;div class=&quot;social__icon&quot;&gt;{% render &#x27;all-icons&#x27;, name: &#x27;facebook&#x27; %}&lt;/div&gt;
+        &lt;div class=&quot;social__icon&quot;&gt;{% render &#x27;all-icons&#x27;, name: &#x27;youtube&#x27; %}&lt;/div&gt;
+        &lt;div class=&quot;social__icon&quot;&gt;{% render &#x27;all-icons&#x27;, name: &#x27;instagram&#x27; %}&lt;/div&gt;
+        &lt;div class=&quot;social__icon&quot;&gt;{% render &#x27;all-icons&#x27;, name: &#x27;tiktok&#x27; %}&lt;/div&gt;
+        &lt;div class=&quot;social__icon&quot;&gt;{% render &#x27;all-icons&#x27;, name: &#x27;twitter&#x27; %}&lt;/div&gt;
+        &lt;div class=&quot;social__icon&quot;&gt;{% render &#x27;all-icons&#x27;, name: &#x27;thread&#x27; %}&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;footer__bottom &quot;&gt;
+    &lt;div class=&quot;footer__bottom-content width page-width&quot;&gt;
+      {% for block in section.blocks %}
+        {% if block.settings.copyright != blank %}
+          &lt;div class=&quot;copyright__country-wrapper&quot;&gt;
+            &lt;div class=&quot;footer__column footer__localization isolate&quot;&gt;
+              {%- if section.settings.enable_country_selector and localization.available_countries.size &gt; 1 -%}
+                &lt;noscript&gt;
+                  {%- form &#x27;localization&#x27;, id: &#x27;FooterCountryFormNoScript&#x27;, class: &#x27;localization-form&#x27; -%}
+                    &lt;div class=&quot;localization-form__select&quot;&gt;
+                      &lt;h2 class=&quot;visually-hidden&quot; id=&quot;FooterCountryLabelNoScript&quot;&gt;
+                        {{ &#x27;localization.country_label&#x27; | t }}
+                      &lt;/h2&gt;
+                      &lt;select
+                        class=&quot;localization-selector link&quot;
+                        name=&quot;country_code&quot;
+                        aria-labelledby=&quot;FooterCountryLabelNoScript&quot;
+                      &gt;
+                        {%- for country in localization.available_countries -%}
+                          &lt;option
+                            value=&quot;{{ country.iso_code }}&quot;
+                            {%- if country.iso_code == localization.country.iso_code %}
+                              selected
+                            {% endif %}
+                          &gt;
+                            {{ country.name }} ({{ country.currency.iso_code }}
+                            {{ country.currency.symbol }})
+                          &lt;/option&gt;
+                        {%- endfor -%}
+                      &lt;/select&gt;
+                      {% render &#x27;icon-caret&#x27; %}
+                    &lt;/div&gt;
+                    &lt;button class=&quot;button button--tertiary&quot;&gt;{{ &#x27;localization.update_country&#x27; | t }}&lt;/button&gt;
+                  {%- endform -%}
+                &lt;/noscript&gt;
+                &lt;localization-form&gt;
+                  {%- form &#x27;localization&#x27;, id: &#x27;FooterCountryForm&#x27;, class: &#x27;localization-form&#x27; -%}
+                    &lt;div class=&quot;no-js-hidden cf__region&quot;&gt;
+                      &lt;h2 class=&quot;caption-large cf_county-selector text-body&quot; id=&quot;FooterCountryLabel&quot;&gt;
+                        {{ &#x27;localization.country_label&#x27; | t }}
+                      &lt;/h2&gt;
+                      {%- render &#x27;country-localization&#x27;, localPosition: &#x27;FooterCountry&#x27; -%}
+                    &lt;/div&gt;
+                  {%- endform -%}
+                &lt;/localization-form&gt;
+              {%- endif -%}
+  
+              {%- if section.settings.enable_language_selector and localization.available_languages.size &gt; 1 -%}
+                &lt;noscript&gt;
+                  {%- form &#x27;localization&#x27;, id: &#x27;FooterLanguageFormNoScript&#x27;, class: &#x27;localization-form&#x27; -%}
+                    &lt;div class=&quot;localization-form__select&quot;&gt;
+                      &lt;h2 class=&quot;visually-hidden&quot; id=&quot;FooterLanguageLabelNoScript&quot;&gt;
+                        {{ &#x27;localization.language_label&#x27; | t }}
+                      &lt;/h2&gt;
+                      &lt;select
+                        class=&quot;localization-selector link&quot;
+                        name=&quot;locale_code&quot;
+                        aria-labelledby=&quot;FooterLanguageLabelNoScript&quot;
+                      &gt;
+                        {%- for language in localization.available_languages -%}
+                          &lt;option
+                            value=&quot;{{ language.iso_code }}&quot;
+                            lang=&quot;{{ language.iso_code }}&quot;
+                            {%- if language.iso_code == localization.language.iso_code %}
+                              selected
+                            {% endif %}
+                          &gt;
+                            {{ language.endonym_name | capitalize }}
+                          &lt;/option&gt;
+                        {%- endfor -%}
+                      &lt;/select&gt;
+                      {% render &#x27;icon-caret&#x27; %}
+                    &lt;/div&gt;
+                    &lt;button class=&quot;button button--tertiary&quot;&gt;{{ &#x27;localization.update_language&#x27; | t }}&lt;/button&gt;
+                  {%- endform -%}
+                &lt;/noscript&gt;
+  
+                &lt;localization-form&gt;
+                  {%- form &#x27;localization&#x27;, id: &#x27;FooterLanguageForm&#x27;, class: &#x27;localization-form-new&#x27; -%}
+                    &lt;div class=&quot;no-js-hidden&quot;&gt;
+                      &lt;h2 class=&quot;caption-large text-body&quot; id=&quot;FooterLanguageLabel&quot;&gt;
+                        {{ &#x27;localization.language_label&#x27; | t }}
+                      &lt;/h2&gt;
+                      {%- render &#x27;language-localization&#x27;, localPosition: &#x27;FooterLanguage&#x27; -%}
+                    &lt;/div&gt;
+                  {%- endform -%}
+                &lt;/localization-form&gt;
+              {%- endif -%}
+            &lt;/div&gt;
+            &lt;div class=&quot;copyright__content&quot;&gt;
+            {{ block.settings.copyright }}
+          &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;footer__column footer__column--info&quot;&gt;
+            {%- if section.settings.payment_enable -%}
+              &lt;div class=&quot;footer__payment&quot;&gt;
+                &lt;span class=&quot;visually-hidden&quot;&gt;{{ &#x27;sections.footer.payment&#x27; | t }}&lt;/span&gt;
+                &lt;ul class=&quot;list list-payment cf__list-payment&quot; role=&quot;list&quot;&gt;
+                  {%- for type in shop.enabled_payment_types -%}
+                    &lt;li class=&quot;list-payment__item&quot;&gt;
+                      {{ type | payment_type_svg_tag: class: &#x27;icon icon--full-color&#x27; }}
+                    &lt;/li&gt;
+                  {%- endfor -%}
+                &lt;/ul&gt;
+              &lt;/div&gt;
+            {%- endif -%}
+          &lt;/div&gt;
+        {% endif %}
+      {% endfor %}
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/footer&gt;
+
+{% schema %}
+{
+  &quot;name&quot;: &quot;Custom Footer&quot;,
+  &quot;settings&quot;: [
+    {
+      &quot;type&quot;:&quot;richtext&quot;,
+      &quot;id&quot;: &quot;rte&quot;,
+      &quot;label&quot;: &quot;Newsletter text&quot;
+    },
+    {
+      &quot;type&quot;: &quot;checkbox&quot;,
+      &quot;id&quot;: &quot;payment_enable&quot;,
+      &quot;default&quot;: true,
+      &quot;label&quot;: &quot;t:sections.footer.settings.payment_enable.label&quot;
+    },
+    {
+      &quot;type&quot;: &quot;checkbox&quot;,
+      &quot;id&quot;: &quot;enable_country_selector&quot;,
+      &quot;default&quot;: true,
+      &quot;label&quot;: &quot;t:sections.footer.settings.enable_country_selector.label&quot;
+    },    
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;margin_top&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 200,
+      &quot;step&quot;: 2,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Margin Top&quot;,
+      &quot;default&quot;: 0
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;margin_bottom&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 200,
+      &quot;step&quot;: 2,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Margin Bottom&quot;,
+      &quot;default&quot;: 0
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;padding_top&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 200,
+      &quot;step&quot;: 2,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Padding Top&quot;,
+      &quot;default&quot;: 4
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;padding_bottom&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 200,
+      &quot;step&quot;: 2,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Padding Bottom&quot;,
+      &quot;default&quot;: 8
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;font_size&quot;,
+      &quot;min&quot;: 4,
+      &quot;max&quot;: 50,
+      &quot;step&quot;: 1,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Font size&quot;,
+      &quot;default&quot;: 12
+    },
+    {
+      &quot;type&quot;: &quot;header&quot;,
+      &quot;content&quot;: &quot;Spacing (Mobile)&quot;
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;margin_top-m&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 200,
+      &quot;step&quot;: 2,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Margin Top (Mobile)&quot;,
+      &quot;default&quot;: 0
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;margin_bottom-m&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 200,
+      &quot;step&quot;: 2,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Margin Bottom (Mobile)&quot;,
+      &quot;default&quot;: 0
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;padding_top-m&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 200,
+      &quot;step&quot;: 2,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Padding Top  (Mobile)&quot;,
+      &quot;default&quot;: 0
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;padding_bottom-m&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 200,
+      &quot;step&quot;: 2,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;Padding Bottom  (Mobile)&quot;,
+      &quot;default&quot;: 0
+    }
+  ],
+  &quot;blocks&quot;: [
+    {
+      &quot;name&quot;: &quot;Title Image&quot;,
+      &quot;type&quot;: &quot;title_image&quot;,
+      &quot;settings&quot;: [
+          {
+            &quot;id&quot;: &quot;img__title&quot;,
+            &quot;type&quot;: &quot;image_picker&quot;,
+            &quot;label&quot;: &quot;Add main title  image&quot;
+          }
+      ]
+    },
+    {
+      &quot;name&quot;: &quot;Navigation column&quot;,
+      &quot;type&quot;: &quot;navigation&quot;,
+      &quot;settings&quot;: [
+        {
+          &quot;type&quot;: &quot;link_list&quot;,
+          &quot;id&quot;: &quot;linklist&quot;,
+          &quot;label&quot;: &quot;Navigation menu&quot;
+        }
+      ]
+    },
+      {
+         &quot;name&quot;: &quot;Footer copyright text&quot;,
+         &quot;type&quot;: &quot;text&quot;,
+         &quot;settings&quot;: [
+           {
+             &quot;type&quot;: &quot;text&quot;,
+             &quot;id&quot;: &quot;copyright&quot;,
+             &quot;label&quot;: &quot;Copyright Text&quot;
+           }
+         ]
+       }
+  ],
+  &quot;presets&quot;:[
+    {
+      &quot;name&quot;: &quot;Custom Footer&quot;
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}</code></pre><p id="865274f0-0834-4ce5-a55d-da9c27116f5c" class="">
+</p><figure id="b710289b-e2f9-4de2-88c1-22d3d1b53de1" class="link-to-page"><a href="Footer%200747e8c1b6804b88bd8a69139c151bb1/Custom%20Image%20Banner%20b710289be2f94de288c122d3d1b53de1.html">Custom Image Banner</a></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

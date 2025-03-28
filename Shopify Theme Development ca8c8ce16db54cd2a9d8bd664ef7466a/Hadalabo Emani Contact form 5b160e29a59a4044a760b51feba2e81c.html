@@ -1,0 +1,1240 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Hadalabo Emani Contact form</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="5b160e29-a59a-4044-a760-b51feba2e81c" class="page sans"><header><h1 class="page-title">Hadalabo Emani Contact form</h1><p class="page-description"></p></header><div class="page-body"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="19f3eda3-7bdc-4762-bc7c-ebeed16c9ccd" class="code"><code class="language-JavaScript">{{ &#x27;section-contact-form.css&#x27; | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  .contact-form{
+    background: rgba(234, 9, 75, 0.05);
+    padding: 30px;
+  }
+  .field__input, .customer .field input{
+    /* border: 1px solid #DEB6A0; */
+    background-color: #fff;
+  }
+  .contact__button button{
+    border: none;
+    color: #fff;
+  }
+  .rte{
+    margin-top: 20px;
+  }
+  .title-wrapper .title{
+    color: #5E5047;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+{%- assign custom_fields = section.blocks | where: &#x27;type&#x27;, &#x27;custom_field&#x27; -%}
+&lt;div class=&quot;color-{{ section.settings.color_scheme }} gradient&quot;&gt;
+  &lt;div class=&quot;contact page-width page-width--inner section-{{ section.id }}-padding&quot;&gt;
+    {%- if section.settings.heading != blank -%}
+      &lt;h2 class=&quot;title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}&quot;&gt;
+        {{ section.settings.heading }}
+      &lt;/h2&gt;
+    {%- else -%}
+      &lt;h2 class=&quot;visually-hidden&quot;&gt;{{ &#x27;templates.contact.form.title&#x27; | t }}&lt;/h2&gt;
+    {%- endif -%}
+    {%- liquid
+      assign contact_form_class = &#x27;isolate&#x27;
+      if settings.animations_reveal_on_scroll
+        assign contact_form_class = &#x27;isolate scroll-trigger animate--slide-in&#x27;
+      endif
+    -%}
+    &lt;form-state&gt;
+      {%- assign form_id = &#x27;ContactForm-&#x27; | append: section.id -%}
+      {%- form &#x27;contact&#x27;, id: form_id -%}
+        {%- if form.posted_successfully? -%}
+          &lt;div class=&quot;form-status form-status-list form__message&quot; tabindex=&quot;-1&quot; autofocus&gt;
+            {% render &#x27;icon&#x27;, icon: &#x27;success&#x27; %}
+            {{ &#x27;templates.contact.form.post_success&#x27; | t }}
+          &lt;/div&gt;
+        {%- endif -%}
+
+        &lt;div class=&quot;contact__fields&quot;&gt;
+          &lt;div class=&quot;field&quot;&gt;
+            &lt;input
+              id=&quot;{{ form_id }}-name&quot;
+              class=&quot;field__input&quot;
+              autocomplete=&quot;name&quot;
+              type=&quot;text&quot;
+              name=&quot;contact[{{ &#x27;templates.contact.form.name&#x27; | t }}]&quot;
+              value=&quot;{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}&quot;
+              placeholder=&quot;Name&quot;
+            &gt;
+            &lt;label class=&quot;visually-hidden&quot; for=&quot;{{ form_id }}-name&quot;&gt;{{ &#x27;templates.contact.form.name&#x27; | t }}&lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;field field--with-error&quot;&gt;
+            &lt;input
+              id=&quot;{{ form_id }}-email&quot;
+              autocomplete=&quot;email&quot;
+              type=&quot;email&quot;
+              id=&quot;ContactForm-email-{{ section.id }}&quot;
+              class=&quot;field__input required{% if form.errors contains &#x27;email&#x27; %} invalid{% endif %}&quot;
+              name=&quot;contact[email]&quot;
+              spellcheck=&quot;false&quot;
+              autocapitalize=&quot;off&quot;
+              value=&quot;{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}&quot;
+              aria-required=&quot;true&quot;
+              {% if form.errors contains &#x27;email&#x27; %}
+                aria-invalid=&quot;true&quot;
+                aria-describedby=&quot;ContactForm-email-error-{{ section.id }}&quot;
+              {% endif %}
+              placeholder=&quot;Email&quot;
+              required=&quot;required&quot;
+            &gt;
+            &lt;label class=&quot;visually-hidden&quot; for=&quot;{{ form_id }}-email&quot;&gt;
+              {{- &#x27;templates.contact.form.email&#x27; | t }}
+              &lt;span aria-hidden=&quot;true&quot;&gt;*&lt;/span&gt;&lt;/label
+            &gt;
+            {%- if form.errors contains &#x27;email&#x27; -%}
+              &lt;small id=&quot;ContactForm-email-error-{{ section.id }}&quot;&gt;
+                &lt;span class=&quot;form__message errors&quot;&gt;
+                  {% render &#x27;icon&#x27;, icon: &#x27;error&#x27; %}
+                  {{ form.errors.translated_fields.email | capitalize }}
+                  {{ form.errors.messages.email }}
+                &lt;/span&gt;
+              &lt;/small&gt;
+            {%- endif -%}
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        {%- if section.settings.show_phone -%}
+          &lt;div class=&quot;field&quot;&gt;
+            &lt;input
+              id=&quot;{{ form_id }}-phone&quot;
+              type=&quot;tel&quot;
+              class=&quot;field__input&quot;
+              autocomplete=&quot;tel&quot;
+              name=&quot;contact[{{ &#x27;templates.contact.form.phone&#x27; | t }}]&quot;
+              pattern=&quot;[0-9\-]*&quot;
+              value=&quot;{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}&quot;
+              placeholder=&quot;Phone number&quot;
+            &gt;
+            &lt;label class=&quot;visually-hidden&quot; for=&quot;{{ form_id }}-phone&quot;&gt;{{ &#x27;templates.contact.form.phone&#x27; | t }}&lt;/label&gt;
+          &lt;/div&gt;
+        {%- endif -%}
+        {%- if custom_fields.size &gt; 0 -%}
+          {%- for block in custom_fields -%}
+            &lt;div class=&quot;field contact-form__input&quot; {{ block.shopify_attributes }}&gt;
+              {%- if block.settings.type == &#x27;checkbox&#x27; -%}
+                &lt;label for=&quot;line-item-{{ section.id }}-{{ block.id }}&quot; class=&quot;form__facet-checkbox&quot;&gt;
+                  &lt;input
+                    type=&quot;hidden&quot;
+                    name=&quot;contact[{{ block.settings.label | escape }}]&quot;
+                    value=&quot;{{ block.settings.unchecked_value | escape }}&quot;
+                  &gt;
+                  &lt;input
+                    id=&quot;line-item-{{ section.id }}-{{ block.id }}&quot;
+                    type=&quot;checkbox&quot;
+                    name=&quot;contact[{{ block.settings.label | escape }}]&quot;
+                    value=&quot;{{ block.settings.checked_value | escape }}&quot;
+                    {% if block.settings.required %}
+                      required
+                    {% endif %}
+                  &gt;
+                  {% render &#x27;icon&#x27;, icon: &#x27;checkmark&#x27; %}
+                  {{ block.settings.label | escape }}
+                &lt;/label&gt;
+              {%- else -%}
+                &lt;label
+                  class=&quot;form__label{% if block.settings.type == &#x27;text&#x27; or block.settings.type == &#x27;textarea&#x27; or block.settings.type == &#x27;select&#x27; %} visually-hidden{% endif %}&quot;
+                  for=&quot;line-item-{{ section.id }}-{{ block.id }}&quot;
+                &gt;
+                  {{- block.settings.label | escape -}}
+                &lt;/label&gt;
+                {%- case block.settings.type -%}
+                  {%- when &#x27;text&#x27; -%}
+                    &lt;input
+                      class=&quot;field__input&quot;
+                      id=&quot;line-item-{{ section.id }}-{{ block.id }}&quot;
+                      type=&quot;text&quot;
+                      name=&quot;contact[{{ block.settings.label | escape }}]&quot;
+                      {% if block.settings.required %}
+                        required
+                      {% endif %}
+                      placeholder=&quot;{{ block.settings.label | escape }}&quot;
+                    &gt;
+                  {%- when &#x27;textarea&#x27; -%}
+                    &lt;textarea
+                      class=&quot;text-area field__input&quot;
+                      id=&quot;line-item-{{ section.id }}-{{ block.id }}&quot;
+                      name=&quot;contact[{{ block.settings.label | escape }}]&quot;
+                      {% if block.settings.required %}
+                        required
+                      {% endif %}
+                      placeholder=&quot;{{ block.settings.label | escape }}&quot;
+                    &gt;&lt;/textarea&gt;
+                  {%- when &#x27;radio&#x27; -%}
+                    {%- assign options = block.settings.radio_options | split: &#x27;,&#x27; -%}
+                    {%- if options.size &gt; 1 -%}
+                      &lt;fieldset class=&quot;contact-form__input&quot;&gt;
+                        {%- for option in options -%}
+                          &lt;label
+                            class=&quot;form__facet-radio&quot;
+                            for=&quot;line-item-{{ section.id }}-{{ block.id }}-{{ forloop.index0 }}&quot;
+                          &gt;
+                            &lt;input
+                              id=&quot;line-item-{{ section.id }}-{{ block.id }}-{{ forloop.index0 }}&quot;
+                              type=&quot;radio&quot;
+                              name=&quot;contact[{{ block.settings.label | escape }}]&quot;
+                              value=&quot;{{ option | strip | escape }}&quot;
+                              {% if block.settings.required %}
+                                required
+                              {% endif %}
+                            &gt;
+                            &lt;span class=&quot;icon&quot;&gt;&lt;/span&gt;
+                            {{ option | strip | escape }}
+                          &lt;/label&gt;
+                        {%- endfor -%}
+                      &lt;/fieldset&gt;
+                    {%- endif -%}
+                  {%- when &#x27;select&#x27; -%}
+                    {%- assign options = block.settings.select_options | split: &#x27;,&#x27; -%}
+                    {%- if options.size &gt; 1 -%}
+                      &lt;select-wrapper class=&quot;select&quot;&gt;
+                        &lt;select
+                          class=&quot;select__select&quot;
+                          id=&quot;line-item-{{ section.id }}-{{ block.id }}&quot;
+                          name=&quot;contact[{{ block.settings.label | escape }}]&quot;
+                          {% if block.settings.required %}
+                            required
+                          {% endif %}
+                        &gt;
+                          &lt;option value=&quot;&quot; disabled selected hidden&gt;{{ block.settings.label | escape }}&lt;/option&gt;
+                          &lt;optgroup label=&quot;{{ block.settings.label | escape }}&quot;&gt;
+                            {%- for option in options -%}
+                              &lt;option value=&quot;{{ option | strip | escape }}&quot;&gt;
+                                {{ option | strip | escape }}
+                              &lt;/option&gt;
+                            {%- endfor -%}
+                          &lt;/optgroup&gt;
+                        &lt;/select&gt;
+                        {% render &#x27;icon&#x27;, icon: &#x27;caret&#x27; %}
+                      &lt;/select-wrapper&gt;
+                    {%- endif -%}
+                {%- endcase -%}
+              {%- endif -%}
+            &lt;/div&gt;
+          {%- endfor -%}
+        {%- endif -%}
+
+        &lt;div class=&quot;field&quot;&gt;
+          &lt;textarea
+            id=&quot;{{ form_id }}-body&quot;
+            rows=&quot;10&quot;
+            class=&quot;text-area field__input&quot;
+            name=&quot;contact[{{ &#x27;templates.contact.form.comment&#x27; | t }}]&quot;
+            placeholder=&quot;Comment&quot;
+          &gt;
+              {{- form.body -}}
+            &lt;/textarea&gt;
+          &lt;label class=&quot;visually-hidden&quot; for=&quot;{{ form_id }}-body&quot;&gt;{{ &#x27;templates.contact.form.comment&#x27; | t }}&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;contact__button&quot;&gt;
+          &lt;button type=&quot;submit&quot; class=&quot;button&quot;&gt;Send Message&lt;/button&gt;
+        &lt;/div&gt;
+
+        {% comment %}
+          Remove the following three lines of code to remove the note
+          about being protected by Google&#x27;s reCAPTCHA service.
+          By removing it, the small reCAPTCHA widget will appear in the
+          bottom right corner of the page.
+        {% endcomment %}
+        &lt;div class=&quot;rte&quot;&gt;
+          {% comment %}{{ &#x27;shopify.online_store.spam_detection.disclaimer_html&#x27; | t }}{% endcomment %}
+          Got questions about a product, status of an order or a general question? Now easier than ever, text support is
+          available at your convenience 8am-6pm PST. Please send a text message to +1.949.532.9774
+        &lt;/div&gt;
+      {%- endform -%}
+    &lt;/form-state&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+{% schema %}
+{
+  &quot;name&quot;: &quot;t:sections.contact-form.name&quot;,
+  &quot;tag&quot;: &quot;section&quot;,
+  &quot;class&quot;: &quot;section&quot;,
+  &quot;disabled_on&quot;: {
+    &quot;groups&quot;: [&quot;header&quot;, &quot;footer&quot;]
+  },
+  &quot;settings&quot;: [
+    {
+      &quot;type&quot;: &quot;inline_richtext&quot;,
+      &quot;id&quot;: &quot;heading&quot;,
+      &quot;default&quot;: &quot;Contact form&quot;,
+      &quot;label&quot;: &quot;Heading&quot;
+    },
+    {
+      &quot;type&quot;: &quot;checkbox&quot;,
+      &quot;id&quot;: &quot;show_phone&quot;,
+      &quot;default&quot;: true,
+      &quot;label&quot;: &quot;Show Number&quot;
+    },
+    {
+      &quot;type&quot;: &quot;select&quot;,
+      &quot;id&quot;: &quot;heading_size&quot;,
+      &quot;options&quot;: [
+        {
+          &quot;value&quot;: &quot;h2&quot;,
+          &quot;label&quot;: &quot;t:sections.all.heading_size.options__1.label&quot;
+        },
+        {
+          &quot;value&quot;: &quot;h1&quot;,
+          &quot;label&quot;: &quot;t:sections.all.heading_size.options__2.label&quot;
+        },
+        {
+          &quot;value&quot;: &quot;h0&quot;,
+          &quot;label&quot;: &quot;t:sections.all.heading_size.options__3.label&quot;
+        }
+      ],
+      &quot;default&quot;: &quot;h1&quot;,
+      &quot;label&quot;: &quot;t:sections.all.heading_size.label&quot;
+    },
+    {
+      &quot;type&quot;: &quot;color_scheme&quot;,
+      &quot;id&quot;: &quot;color_scheme&quot;,
+      &quot;label&quot;: &quot;t:sections.all.colors.label&quot;,
+      &quot;default&quot;: &quot;scheme-1&quot;
+    },
+    {
+      &quot;type&quot;: &quot;header&quot;,
+      &quot;content&quot;: &quot;t:sections.all.padding.section_padding_heading&quot;
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;padding_top&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 100,
+      &quot;step&quot;: 4,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;t:sections.all.padding.padding_top&quot;,
+      &quot;default&quot;: 36
+    },
+    {
+      &quot;type&quot;: &quot;range&quot;,
+      &quot;id&quot;: &quot;padding_bottom&quot;,
+      &quot;min&quot;: 0,
+      &quot;max&quot;: 100,
+      &quot;step&quot;: 4,
+      &quot;unit&quot;: &quot;px&quot;,
+      &quot;label&quot;: &quot;t:sections.all.padding.padding_bottom&quot;,
+      &quot;default&quot;: 36
+    }
+  ],
+  &quot;presets&quot;: [
+    {
+      &quot;name&quot;: &quot;t:sections.contact-form.presets.name&quot;
+    }
+  ]
+}
+{% endschema %}
+</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="fd45553a-fbf9-43ba-88f3-60d5a9e9bb12" class="code"><code class="language-JavaScript">.contact img {
+  max-width: 100%;
+}
+.contact .field label.visually-hidden {
+    /* position: unset;
+    overflow: unset;
+    width: max-content;
+    height: max-content;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    clip: unset;
+    word-wrap: normal;
+    top: 0;
+    left: 15px;
+    transform: translate(10px, 10px); */
+}
+
+.contact .field {
+  display: block;
+  margin-bottom: 1.5rem;
+}
+.contact .field__input::placeholder,
+.contact  .field input::placeholder{
+  font-size: 1.3rem;
+  line-height: normal;
+  letter-spacing: .04rem;
+  opacity: 1 !important;
+}
+.contact .field__input:focus::placeholder,
+.contact .field input:focus::placeholder {
+  opacity: 0.4 !important;
+}
+.contact .button {
+  background: #EA094B;
+}
+.contact .button:after,
+.contact .button:not([disabled]):hover:after{
+    box-shadow: unset;
+}
+.contact .field:after,
+.contact .field:hover.field:after{
+    box-shadow: unset;
+}
+.contact  .field__input{
+    font-family: inherit;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    border: 0;
+    border-radius: 0;
+    color: rgb(var(--color-foreground));
+    width: 100%;
+    box-shadow: unset;
+    height: 4.4rem;
+    box-sizing: border-box;
+    transition: box-shadow var(--duration-default) ease;
+}
+
+@media screen and (min-width: 750px) {
+  .contact .field {
+    margin-bottom: 2rem;
+  }
+}
+
+.contact__button {
+  margin-top: 3rem;
+}
+
+@media screen and (min-width: 750px) {
+  .contact__button {
+    margin-top: 4rem;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .contact .contact__fields {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2rem;
+  }
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
+.contact__list {
+  padding-top: 5rem;
+  line-height: calc(1 + 0.5 / var(--font-body-scale));
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+  row-gap: 4rem;
+}
+
+@media screen and (min-width: 750px) {
+  .contact__list {
+    padding-top: 0;
+    padding-inline-start: 6rem;
+  }
+}
+
+.contact__list &gt; li {
+  flex: 0 0 100%;
+}
+
+.contact__list .h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  line-height: calc(1 + 0.2 / max(1, var(--font-heading-scale)));
+}
+
+.contact__list .link {
+  padding-bottom: 0.2rem;
+}
+
+.contact__list .list-social {
+  padding-top: .5rem;
+}
+
+@media screen and (max-width: 749px) {
+  .contact .grid .grid__item {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .contact__list &gt; li {
+    flex: 1 0 calc(50% - 1rem);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contact__list &gt; li {
+    flex: 0 0 100%;
+  }
+}
+
+.contact-form__input .form__facet-checkbox,
+.contact-form__input .form__facet-radio {
+  position: relative;
+  display: flex;
+  align-items: center;
+  word-break: break-word;
+  line-height: 1.6rem;
+  cursor: pointer;
+}
+
+.contact-form__input .form__facet-checkbox input[type=checkbox] {
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  position: absolute;
+  height: 0.1rem;
+  width: 0.1rem;
+}
+
+.contact-form__input .form__facet-checkbox .icon {
+  color: rgb(var(--color-border));
+  background-color: rgb(var(--color-background));
+  margin-inline-end: 1rem;
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+}
+
+.contact-form__input .form__facet-checkbox .icon path:last-child {
+  color: rgb(var(--color-foreground));
+}
+
+.contact-form__input .form__facet-radio .icon {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  margin-inline-end: 1rem;
+  position: relative;
+  border: 1px solid rgb(var(--color-border));
+  border-radius: 50%;
+}
+
+.contact-form__input .form__facet-radio .icon::after {
+  content: &#x27;&#x27;;
+  width: 0.6rem;
+  height: 0.6rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: currentColor;
+  border-radius: 50%;
+}
+
+.contact-form__input .form__facet-checkbox .icon path:last-child,
+.contact-form__input .form__facet-radio .icon::after {
+  opacity: 0;
+  transition: opacity var(--duration-short) ease;
+}
+
+.contact-form__input .form__facet-checkbox &gt; input[type=checkbox]:checked ~ .icon-checkmark path:last-child,
+.contact-form__input .form__facet-radio &gt; input[type=radio]:checked ~ .icon::after {
+  opacity: 1;
+}
+
+.contact-form__input fieldset.contact-form__input {
+  flex-direction: column;
+  row-gap: 1rem;
+  padding: 0;
+  margin: 0;
+  border: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contact-form__input input[type=radio] {
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  position: absolute;
+  height: 0.1rem;
+  width: 0.1rem;
+}
+</code></pre></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
